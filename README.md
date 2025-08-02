@@ -30,7 +30,6 @@ Welcome to my portfolio — a chronicle of professional transformation.
 
 This site documents my evolution from operations and procurement leadership to emerging technology professional. Thoughtfully crafted with modern web technologies, it emphasizes performance, accessibility, and intuitive navigation — principles that mirror my approach to both learning and professional practice: methodical, purposeful, and growth-oriented.
 
-
 - **Performance-First:** 90+ Lighthouse scores across all metrics
 - **Accessibility:** WCAG AA compliant with full keyboard navigation
 - **Responsive Design:** Mobile-first approach supporting all devices
@@ -44,7 +43,7 @@ This site documents my evolution from operations and procurement leadership to e
 
 ### 🎨 Core Features
 
-- **Interactive Career Timeline** - Visual progression from admin role to tech journey
+- **Interactive Career Timeline** - Visual progression from encoder to tech journey
 - **Skills Progression Visualization** - Dynamic skill development tracking
 - **Project Showcase** - Curated portfolio with live demos and GitHub links
 - **Blog System** - Regular updates on learning journey and insights
