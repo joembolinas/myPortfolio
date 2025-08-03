@@ -74,9 +74,15 @@ Navigate to: `https://github.com/joembolinas/myPortfolio`
 
 Click the ⚙️ gear icon next to "About" and add these topics:
 ```
-portfolio, career-transition, react, vite, typescript, tailwind-css, 
+portfolio, career-transition, react, typescript, tailwind-css, 
 framer-motion, performance-optimization, accessibility, responsive-design,
 frontend-development, web-development, lighthouse, seo-optimized
+```
+
+**Alternative: Use the automated script:**
+```bash
+# Run the repository topics setup script
+./scripts/set-repo-topics.sh
 ```
 
 ## 7. 📋 Create GitHub Projects Board (Manual - GitHub Web Interface)
