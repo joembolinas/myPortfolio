@@ -42,7 +42,7 @@ Before diving into the deliverables, let's strategically align on your vision. I
 
 9. **Interactive Elements:** Interest in features like:
    - feedback button
-   - Interactive my google calendar live view(but not priority, just add it in th future i think)
+   - Interactive my Google calendar live view (but not priority, just add it in the future I think)
    - Real-time GitHub contribution visualization
    - Contact form with scheduling integration (lets work together)
    - button for see my resume with download button in PDF file
