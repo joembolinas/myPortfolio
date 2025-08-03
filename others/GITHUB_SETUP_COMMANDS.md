@@ -79,7 +79,7 @@ Navigate to: `https://github.com/joembolinas/myPortfolio`
 Click the ⚙️ gear icon next to "About" and add these topics:
 
 ```
-portfolio, career-transition, react, react, typescript, tailwind-css, 
+portfolio, career-transition, react, vite, typescript, tailwind-css, 
 framer-motion, performance-optimization, accessibility, responsive-design,
 frontend-development, web-development, lighthouse, seo-optimized
 ```
