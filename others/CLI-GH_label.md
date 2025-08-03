@@ -129,21 +129,21 @@ gh label create "Difficulty: Advanced" --description "Requires significant exper
 
 | Color Code | Color Name   | Usage                                                   |
 | ---------- | ------------ | ------------------------------------------------------- |
-| `FF0000` | Bright Red   | Critical Priority                                       |
-| `FF6B6B` | Red          | High Priority, Bugs, Blocked                            |
-| `E17055` | Red-Orange   | Security Issues                                         |
-| `FF9F43` | Orange       | Performance (Type)                                      |
-| `FFB347` | Orange       | Performance (Component)                                 |
-| `FFA07A` | Light Orange | Testing                                                 |
-| `FFE066` | Yellow       | Medium Priority, Refactor, Testing Status, Intermediate |
-| `F7DC6F` | Light Yellow | SEO                                                     |
-| `51CF66` | Green        | Features, Low Priority, Ready, Beginner                 |
-| `4ECDC4` | Teal         | Enhancement, In Progress                                |
-| `45B7D1` | Blue         | Documentation, Review                                   |
-| `A8E6CF` | Light Green  | UI/UX                                                   |
-| `98D8C8` | Light Teal   | CI/CD                                                   |
-| `DDA0DD` | Light Purple | Backend                                                 |
-| `7209B7` | Purple       | Accessibility                                           |
+| `FF0000`   | Bright Red   | Critical Priority                                       |
+| `FF6B6B`   | Red          | High Priority, Bugs, Blocked                            |
+| `E17055`   | Red-Orange   | Security Issues                                         |
+| `FF9F43`   | Orange       | Performance (Type)                                      |
+| `FFB347`   | Orange       | Performance (Component)                                 |
+| `FFA07A`   | Light Orange | Testing                                                 |
+| `FFE066`   | Yellow       | Medium Priority, Refactor, Testing Status, Intermediate |
+| `F7DC6F`   | Light Yellow | SEO                                                     |
+| `51CF66`   | Green        | Features, Low Priority, Ready, Beginner                 |
+| `4ECDC4`   | Teal         | Enhancement, In Progress                                |
+| `45B7D1`   | Blue         | Documentation, Review                                   |
+| `A8E6CF`   | Light Green  | UI/UX                                                   |
+| `98D8C8`   | Light Teal   | CI/CD                                                   |
+| `DDA0DD`   | Light Purple | Backend                                                 |
+| `7209B7`   | Purple       | Accessibility                                           |
 
 ## Usage Examples
 
@@ -174,16 +174,15 @@ gh label delete "Label Name"
 ## Best Practices for Using These Labels
 
 1. **Use Multiple Labels**: Combine labels from different categories for better organization
-
    - Example: `Type: Feature` + `Priority: Medium` + `Component: UI/UX` + `Difficulty: Beginner`
-2. **Label Workflow**:
 
+2. **Label Workflow**:
    - Start with `Type` and `Priority`
    - Add `Component` to identify affected area
    - Use `Status` to track progress
    - Add `Difficulty` to help contributors
-3. **Regular Maintenance**:
 
+3. **Regular Maintenance**:
    - Review and update labels as projects evolve
    - Remove unused labels periodically
    - Ensure team members understand label meanings

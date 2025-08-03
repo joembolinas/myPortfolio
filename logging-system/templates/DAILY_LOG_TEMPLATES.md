@@ -1,7 +1,9 @@
 # Daily Project Log Templates
+
 # Copy and paste these into project.log as needed
 
 ## MORNING ROUTINE (Start of Day)
+
 ```
 # SESSION: [DATE] - [SESSION_DESCRIPTION]
 [timestamp] | DAILY | START | [Today's main focus area] | PLANNED
@@ -10,6 +12,7 @@
 ```
 
 ## THROUGHOUT THE DAY (As things happen)
+
 ```
 # Learning Moments
 [timestamp] | LEARNING | [SKILL] | [What you discovered/understood] | INSIGHT
@@ -18,7 +21,7 @@
 [timestamp] | CHALLENGE | [AREA] | [Problem you encountered] | OBSTACLE
 [timestamp] | DEBUG | [TOOL] | [What you're investigating] | INVESTIGATING
 
-# Solutions Found  
+# Solutions Found
 [timestamp] | SOLUTION | [AREA] | [How you solved the problem] | RESOLVED
 [timestamp] | FIX | [TOOL] | [Technical fix implemented] | COMPLETED
 
@@ -28,6 +31,7 @@
 ```
 
 ## EVENING ROUTINE (End of Day)
+
 ```
 [timestamp] | DAILY | SUMMARY | [What got done vs planned] | COMPLETED
 [timestamp] | LEARNING | TODAY | [Key things learned] | INSIGHT
@@ -38,6 +42,7 @@
 ```
 
 ## WEEKLY REVIEW (Sunday Evening)
+
 ```
 # WEEKLY REVIEW: Week [XX] - [Start Date] to [End Date]
 [timestamp] | WEEKLY | SUMMARY | [Major accomplishments this week] | COMPLETED
@@ -52,6 +57,7 @@
 ## QUICK ENTRY SHORTCUTS
 
 ### For Learning Platforms:
+
 ```
 [timestamp] | PROGRESS | LEETCODE | Solved [X] problems - [difficulty levels] | TRACKING
 [timestamp] | PROGRESS | TRYHACKME | Completed [room name] - [skills practiced] | TRACKING
@@ -59,6 +65,7 @@
 ```
 
 ### For Technical Issues:
+
 ```
 [timestamp] | DEBUG | [TOOL] | [Issue description] | INVESTIGATING
 [timestamp] | RESEARCH | [TECHNOLOGY] | [What you're learning about] | LEARNING
@@ -67,6 +74,7 @@
 ```
 
 ### For Career Development:
+
 ```
 [timestamp] | CAREER | APPLICATION | Applied to [company] for [position] | SUBMITTED
 [timestamp] | CAREER | NETWORKING | [LinkedIn connection, community interaction] | COMPLETED
@@ -75,6 +83,7 @@
 ```
 
 ### For Emotional/Motivational Tracking:
+
 ```
 [timestamp] | MOTIVATION | LEVEL | [High/Medium/Low] - [reason why] | NOTED
 [timestamp] | CONFIDENCE | SKILL | [Technology] - feeling [confident/learning/struggling] | NOTED
@@ -83,20 +92,24 @@
 ```
 
 ## TIMESTAMP HELPER
+
 Current Unix timestamp: Use online converter or:
+
 - Windows: Get-Date -UFormat %s in PowerShell
 - Or just use current time in YYYY-MM-DD HH:MM format
 
 ## AUTOMATION REMINDERS
+
 1. Use PowerShell script: .\log-entry.ps1 -Type "LEARNING" -Component "REACT" -Description "Understanding hooks" -Status "INSIGHT"
 2. Use VS Code snippets: Type "log" and press Tab
 3. Set daily reminders to log morning goals and evening reflection
 4. Weekly Sunday review to catch anything missed
 
 ## STATUS DEFINITIONS
+
 - PLANNED: Something you intend to do
 - IN_PROGRESS: Currently working on
-- COMPLETED: Finished successfully  
+- COMPLETED: Finished successfully
 - RESOLVED: Problem solved
 - OBSTACLE: Blocking issue encountered
 - INVESTIGATING: Researching/debugging

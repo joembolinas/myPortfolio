@@ -31,6 +31,7 @@ Welcome to my portfolio — a chronicle of professional transformation from SNR 
 This project represents more than a portfolio—it's a strategic career transition tool built with modern web technologies and a performance-first mindset. Thoughtfully crafted to emphasize accessibility, user experience, and technical excellence, it mirrors my approach to both learning and professional practice: methodical, purposeful, and growth-oriented.
 
 ### 🏆 Phase 1 Achievements (COMPLETED)
+
 - ✅ **Strategic Planning** - Project charter with confirmed technical decisions
 - ✅ **Professional GitHub Setup** - Enterprise-level repository configuration
 - ✅ **Development Environment** - Complete toolchain (React + Vite + TypeScript + Tailwind)
@@ -40,6 +41,7 @@ This project represents more than a portfolio—it's a strategic career transiti
 - ✅ **Project Management** - GitHub Project Board with workflow automation
 
 ### 🎯 Confirmed Technical Approach
+
 - **Archetype:** "The Technical Storyteller" - narrative-driven with interactive timeline
 - **Performance Priority:** 70% performance, 30% visual appeal
 - **Technology Stack:** React 18+ + Vite 5+ + TypeScript + Tailwind CSS + Framer Motion
@@ -50,6 +52,7 @@ This project represents more than a portfolio—it's a strategic career transiti
 ## ✨ Planned Features (Phase 2-5 Implementation)
 
 ### 🎨 Core Portfolio Features
+
 - **Interactive Career Timeline** - Visual progression from admin/procurement to tech journey with milestone markers
 - **Skills Progression Visualization** - Dynamic tracking of learning journey (TryHackMe, roadmap.sh, LeetCode)
 - **Real-time GitHub Integration** - Live contribution visualization and repository showcase
@@ -60,6 +63,7 @@ This project represents more than a portfolio—it's a strategic career transiti
 - **Feedback System** - Visitor feedback collection for continuous improvement
 
 ### 🔧 Technical Features
+
 - **Performance Optimization** - Code splitting, lazy loading, image optimization (90+ Lighthouse scores)
 - **SEO Excellence** - Meta tags, structured data, sitemap generation for discoverability
 - **Accessibility First** - Screen reader support, keyboard navigation, WCAG AA compliance
@@ -67,6 +71,7 @@ This project represents more than a portfolio—it's a strategic career transiti
 - **Analytics Integration** - User behavior tracking and performance monitoring
 
 ### 📱 Responsive Experience
+
 - **Mobile-First Design** - Optimized for mobile, enhanced for desktop
 - **Touch-Friendly Interface** - Large touch targets and intuitive gesture support
 - **Cross-Browser Compatibility** - Tested on Chrome, Firefox, Safari, Edge
