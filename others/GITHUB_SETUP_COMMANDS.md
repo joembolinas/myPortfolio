@@ -116,7 +116,7 @@ After completing all steps, verify:
 - [X] Develop branch exists
 - [X] Branch protection rules are active
 - [X] Repository topics are added
-- [ ] Projects board is created
+- [X] Projects board is created
 
 ## 🎉 Next Steps
 
