@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { clsx } from 'clsx';
-import { Button } from '@/components/ui';
+import { Button, DarkModeToggle } from '@/components/ui';
 import { navigationItems } from '@/data/portfolio';
 
 const Header = () => {
@@ -67,8 +67,8 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-baseline space-x-4">
               {navigationItems.map((item) => (
                 <button
                   key={item.href}
@@ -87,10 +87,12 @@ const Header = () => {
                 </button>
               ))}
             </div>
+            <DarkModeToggle />
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and dark mode toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <DarkModeToggle />
             <Button
               variant="ghost"
               size="sm"

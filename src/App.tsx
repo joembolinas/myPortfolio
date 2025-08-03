@@ -1,5 +1,6 @@
 import { Header, Footer } from '@/components/layout';
 import { Hero, About, Projects, Contact } from '@/components/sections';
+import { BackToTop } from '@/components/ui';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }
