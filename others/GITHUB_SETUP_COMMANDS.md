@@ -58,7 +58,6 @@ After pushing, go to GitHub web interface:
 
 1. **Navigate to:** `https://github.com/joembolinas/myPortfolio/settings/branches`
 2. **Add Rule for `main` branch:**
-
    - Branch name pattern: `main`
    - ✅ Require a pull request before merging
    - ✅ Require approvals: 1
@@ -66,8 +65,8 @@ After pushing, go to GitHub web interface:
    - ✅ Require status checks to pass before merging
    - ✅ Require branches to be up to date before merging
    - ✅ Include administrators
-3. **Add Rule for `develop` branch:**
 
+3. **Add Rule for `develop` branch:**
    - Branch name pattern: `develop`
    - ✅ Require a pull request before merging
    - ✅ Require status checks to pass before merging
@@ -79,7 +78,7 @@ Navigate to: `https://github.com/joembolinas/myPortfolio`
 Click the ⚙️ gear icon next to "About" and add these topics:
 
 ```
-portfolio, career-transition, react, vite, typescript, tailwind-css, 
+portfolio, career-transition, react, vite, typescript, tailwind-css,
 framer-motion, performance-optimization, accessibility, responsive-design,
 frontend-development, web-development, lighthouse, seo-optimized
 ```

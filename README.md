@@ -136,8 +136,8 @@ npm run a11y-test
 
 ### Core Technologies
 
-| Technology                                   | Version | Purpose      |
-| -------------------------------------------- | ------- | ------------ |
+| Technology                                      | Version | Purpose      |
+| ----------------------------------------------- | ------- | ------------ |
 | [React](https://reactjs.org/)                   | 18+     | UI Framework |
 | [TypeScript](https://www.typescriptlang.org/)   | 5.0+    | Type Safety  |
 | [Vite](https://vitejs.dev/)                     | 5.0+    | Build Tool   |

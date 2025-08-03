@@ -54,22 +54,26 @@ Ensure you have the following installed:
 ### Initial Setup
 
 1. **Fork the repository**
+
    ```bash
    # Click the "Fork" button on GitHub
    ```
 
 2. **Clone your fork**
+
    ```bash
    git clone https://github.com/your-username/growth-journey-portfolio.git
    cd growth-journey-portfolio
    ```
 
 3. **Add upstream remote**
+
    ```bash
    git remote add upstream https://github.com/original-owner/growth-journey-portfolio.git
    ```
 
 4. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -86,6 +90,7 @@ Ensure you have the following installed:
 ### Branching Strategy
 
 1. **Sync with upstream**
+
    ```bash
    git checkout main
    git pull upstream main
@@ -93,6 +98,7 @@ Ensure you have the following installed:
    ```
 
 2. **Create feature branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    # or
@@ -105,12 +111,14 @@ Ensure you have the following installed:
    - Update documentation as needed
 
 4. **Commit your changes**
+
    ```bash
    git add .
    git commit -m "feat: add new feature description"
    ```
 
 5. **Push to your fork**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -146,8 +154,8 @@ interface UserProfile {
 const createProfile = (data: Partial<UserProfile>): UserProfile => {
   return {
     id: generateId(),
-    name: data.name || '',
-    email: data.email || '',
+    name: data.name || "",
+    email: data.email || "",
     skills: data.skills || [],
   };
 };
@@ -163,29 +171,29 @@ const createProfile = (data: any): any => {
 ```tsx
 // ✅ Good: Proper component structure
 interface ButtonProps {
-  variant: 'primary' | 'secondary';
-  size: 'sm' | 'md' | 'lg';
+  variant: "primary" | "secondary";
+  size: "sm" | "md" | "lg";
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   children,
   onClick,
   disabled = false,
 }) => {
-  const baseClasses = 'rounded-lg font-medium transition-colors';
+  const baseClasses = "rounded-lg font-medium transition-colors";
   const variantClasses = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700',
-    secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300',
+    primary: "bg-blue-600 text-white hover:bg-blue-700",
+    secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
   };
   const sizeClasses = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2 text-base',
-    lg: 'px-6 py-3 text-lg',
+    sm: "px-3 py-1.5 text-sm",
+    md: "px-4 py-2 text-base",
+    lg: "px-6 py-3 text-lg",
   };
 
   return (
@@ -260,34 +268,41 @@ src/
 
 ```markdown
 ## 🎯 Description
+
 Brief description of what this PR does.
 
 ## 🔗 Related Issues
+
 - Closes #123
 - Related to #456
 
 ## 🛠️ Type of Change
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
 - [ ] Documentation update
 
 ## 🧪 Testing
+
 - [ ] Unit tests added/updated
 - [ ] Integration tests pass
 - [ ] Manual testing completed
 
 ## 📊 Performance Impact
+
 - [ ] No performance impact
 - [ ] Performance improved
 - [ ] Performance impact acceptable
 
 ## ♿ Accessibility
+
 - [ ] No accessibility impact
 - [ ] Accessibility improved
 - [ ] Accessibility tested
 
 ## 📸 Screenshots
+
 <!-- Add screenshots for UI changes -->
 ```
 
@@ -351,7 +366,7 @@ describe('Button', () => {
   it('calls onClick when clicked', () => {
     const handleClick = jest.fn();
     render(<Button onClick={handleClick}>Click me</Button>);
-    
+
     fireEvent.click(screen.getByText('Click me'));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
@@ -375,14 +390,14 @@ describe('ContactForm Integration', () => {
   it('submits form with valid data', async () => {
     const user = userEvent.setup();
     const mockSubmit = jest.fn();
-    
+
     render(<ContactForm onSubmit={mockSubmit} />);
-    
+
     await user.type(screen.getByLabelText(/name/i), 'John Doe');
     await user.type(screen.getByLabelText(/email/i), 'john@example.com');
     await user.type(screen.getByLabelText(/message/i), 'Hello world');
     await user.click(screen.getByRole('button', { name: /submit/i }));
-    
+
     await waitFor(() => {
       expect(mockSubmit).toHaveBeenCalledWith({
         name: 'John Doe',
@@ -432,7 +447,7 @@ npm run test:e2e
  * @example
  * formatDate('2023-12-25') // 'Dec 25, 2023'
  */
-export const formatDate = (date: string, format = 'MMM dd, yyyy'): string => {
+export const formatDate = (date: string, format = "MMM dd, yyyy"): string => {
   // Implementation
 };
 ```
@@ -442,7 +457,7 @@ export const formatDate = (date: string, format = 'MMM dd, yyyy'): string => {
 ```tsx
 /**
  * Button component with multiple variants and sizes
- * 
+ *
  * @example
  * <Button variant="primary" size="lg" onClick={handleClick}>
  *   Click me

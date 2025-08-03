@@ -22,7 +22,7 @@
 **Topics/Tags:**
 
 ```
-portfolio, career-transition, react, vite, typescript, tailwind-css, 
+portfolio, career-transition, react, vite, typescript, tailwind-css,
 framer-motion, performance-optimization, accessibility, responsive-design,
 frontend-development, web-development, lighthouse, seo-optimized
 ```
@@ -191,19 +191,23 @@ Difficulty: Advanced     # FF6B6B - Requires significant experience
 
 ```markdown
 ## 🎯 Feature Description
+
 Brief description of the feature
 
 ## 📋 Acceptance Criteria
+
 - [ ] Criterion 1
 - [ ] Criterion 2
 - [ ] Criterion 3
 
 ## 🔧 Technical Requirements
+
 - Technology requirements
 - Performance requirements
 - Accessibility requirements
 
 ## 📊 Definition of Done
+
 - [ ] Feature implemented
 - [ ] Tests written and passing
 - [ ] Documentation updated
@@ -220,13 +224,16 @@ Brief description of the feature
 ## 🎯 Pull Request Description
 
 ### What does this PR do?
+
 Brief description of changes
 
 ### 🔗 Related Issues
+
 - Closes #[issue-number]
 - Related to #[issue-number]
 
 ### 🛠️ Type of Change
+
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
@@ -235,27 +242,32 @@ Brief description of changes
 - [ ] Refactoring
 
 ### 🧪 Testing
+
 - [ ] Unit tests added/updated
 - [ ] Integration tests added/updated
 - [ ] Manual testing completed
 - [ ] All tests pass
 
 ### 📊 Performance Impact
+
 - [ ] No performance impact
 - [ ] Performance improved
 - [ ] Performance impact acceptable (explain below)
 
 ### ♿ Accessibility
+
 - [ ] No accessibility impact
 - [ ] Accessibility improved
 - [ ] Accessibility verified with tools
 
 ### 📱 Responsive Design
+
 - [ ] Desktop tested
 - [ ] Tablet tested
 - [ ] Mobile tested
 
 ### 🔍 Code Quality Checklist
+
 - [ ] Code follows project style guidelines
 - [ ] Self-review completed
 - [ ] Code is properly commented
@@ -263,9 +275,11 @@ Brief description of changes
 - [ ] TypeScript strict mode compliance
 
 ### 📸 Screenshots (if applicable)
+
 <!-- Add screenshots for UI changes -->
 
 ### 📋 Additional Notes
+
 <!-- Any additional information, considerations, or context -->
 ```
 
@@ -281,36 +295,43 @@ Brief description of changes
 ---
 name: Bug Report
 about: Create a report to help us improve
-title: '[BUG] '
-labels: 'Type: Bug'
-assignees: ''
+title: "[BUG] "
+labels: "Type: Bug"
+assignees: ""
 ---
 
 ## 🐛 Bug Description
+
 A clear and concise description of what the bug is.
 
 ## 🔄 Steps to Reproduce
+
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
 ## ✅ Expected Behavior
+
 A clear and concise description of what you expected to happen.
 
 ## 🚫 Actual Behavior
+
 A clear and concise description of what actually happened.
 
 ## 📱 Environment
+
 - **Device:** [e.g. iPhone 12, Desktop]
 - **OS:** [e.g. iOS 15, Windows 11]
 - **Browser:** [e.g. Chrome 96, Safari 15]
 - **Screen Size:** [e.g. 1920x1080, 375x812]
 
 ## 📸 Screenshots
+
 If applicable, add screenshots to help explain your problem.
 
 ## 🔍 Additional Context
+
 Add any other context about the problem here.
 ```
 
@@ -322,40 +343,49 @@ Add any other context about the problem here.
 ---
 name: Feature Request
 about: Suggest an idea for this project
-title: '[FEATURE] '
-labels: 'Type: Feature'
-assignees: ''
+title: "[FEATURE] "
+labels: "Type: Feature"
+assignees: ""
 ---
 
 ## 🚀 Feature Description
+
 A clear and concise description of what you want to happen.
 
 ## 💡 Problem Statement
+
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 ## 🎯 Proposed Solution
+
 A clear and concise description of what you want to happen.
 
 ## 🔄 Alternative Solutions
+
 A clear and concise description of any alternative solutions or features you've considered.
 
 ## 📊 Acceptance Criteria
+
 - [ ] Criterion 1
 - [ ] Criterion 2
 - [ ] Criterion 3
 
 ## 🎨 Design Considerations
+
 Any design or UX considerations for this feature.
 
 ## 🔧 Technical Considerations
+
 Any technical implementation details or considerations.
 
 ## 📱 Device Compatibility
+
 - [ ] Desktop
 - [ ] Tablet
 - [ ] Mobile
 
 ## 🔍 Additional Context
+
 Add any other context or screenshots about the feature request here.
 ```
 
@@ -376,16 +406,16 @@ Add any other context or screenshots about the feature request here.
 #### Commit Types
 
 ```yaml
-feat:     # New feature
-fix:      # Bug fix
-docs:     # Documentation changes
-style:    # Code style changes (formatting, etc.)
+feat: # New feature
+fix: # Bug fix
+docs: # Documentation changes
+style: # Code style changes (formatting, etc.)
 refactor: # Code refactoring
-perf:     # Performance improvements
-test:     # Adding or updating tests
-chore:    # Maintenance tasks
-ci:       # CI/CD changes
-build:    # Build system changes
+perf: # Performance improvements
+test: # Adding or updating tests
+chore: # Maintenance tasks
+ci: # CI/CD changes
+build: # Build system changes
 ```
 
 #### Examples
@@ -404,14 +434,14 @@ chore(deps): update dependencies to latest versions
 #### Scope Guidelines
 
 ```yaml
-timeline:    # Interactive timeline component
-contact:     # Contact form and related features
-blog:        # Blog system
-projects:    # Project showcase
-navigation:  # Site navigation
+timeline: # Interactive timeline component
+contact: # Contact form and related features
+blog: # Blog system
+projects: # Project showcase
+navigation: # Site navigation
 performance: # Performance optimizations
-seo:         # SEO improvements
-a11y:        # Accessibility improvements
+seo: # SEO improvements
+a11y: # Accessibility improvements
 ```
 
 ---

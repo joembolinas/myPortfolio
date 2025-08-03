@@ -26,19 +26,19 @@ graph TB
         B --> C[State Management]
         C --> D[Router]
     end
-    
+
     subgraph "API Layer"
         E[GitHub API] --> F[Data Processing]
         G[Contact API] --> H[Form Handler]
         I[Analytics API] --> J[Tracking]
     end
-    
+
     subgraph "Infrastructure"
         K[Vercel Edge] --> L[CDN]
         M[GitHub Actions] --> N[CI/CD]
         O[Monitoring] --> P[Alerts]
     end
-    
+
     A --> E
     A --> G
     A --> I
@@ -57,19 +57,19 @@ flowchart LR
         C --> D[Tailwind CSS]
         D --> E[Framer Motion]
     end
-    
+
     subgraph "Build & Deploy"
         F[ESLint/Prettier] --> G[Vitest]
         G --> H[Playwright]
         H --> I[Lighthouse CI]
         I --> J[Vercel]
     end
-    
+
     subgraph "External APIs"
         K[GitHub API] --> L[Google Analytics]
         L --> M[Contact Service]
     end
-    
+
     A --> F
     J --> K
 ```
@@ -86,26 +86,26 @@ graph TD
     B --> C[Header]
     B --> D[Main]
     B --> E[Footer]
-    
+
     C --> F[Navigation]
     C --> G[MobileMenu]
-    
+
     D --> H[Hero]
     D --> I[About]
     D --> J[Timeline]
     D --> K[Projects]
     D --> L[Blog]
     D --> M[Contact]
-    
+
     J --> N[TimelineItem]
     J --> O[Milestone]
-    
+
     K --> P[ProjectCard]
     K --> Q[ProjectModal]
-    
+
     L --> R[BlogPost]
     L --> S[BlogCard]
-    
+
     M --> T[ContactForm]
     M --> U[ScheduleButton]
 ```
@@ -117,7 +117,7 @@ graph LR
     A[UI Components] --> B[Feature Components]
     B --> C[Page Components]
     C --> D[Layout Components]
-    
+
     E[Custom Hooks] --> B
     F[Utils] --> E
     G[Types] --> F
@@ -136,11 +136,11 @@ flowchart TD
     B --> C[State Update]
     C --> D[Component Re-render]
     D --> E[DOM Update]
-    
+
     F[API Call] --> G[Data Processing]
     G --> H[Cache Update]
     H --> C
-    
+
     I[External Event] --> J[Event Listener]
     J --> K[State Sync]
     K --> C
@@ -155,7 +155,7 @@ sequenceDiagram
     participant Hook
     participant API
     participant Cache
-    
+
     User->>Component: Interaction
     Component->>Hook: Trigger Action
     Hook->>API: Fetch Data
@@ -177,11 +177,11 @@ graph TB
     B --> C[Lazy Loading]
     C --> D[Image Optimization]
     D --> E[Caching Strategy]
-    
+
     F[Bundle Analysis] --> G[Tree Shaking]
     G --> H[Minification]
     H --> I[Compression]
-    
+
     J[Runtime Optimization] --> K[Memoization]
     K --> L[Virtual Scrolling]
     L --> M[Debouncing]
@@ -194,16 +194,16 @@ gantt
     title Performance Loading Timeline
     dateFormat X
     axisFormat %s
-    
+
     section Critical
     HTML Parse     :0, 0.2s
     CSS Parse      :0, 0.5s
     JS Parse       :0.2s, 0.8s
-    
+
     section Above Fold
     Hero Render    :0.8s, 1.2s
     Navigation     :0.8s, 1.0s
-    
+
     section Below Fold
     Timeline       :1.2s, 2.0s
     Projects       :1.5s, 2.5s
@@ -221,10 +221,10 @@ graph TB
     A[Input Validation] --> B[Sanitization]
     B --> C[CSRF Protection]
     C --> D[XSS Prevention]
-    
+
     E[HTTPS Enforcement] --> F[Security Headers]
     F --> G[Content Security Policy]
-    
+
     H[API Security] --> I[Rate Limiting]
     I --> J[Authentication]
     J --> K[Authorization]
@@ -238,7 +238,7 @@ sequenceDiagram
     participant Frontend
     participant API
     participant Validation
-    
+
     User->>Frontend: Submit Form
     Frontend->>Validation: Validate Input
     Validation-->>Frontend: Validation Result
@@ -266,7 +266,7 @@ erDiagram
         string linkedin
         string github
     }
-    
+
     TIMELINE_ITEM {
         string id PK
         string title
@@ -277,7 +277,7 @@ erDiagram
         string[] skills
         string type
     }
-    
+
     PROJECT {
         string id PK
         string title
@@ -289,7 +289,7 @@ erDiagram
         date completedDate
         boolean featured
     }
-    
+
     BLOG_POST {
         string id PK
         string title
@@ -300,7 +300,7 @@ erDiagram
         date publishedDate
         boolean published
     }
-    
+
     SKILL {
         string id PK
         string name
@@ -308,7 +308,7 @@ erDiagram
         number level
         string iconUrl
     }
-    
+
     PROFILE ||--o{ TIMELINE_ITEM : has
     PROFILE ||--o{ PROJECT : creates
     PROFILE ||--o{ BLOG_POST : writes
@@ -330,10 +330,10 @@ graph TB
     E --> F[Business Logic]
     F --> G[Data Layer]
     G --> H[Response]
-    
+
     I[Error Handling] --> J[Logging]
     J --> K[Monitoring]
-    
+
     F --> I
     H --> I
 ```
@@ -346,14 +346,14 @@ graph LR
     A --> C[/contact]
     A --> D[/analytics]
     A --> E[/health]
-    
+
     B --> F[/repos]
     B --> G[/contributions]
     B --> H[/stats]
-    
+
     C --> I[/send]
     C --> J[/schedule]
-    
+
     D --> K[/track]
     D --> L[/events]
 ```
@@ -368,7 +368,7 @@ graph LR
 graph TB
     A[E2E Tests<br/>10%] --> B[Integration Tests<br/>20%]
     B --> C[Unit Tests<br/>70%]
-    
+
     D[Manual Testing] --> A
     E[Visual Testing] --> D
     F[Performance Testing] --> E
@@ -407,10 +407,10 @@ graph TB
     G --> H[Deploy to Vercel]
     H --> I[Health Check]
     I --> J[Notify Team]
-    
+
     K[Feature Branch] --> L[Preview Deploy]
     L --> M[Review App]
-    
+
     N[Main Branch] --> O[Production Deploy]
     O --> P[Cache Invalidation]
     P --> Q[Monitoring Alert]
@@ -424,17 +424,17 @@ graph TB
         A[Global CDN] --> B[Edge Functions]
         B --> C[Static Assets]
     end
-    
+
     subgraph "GitHub"
         D[Source Code] --> E[Actions Runner]
         E --> F[Container Registry]
     end
-    
+
     subgraph "External Services"
         G[GitHub API] --> H[Analytics]
         I[Contact Service] --> J[Monitoring]
     end
-    
+
     A --> G
     B --> I
     E --> A
@@ -451,15 +451,15 @@ graph TB
     A[User Interactions] --> B[Client Analytics]
     B --> C[Performance Metrics]
     C --> D[Error Tracking]
-    
+
     E[Server Metrics] --> F[Response Times]
     F --> G[Error Rates]
     G --> H[Uptime]
-    
+
     I[Business Metrics] --> J[Conversion Rates]
     J --> K[User Engagement]
     K --> L[Goal Tracking]
-    
+
     D --> M[Dashboard]
     H --> M
     L --> M
@@ -474,7 +474,7 @@ sequenceDiagram
     participant Analytics
     participant Monitoring
     participant Dashboard
-    
+
     User->>App: Page View
     App->>Analytics: Track Event
     App->>Monitoring: Performance Data
@@ -496,11 +496,11 @@ graph TB
     C --> D[Reducer]
     D --> E[Store]
     E --> F[Component Update]
-    
+
     G[Middleware] --> H[Side Effects]
     H --> I[API Calls]
     I --> B
-    
+
     C --> G
 ```
 
@@ -510,11 +510,11 @@ graph TB
 graph TB
     A[Provider] --> B[Context]
     B --> C[Consumer Components]
-    
+
     D[State Updates] --> A
     E[Side Effects] --> D
     F[User Actions] --> E
-    
+
     C --> F
 ```
 
@@ -529,7 +529,7 @@ graph LR
     A[Mobile<br/>320px-768px] --> B[Tablet<br/>768px-1024px]
     B --> C[Desktop<br/>1024px-1440px]
     C --> D[Large Desktop<br/>1440px+]
-    
+
     E[Mobile First] --> A
     F[Progressive Enhancement] --> E
 ```
@@ -543,7 +543,7 @@ flowchart TD
     B -->|Tablet| D[Grid 2-col]
     B -->|Desktop| E[Grid 3-col]
     B -->|Large| F[Grid 4-col]
-    
+
     C --> G[Touch Optimized]
     D --> H[Hybrid Navigation]
     E --> I[Hover Effects]
