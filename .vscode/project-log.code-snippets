@@ -1,0 +1,81 @@
+{
+  "Project Log Entry": {
+    "prefix": "log",
+    "body": [
+      "[${1:timestamp}] | ${2|DAILY,LEARNING,CHALLENGE,SOLUTION,DEBUG,FIX,CONFIG,INSTALL,PROGRESS,GOAL,MILESTONE,CAREER,REFLECTION,CREATE,UPDATE,COMMIT|} | ${3:COMPONENT} | ${4:description} | ${5|PLANNED,IN_PROGRESS,COMPLETED,RESOLVED,OBSTACLE,INVESTIGATING,INSIGHT,POSITIVE,NOTED|}",
+    ],
+    "description": "Quick project log entry with dropdown options",
+  },
+
+  "Daily Log Start": {
+    "prefix": "logday",
+    "body": [
+      "",
+      "# SESSION: ${1:YYYY-MM-DD} - ${2:session_description}",
+      "[${3:timestamp}] | DAILY | START | ${4:today_focus} | PLANNED",
+      "[${5:timestamp}] | GOAL | TODAY | ${6:specific_goals} | PLANNED",
+    ],
+    "description": "Start of day logging template",
+  },
+
+  "Daily Log End": {
+    "prefix": "logend",
+    "body": [
+      "[${1:timestamp}] | DAILY | SUMMARY | ${2:what_accomplished} | COMPLETED",
+      "[${3:timestamp}] | LEARNING | TODAY | ${4:key_learnings} | INSIGHT",
+      "[${5:timestamp}] | CHALLENGE | TODAY | ${6:biggest_obstacle} | ${7|RESOLVED,LEARNING,OBSTACLE|}",
+      "[${8:timestamp}] | REFLECTION | DAILY | ${9:how_felt_and_thoughts} | NOTED",
+      "[${10:timestamp}] | TOMORROW | PREP | ${11:next_focus} | PLANNED",
+    ],
+    "description": "End of day reflection template",
+  },
+
+  "Learning Entry": {
+    "prefix": "loglearn",
+    "body": [
+      "[${1:timestamp}] | LEARNING | ${2:skill_area} | ${3:what_learned} | INSIGHT",
+    ],
+    "description": "Quick learning insight entry",
+  },
+
+  "Challenge Entry": {
+    "prefix": "logchallenge",
+    "body": [
+      "[${1:timestamp}] | CHALLENGE | ${2:area} | ${3:problem_description} | OBSTACLE",
+      "[${4:timestamp}] | DEBUG | ${5:tool} | ${6:investigation_details} | INVESTIGATING",
+    ],
+    "description": "Problem/challenge logging template",
+  },
+
+  "Solution Entry": {
+    "prefix": "logsolution",
+    "body": [
+      "[${1:timestamp}] | SOLUTION | ${2:area} | ${3:how_solved} | RESOLVED",
+      "[${4:timestamp}] | REFLECTION | LEARNING | ${5:what_learned_from_solution} | INSIGHT",
+    ],
+    "description": "Solution and learning template",
+  },
+
+  "Career Entry": {
+    "prefix": "logcareer",
+    "body": [
+      "[${1:timestamp}] | CAREER | ${2:area} | ${3:thought_or_progress} | NOTED",
+      "[${4:timestamp}] | GOAL | ${5:timeframe} | ${6:career_goal} | PLANNED",
+    ],
+    "description": "Career development tracking",
+  },
+
+  "Weekly Review": {
+    "prefix": "logweek",
+    "body": [
+      "",
+      "# WEEKLY REVIEW: Week ${1:week_number} - ${2:week_dates}",
+      "[${3:timestamp}] | WEEKLY | SUMMARY | ${4:major_accomplishments} | COMPLETED",
+      "[${5:timestamp}] | WEEKLY | LEARNING | ${6:key_skills_developed} | INSIGHT",
+      "[${7:timestamp}] | WEEKLY | CHALLENGES | ${8:major_obstacles_faced} | NOTED",
+      "[${9:timestamp}] | WEEKLY | PROGRESS | ${10:career_development_progress} | TRACKING",
+      "[${11:timestamp}] | WEEKLY | GOALS | ${12:next_week_focus_areas} | PLANNED",
+    ],
+    "description": "Weekly reflection and planning template",
+  },
+}
