@@ -58,6 +58,7 @@ After pushing, go to GitHub web interface:
 
 1. **Navigate to:** `https://github.com/joembolinas/myPortfolio/settings/branches`
 2. **Add Rule for `main` branch:**
+
    - Branch name pattern: `main`
    - ✅ Require a pull request before merging
    - ✅ Require approvals: 1
@@ -65,8 +66,8 @@ After pushing, go to GitHub web interface:
    - ✅ Require status checks to pass before merging
    - ✅ Require branches to be up to date before merging
    - ✅ Include administrators
-
 3. **Add Rule for `develop` branch:**
+
    - Branch name pattern: `develop`
    - ✅ Require a pull request before merging
    - ✅ Require status checks to pass before merging
@@ -110,11 +111,11 @@ Add these secrets when ready to deploy:
 
 After completing all steps, verify:
 
-- [ ] All GitHub templates are visible in your repository
-- [ ] GitHub Actions workflows are present
-- [ ] Develop branch exists
-- [ ] Branch protection rules are active
-- [ ] Repository topics are added
+- [X] All GitHub templates are visible in your repository
+- [X] GitHub Actions workflows are present
+- [X] Develop branch exists
+- [X] Branch protection rules are active
+- [X] Repository topics are added
 - [ ] Projects board is created
 
 ## 🎉 Next Steps
