@@ -28,11 +28,11 @@ Add-Content -Path $logPath -Value $entry
 # Show confirmation
 Write-Host "✅ Logged: $entry" -ForegroundColor Green
 
-# Common usage examples
+# Show usage examples
 Write-Host ""
-Write-Host "📝 Quick Usage Examples:" -ForegroundColor Cyan
-Write-Host ".\log-entry.ps1 -Type 'LEARNING' -Component 'REACT' -Description 'Understanding JSX syntax' -Status 'INSIGHT'"
-Write-Host ".\log-entry.ps1 -Type 'CHALLENGE' -Component 'CSS' -Description 'Grid layout not working as expected' -Status 'OBSTACLE'"
-Write-Host ".\log-entry.ps1 -Type 'SOLUTION' -Component 'CSS' -Description 'Fixed grid with proper fr units' -Status 'RESOLVED'"
-Write-Host ".\log-entry.ps1 -Type 'DAILY' -Component 'START' -Description 'Focus on portfolio responsiveness today'"
-Write-Host ".\log-entry.ps1 -Type 'REFLECTION' -Component 'DAILY' -Description 'Made good progress, feeling confident'"
+Write-Host "📝 Common Usage Examples:" -ForegroundColor Cyan
+Write-Host "Learning:    .\log-entry.ps1 -Type 'LEARNING' -Component 'REACT' -Description 'Understanding hooks' -Status 'INSIGHT'" -ForegroundColor Yellow
+Write-Host "Challenge:   .\log-entry.ps1 -Type 'CHALLENGE' -Component 'CSS' -Description 'Layout issues' -Status 'OBSTACLE'" -ForegroundColor Yellow  
+Write-Host "Solution:    .\log-entry.ps1 -Type 'SOLUTION' -Component 'CSS' -Description 'Fixed with flexbox' -Status 'RESOLVED'" -ForegroundColor Yellow
+Write-Host "Daily start: .\log-entry.ps1 -Type 'DAILY' -Component 'START' -Description 'Focus on portfolio today'" -ForegroundColor Yellow
+Write-Host "Reflection:  .\log-entry.ps1 -Type 'REFLECTION' -Component 'DAILY' -Description 'Good progress made'" -ForegroundColor Yellow

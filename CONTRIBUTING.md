@@ -58,27 +58,24 @@ Ensure you have the following installed:
    ```bash
    # Click the "Fork" button on GitHub
    ```
-
 2. **Clone your fork**
 
    ```bash
    git clone https://github.com/your-username/growth-journey-portfolio.git
    cd growth-journey-portfolio
    ```
-
 3. **Add upstream remote**
 
    ```bash
    git remote add upstream https://github.com/original-owner/growth-journey-portfolio.git
    ```
-
 4. **Install dependencies**
 
    ```bash
    npm install
    ```
-
 5. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -96,7 +93,6 @@ Ensure you have the following installed:
    git pull upstream main
    git push origin main
    ```
-
 2. **Create feature branch**
 
    ```bash
@@ -104,26 +100,24 @@ Ensure you have the following installed:
    # or
    git checkout -b fix/bug-description
    ```
-
 3. **Make your changes**
+
    - Follow code standards
    - Write tests for new functionality
    - Update documentation as needed
-
 4. **Commit your changes**
 
    ```bash
    git add .
    git commit -m "feat: add new feature description"
    ```
-
 5. **Push to your fork**
 
    ```bash
    git push origin feature/your-feature-name
    ```
-
 6. **Create Pull Request**
+
    - Use the PR template
    - Provide clear description
    - Link related issues
@@ -256,13 +250,13 @@ src/
 
 ### PR Requirements
 
-- [ ] **Description:** Clear description of changes
-- [ ] **Issue Link:** Reference related issues
-- [ ] **Tests:** All tests pass
-- [ ] **Code Quality:** ESLint and Prettier checks pass
-- [ ] **Performance:** No performance regressions
-- [ ] **Accessibility:** No accessibility issues introduced
-- [ ] **Documentation:** Updated if needed
+- [X] **Description:** Clear description of changes
+- [X] **Issue Link:** Reference related issues
+- [X] **Tests:** All tests pass
+- [X] **Code Quality:** ESLint and Prettier checks pass
+- [X] **Performance:** No performance regressions
+- [X] **Accessibility:** No accessibility issues introduced
+- [X] **Documentation:** Updated if needed
 
 ### PR Template
 
@@ -483,11 +477,11 @@ When adding new features, update:
 
 ### Performance Checklist
 
-- [ ] **Code Splitting:** Large components are lazy-loaded
-- [ ] **Image Optimization:** All images are optimized
-- [ ] **Bundle Size:** Monitor bundle size impact
-- [ ] **Memory Leaks:** Clean up listeners and timers
-- [ ] **React Best Practices:** Use useMemo, useCallback appropriately
+- [X] **Code Splitting:** Large components are lazy-loaded
+- [X] **Image Optimization:** All images are optimized
+- [X] **Bundle Size:** Monitor bundle size impact
+- [X] **Memory Leaks:** Clean up listeners and timers
+- [X] **React Best Practices:** Use useMemo, useCallback appropriately
 
 ### Performance Testing
 
@@ -508,11 +502,11 @@ npm run perf
 
 ### Accessibility Checklist
 
-- [ ] **Semantic HTML:** Use proper HTML elements
-- [ ] **Keyboard Navigation:** All interactive elements accessible
-- [ ] **Screen Readers:** Proper ARIA labels and descriptions
-- [ ] **Color Contrast:** Minimum 4.5:1 ratio
-- [ ] **Focus Management:** Visible focus indicators
+- [X] **Semantic HTML:** Use proper HTML elements
+- [X] **Keyboard Navigation:** All interactive elements accessible
+- [X] **Screen Readers:** Proper ARIA labels and descriptions
+- [X] **Color Contrast:** Minimum 4.5:1 ratio
+- [X] **Focus Management:** Visible focus indicators
 
 ### Accessibility Testing
 
@@ -558,5 +552,5 @@ Contributors will be recognized in:
 
 Thank you for contributing to the Growth Journey Portfolio! 🚀
 
-**Document Version:** 1.0  
+**Document Version:** 1.0
 **Last Updated:** August 3, 2025
