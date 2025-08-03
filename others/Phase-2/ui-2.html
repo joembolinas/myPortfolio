@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joem Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes bg-pan {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .bg-grid-pattern {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 2rem 2rem;
+            animation: bg-pan 20s linear infinite;
+        }
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-out {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-900 text-white">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-blue-400">
+                    Joem Portfolio
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="scrollToSection('home')" class="nav-link capitalize hover:text-blue-400 transition-colors duration-300 text-blue-400">
+                        home
+                    </button>
+                    <button onclick="scrollToSection('about')" class="nav-link capitalize hover:text-blue-400 transition-colors duration-300 text-gray-300">
+                        about
+                    </button>
+                    <button onclick="scrollToSection('projects')" class="nav-link capitalize hover:text-blue-400 transition-colors duration-300 text-gray-300">
+                        projects
+                    </button>
+                    <button onclick="scrollToSection('websites')" class="nav-link capitalize hover:text-blue-400 transition-colors duration-300 text-gray-300">
+                        websites
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="nav-link capitalize hover:text-blue-400 transition-colors duration-300 text-gray-300">
+                        contact
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 transition-all duration-1000 relative z-10 bg-grid-pattern fade-out">
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Hello, I'm Joem
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                Full Stack Developer passionate about creating beautiful, functional, and user-friendly applications
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('projects')" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    View My Work
+                </button>
+                <button onclick="scrollToSection('websites')" class="px-8 py-3 border-2 border-blue-600 hover:bg-blue-600 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    Static Websites
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-gray-800/95 backdrop-blur-sm relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Who I Am</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        I'm a passionate developer with a love for creating innovative solutions and beautiful user experiences. 
+                        With expertise in modern web technologies, I enjoy turning complex problems into simple, elegant designs.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
+                        or sharing knowledge with the developer community.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold mb-6">Skills & Technologies</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-700 px-4 py-2 rounded-lg text-center hover:bg-gray-600 transition-colors duration-300">React</div>
+                        <div class="bg-gray-700 px-4 py-2 rounded-lg text-center hover:bg-gray-600 transition-colors duration-300">JavaScript</div>
+                        <div class="bg-gray-700 px-4 py-2 rounded-lg text-center hover:bg-gray-600 transition-colors duration-300">TypeScript</div>
+                        <div class="bg-gray-700 px-4 py-2 rounded-lg text-center hover:bg-gray-600 transition-colors duration-300">Node.js</div>
+                        <div class="bg-gray-700 px-4 py-2 rounded-lg text-center hover:bg-gray-600 transition-colors duration-300">Python</div>
+                        <div class="bg-gray-700 px-4 py-2 rounded-lg text-center hover:bg-gray-600 transition-colors duration-300">MongoDB</div>
+                        <div class="bg-gray-700 px-4 py-2 rounded-lg text-center hover:bg-gray-600 transition-colors duration-300">PostgreSQL</div>
+                        <div class="bg-gray-700 px-4 py-2 rounded-lg text-center hover:bg-gray-600 transition-colors duration-300">Git</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-blue-400">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 relative">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">E-Commerce Platform</h3>
+                        <p class="text-gray-400 mb-4">A full-stack e-commerce solution with React, Node.js, and MongoDB</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">React</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm transition-colors duration-300">
+                                Live Demo
+                            </button>
+                            <button class="px-4 py-2 border border-gray-600 hover:border-gray-500 rounded-lg text-sm transition-colors duration-300">
+                                Source Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 relative">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Task Management App</h3>
+                        <p class="text-gray-400 mb-4">A collaborative task management tool with real-time updates</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">React</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">Socket.io</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">PostgreSQL</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm transition-colors duration-300">
+                                Live Demo
+                            </button>
+                            <button class="px-4 py-2 border border-gray-600 hover:border-gray-500 rounded-lg text-sm transition-colors duration-300">
+                                Source Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-500 relative">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Weather Dashboard</h3>
+                        <p class="text-gray-400 mb-4">A responsive weather app with geolocation and forecasting</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">API Integration</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded-full">CSS3</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm transition-colors duration-300">
+                                Live Demo
+                            </button>
+                            <button class="px-4 py-2 border border-gray-600 hover:border-gray-500 rounded-lg text-sm transition-colors duration-300">
+                                Source Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Static Websites Section -->
+    <section id="websites" class="py-20 px-4 bg-gray-800/95 backdrop-blur-sm relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-blue-400">10 Essential Static Websites</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Empower your small business with cost-effective, fast-loading, and secure static websites. 
+                    Perfect for establishing a professional online presence without the complexity.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                <!-- Website Type 1 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">👤</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Digital Business Card
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Perfect for freelancers and consultants</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">A one-page site with bio, services, contact details, and social links to establish credibility.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 2 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">📋</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Online Brochure/Catalog
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Showcase products without e-commerce</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">A local bakery's gallery of cakes and pastries with descriptions and pricing.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 3 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-green-500 to-teal-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🎨</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Portfolio Showcase
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Must-have for photographers and artists</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">A wedding photographer's stunning galleries organized by event type.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 4 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-orange-500 to-red-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🍽️</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Restaurant/Café Menu
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Essential for food establishments</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">Clean, mobile-friendly site with menu, hours, and embedded map location.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 5 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🚀</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Coming Soon Landing
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Build anticipation before launch</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">New fitness studio with countdown timer and email signup for promotions.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 6 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-pink-500 to-rose-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🎪</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Event Microsite
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Promote single events or workshops</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">Bookstore's author signing with bios, event details, and pre-order links.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 7 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🎯</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Lead Generation Page
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Focused marketing campaigns</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">Financial advisor offering free retirement planning guide for email signup.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 8 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-emerald-500 to-green-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🏠</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Real Estate Listing
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Showcase individual properties</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">Dedicated site for house sale with photo gallery and agent contact info.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 9 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-violet-500 to-purple-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">📄</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Digital Resume/CV
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Enhanced interactive resume</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">Developer's site with experience, GitHub links, and live project demos.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Type 10 -->
+                <div class="group bg-gray-700/50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-gray-600/50 hover:border-blue-400/50">
+                    <div class="h-2 bg-gradient-to-r from-rose-500 to-pink-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">❤️</span>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                                Non-Profit Info Hub
+                            </h3>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-blue-300 mb-2">Use Case:</p>
+                            <p class="text-gray-300 text-sm">Affordable solution for organizations</p>
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-sm font-semibold text-green-300 mb-2">Example:</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">Animal shelter with adoption info, animal profiles, and donation CTA.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-600/50">
+                            <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 transform group-hover:scale-105">
+                                Get Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-blue-400/20">
+                    <h3 class="text-2xl font-bold text-white mb-4">Why Choose Static Websites?</h3>
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div class="space-y-2">
+                            <div class="text-3xl">⚡</div>
+                            <h4 class="font-semibold text-blue-400">Lightning Fast</h4>
+                            <p class="text-gray-400 text-sm">No database queries, instant loading</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-3xl">🔒</div>
+                            <h4 class="font-semibold text-green-400">Secure</h4>
+                            <p class="text-gray-400 text-sm">Less attack surface, better protection</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-3xl">💰</div>
+                            <h4 class="font-semibold text-yellow-400">Cost-Effective</h4>
+                            <p class="text-gray-400 text-sm">Lower hosting costs, easy maintenance</p>
+                        </div>
+                    </div>
+                    <button onclick="scrollToSection('contact')" class="mt-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
+                        Start Your Project Today
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gray-800/95 backdrop-blur-sm relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-16 text-blue-400">Let's Connect</h2>
+            <p class="text-xl text-gray-300 mb-12">
+                I'm always interested in new opportunities and exciting projects. Let's build something amazing together!
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-700 p-6 rounded-xl hover:bg-gray-600 transition-colors duration-300">
+                    <div class="text-3xl mb-3">📧</div>
+                    <h3 class="font-semibold mb-2">Email</h3>
+                    <p class="text-gray-300">joem@example.com</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-xl hover:bg-gray-600 transition-colors duration-300">
+                    <div class="text-3xl mb-3">💼</div>
+                    <h3 class="font-semibold mb-2">LinkedIn</h3>
+                    <p class="text-gray-300">linkedin.com/in/joem</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-xl hover:bg-gray-600 transition-colors duration-300">
+                    <div class="text-3xl mb-3">💻</div>
+                    <h3 class="font-semibold mb-2">GitHub</h3>
+                    <p class="text-gray-300">github.com/joem</p>
+                </div>
+            </div>
+            <button class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                Download Resume
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center border-t border-gray-800 relative z-10">
+        <p class="text-gray-400">
+            © 2024 Joem Portfolio. Built with React & Tailwind CSS.
+        </p>
+    </footer>
+
+    <script>
+        // JavaScript functionality
+        let activeSection = 'home';
+
+        // Fade in effect on page load
+        window.addEventListener('load', function() {
+            const heroSection = document.getElementById('home');
+            setTimeout(() => {
+                heroSection.classList.remove('fade-out');
+                heroSection.classList.add('fade-in');
+            }, 100);
+        });
+
+        // Smooth scroll to section function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                setActiveSection(sectionId);
+            }
+        }
+
+        // Set active navigation link
+        function setActiveSection(sectionId) {
+            activeSection = sectionId;
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.textContent.trim() === sectionId) {
+                    link.classList.remove('text-gray-300');
+                    link.classList.add('text-blue-400');
+                } else {
+                    link.classList.remove('text-blue-400');
+                    link.classList.add('text-gray-300');
+                }
+            });
+        }
+
+        // Intersection Observer for automatic section highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

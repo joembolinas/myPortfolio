@@ -10,15 +10,16 @@ Before diving into the deliverables, let's strategically align on your vision. I
 **Why:** Perfect for demonstrating growth mindset and transferable skills - exactly what hiring managers want to see.
 **How:** Interactive timeline with milestone markers, animated transitions between career phases, skills progression visualization.
 
-## 
+##
+
 🤔 B) STRATEGIC CLARIFYING QUESTIONS
 
 ### Content Strategy
 
 1. **Career Highlights:** What specific achievements from your SNR admin/procurement role should we emphasize? (problem-solving?, developing mind, continuos lerning)
-2. **Learning Journey:** Which platforms should we showcase prominently? 
+2. **Learning Journey:** Which platforms should we showcase prominently?
    (TryHackMe badges and roadmap.sh completions)
-3. **Project Portfolio:** Do you have any existing projects, or should we plan for showcasing future builds? 
+3. **Project Portfolio:** Do you have any existing projects, or should we plan for showcasing future builds?
    ( i have many project done i share it these in future or on phase 2)
 
 ### Technical Preferences
@@ -40,14 +41,14 @@ Before diving into the deliverables, let's strategically align on your vision. I
 ### Advanced Features
 
 9. **Interactive Elements:** Interest in features like:
-
    - feedback button
-   - Interactive my google calendar  live view(but not priority, just add it in th future i think)
+   - Interactive my Google calendar live view (but not priority, just add it in the future I think)
    - Real-time GitHub contribution visualization
    - Contact form with scheduling integration (lets work together)
    - button for see my resume with download button in PDF file
-   - clickable link to  redirect on my specific and selected sections (for future implementation)
-   - 
+   - clickable link to redirect on my specific and selected sections (for future implementation)
+   -
+
 10. **Content Management:** Will you be updating content regularly? Should we build in easy content management? - yes
 11. i want to add my blogs section ( i give more info in phase 2)
 
@@ -65,7 +66,7 @@ Before diving into the deliverables, let's strategically align on your vision. I
 
 check my answered questions, :
 
-if you havent question or confimation  then create the comprehensive foundation documents tailored to specific vision and requirements.
+if you havent question or confimation then create the comprehensive foundation documents tailored to specific vision and requirements.
 
 ---
 

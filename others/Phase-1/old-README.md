@@ -44,21 +44,25 @@ myPortfolio/
 ## Customization Guide
 
 ### Personal Information
+
 - Update the hero section in `index.html` with your name and title
 - Modify the about section with your background and skills
 - Update contact information in the contact section
 
 ### Projects
+
 - Replace the three example project cards with your actual projects
 - Add project images to `assets/images/` folder
 - Update project titles, descriptions, and links
 
 ### Styling
+
 - All colors are defined as CSS variables in `style.css`
 - Modify the `:root` section to change the color scheme
 - The design is fully responsive and will adapt to different screen sizes
 
 ### Adding New Sections
+
 - Follow the existing HTML structure
 - Add corresponding styles in `style.css`
 - Update navigation in the header if needed
@@ -73,6 +77,7 @@ myPortfolio/
 ## Browser Support
 
 This portfolio works in all modern browsers including:
+
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
@@ -81,6 +86,7 @@ This portfolio works in all modern browsers including:
 ## Deployment
 
 This is a static website that can be deployed to:
+
 - **GitHub Pages**: Perfect for showcasing your work
 - **Netlify**: Easy deployment with form handling
 - **Vercel**: Fast deployment with great performance
