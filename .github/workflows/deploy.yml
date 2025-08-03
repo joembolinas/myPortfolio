@@ -47,5 +47,3 @@ jobs:
       - name: 🚀 Deploy to Vercel (Production)
         if: github.ref == 'refs/heads/main'
         run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
-
-        
