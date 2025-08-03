@@ -225,6 +225,37 @@ This backlog contains all remaining tasks for Phase 2 of the portfolio project. 
 
 ---
 
+### Issue #8: CI/CD Pipeline Setup
+**Priority:** Medium | **Effort:** Medium | **Type:** Infrastructure
+
+**Goal:** Set up automated Continuous Integration and Continuous Deployment pipeline to demonstrate modern development practices.
+
+**Tasks:**
+- [ ] Create build and test workflow (.github/workflows/ci.yml)
+- [ ] Add code quality checks (ESLint, TypeScript)
+- [ ] Implement automated testing pipeline
+- [ ] Add performance testing with Lighthouse CI
+- [ ] Configure GitHub Pages deployment
+- [ ] Set up environment-specific builds
+- [ ] Add branch protection rules
+- [ ] Configure deployment status badges
+
+**Learning Objectives:**
+- Understanding CI/CD principles
+- GitHub Actions workflow configuration
+- Automated testing strategies
+- DevOps best practices
+
+**Success Criteria:**
+- All pushes trigger automated builds
+- Tests run automatically on PRs
+- Successful builds deploy automatically
+- Quality gates prevent bad code from merging
+
+**Labels:** `infrastructure`, `phase-2`, `ci-cd`, `devops`
+
+---
+
 ## 📝 How to Use This Backlog
 
 ### Creating GitHub Issues
