@@ -1,0 +1,189 @@
+{
+  "workflowName": "Phase Development Standard Operating Procedure",
+  "version": "1.0.0",
+  "description": "Standardized workflow for all phase development to ensure consistency, quality, and completeness",
+  "projectContext": {
+    "projectName": "Growth Journey Portfolio",
+    "currentPhase": "Phase 2.2",
+    "techStack": ["React", "Vite", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "archetype": "Technical Storyteller",
+    "performanceTarget": "70% performance, 30% visual"
+  },
+  "workflow": {
+    "1_phase_initiation": {
+      "step": "Phase Initiation Prompt",
+      "description": "User provides initial prompt with phase objectives",
+      "userAction": "Enter prompt with phase goals and requirements",
+      "expectedOutput": "Clear phase objectives stated",
+      "logEntry": "INIT | User initiated [PHASE_NAME] with objectives: [SUMMARY]"
+    },
+    "2_context_gathering": {
+      "step": "Clarifying Questions & Context Gathering",
+      "description": "AI asks strategic questions to understand requirements fully",
+      "userAction": "Answer all clarifying questions thoroughly",
+      "aiAction": [
+        "Analyze current project state",
+        "Review previous phase deliverables",
+        "Check project.log for context",
+        "Ask specific clarifying questions covering: technical, design, content, performance, timeline aspects"
+      ],
+      "expectedOutput": "Comprehensive understanding of phase requirements",
+      "logEntry": "CONSULTATION | Clarifying questions asked and answered for [PHASE_NAME]"
+    },
+    "3_refinement_iteration": {
+      "step": "Requirement Refinement (if needed)",
+      "description": "Iterate on requirements until crystal clear",
+      "userAction": "Refine or improve requirements based on discussion",
+      "aiAction": "Ask follow-up questions if anything unclear",
+      "repeat": "Steps 2-3 until requirements are locked",
+      "expectedOutput": "Locked-in requirements with no ambiguity",
+      "logEntry": "REFINEMENT | Requirements refined and confirmed for [PHASE_NAME]"
+    },
+    "4_planning_summary": {
+      "step": "High-Level Action Plan Presentation",
+      "description": "AI presents comprehensive plan BEFORE taking action",
+      "userAction": "Review the plan carefully",
+      "aiAction": [
+        "Create high-level summary of all planned actions",
+        "List all files to be created/modified",
+        "Outline all implementation steps",
+        "Identify potential risks or dependencies",
+        "Estimate time and effort required",
+        "Show expected outcomes and deliverables"
+      ],
+      "expectedOutput": "Complete action plan visible to user for approval",
+      "logEntry": "PLANNING | High-level action plan created for [PHASE_NAME]",
+      "warningMessage": "⚠️ CHECKPOINT: Review this plan carefully before proceeding!"
+    },
+    "5_user_confirmation": {
+      "step": "User Confirmation Gate",
+      "description": "User must explicitly confirm before AI proceeds",
+      "userAction": "Type: 'CONFIRM AND PROCEED' to authorize implementation",
+      "aiAction": "Wait for explicit confirmation - DO NOT PROCEED without it",
+      "gatekeeper": true,
+      "expectedOutput": "Explicit user authorization received",
+      "logEntry": "CONFIRMATION | User authorized implementation of [PHASE_NAME] plan"
+    },
+    "6_implementation": {
+      "step": "Automated Implementation",
+      "description": "AI executes all planned tasks systematically",
+      "userAction": "Monitor progress, provide feedback if needed",
+      "aiAction": [
+        "Execute all planned implementation steps",
+        "Create/modify files as outlined",
+        "Run tests and validations",
+        "Handle errors and edge cases",
+        "Maintain detailed progress logs"
+      ],
+      "expectedOutput": "All implementation tasks completed successfully",
+      "logEntry": "IMPLEMENTATION | [PHASE_NAME] implementation completed with [X] deliverables"
+    },
+    "7_documentation_generation": {
+      "step": "Documentation & Summary Creation",
+      "description": "Generate comprehensive documentation of work completed",
+      "userAction": "Review documentation for accuracy",
+      "aiAction": [
+        "Create phase completion summary",
+        "Update relevant documentation files",
+        "Generate technical documentation if needed",
+        "Create user guides or README updates",
+        "Document any decisions made during implementation"
+      ],
+      "expectedOutput": "Complete documentation of phase work",
+      "logEntry": "DOCUMENTATION | [PHASE_NAME] documentation generated and updated"
+    },
+    "8_project_logging": {
+      "step": "Project Log Update",
+      "description": "Update project.log with all activities and decisions",
+      "userAction": "Verify log accuracy",
+      "aiAction": [
+        "Add all session activities to project.log",
+        "Include timestamps for all major actions",
+        "Document key decisions and rationale",
+        "Update project status and next steps",
+        "Log any issues encountered and resolutions"
+      ],
+      "expectedOutput": "project.log fully updated with session activities",
+      "logEntry": "LOGGING | [PHASE_NAME] session fully logged with [X] entries"
+    }
+  },
+  "qualityGates": {
+    "beforeImplementation": [
+      "Requirements are crystal clear",
+      "Action plan is comprehensive and approved",
+      "User has explicitly confirmed 'CONFIRM AND PROCEED'",
+      "All dependencies and risks identified"
+    ],
+    "duringImplementation": [
+      "Each step logs progress",
+      "Errors are handled gracefully",
+      "User is kept informed of major milestones"
+    ],
+    "afterImplementation": [
+      "All deliverables completed",
+      "Documentation updated",
+      "Project log reflects all activities",
+      "Next steps identified"
+    ]
+  },
+  "reminders": {
+    "forUser": [
+      "Always ask clarifying questions if anything is unclear",
+      "Review the action plan carefully before confirming",
+      "Don't forget to type 'CONFIRM AND PROCEED' when ready",
+      "Check the project.log regularly to track progress",
+      "Verify documentation accuracy before moving to next phase"
+    ],
+    "forAI": [
+      "NEVER skip the clarifying questions step",
+      "ALWAYS present action plan before implementing",
+      "WAIT for explicit 'CONFIRM AND PROCEED' before acting",
+      "Log every significant action in project.log",
+      "Ask 'What would a professional developer do?' when facing decisions"
+    ]
+  },
+  "contingencies": {
+    "ifUserIsUnclear": "Go back to step 2 and ask more specific questions",
+    "ifTechnicalBlocked": "Document the blocker, suggest alternatives, ask for user preference",
+    "ifTimeEstimateWrong": "Update estimates, inform user, adjust plan accordingly",
+    "ifUnexpectedIssues": "Log the issue, analyze root cause, propose solution, get user approval"
+  },
+  "extensions": {
+    "contextGathering": [
+      "Always check current git branch and status",
+      "Review recent project.log entries for context",
+      "Check for any unfinished work from previous sessions",
+      "Verify all required dependencies are installed",
+      "Assess current project state vs. expected state"
+    ],
+    "professionalConsideration": [
+      "What would a senior developer do in this situation?",
+      "How does this align with industry best practices?",
+      "What are the long-term maintainability implications?",
+      "How does this impact performance and accessibility?",
+      "What are the security considerations?"
+    ],
+    "learningOpportunities": [
+      "Identify concepts the user should understand",
+      "Explain the 'why' behind technical decisions",
+      "Point out industry patterns and best practices",
+      "Suggest resources for deeper learning when relevant"
+    ]
+  },
+  "successCriteria": {
+    "phaseCompletion": [
+      "All planned deliverables created/updated",
+      "User understands what was accomplished",
+      "Next steps clearly identified",
+      "Project.log fully updated",
+      "No unresolved blockers or issues"
+    ],
+    "qualityMetrics": [
+      "Code follows established patterns",
+      "Documentation is comprehensive and accurate",
+      "Performance targets maintained",
+      "Accessibility standards met",
+      "Security best practices followed"
+    ]
+  }
+}
