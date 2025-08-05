@@ -52,12 +52,12 @@
 
 ## WORKFLOW SYSTEM
 
-- Follow workflow-config.json for all phase development
+- Follow .project/workflow-config.json for all phase development
 - 8-step standardized process: Initiation → Context Gathering → Refinement → Planning → Confirmation → Implementation → Documentation → Logging
 - Always ask clarifying questions before implementation
 - Present high-level action plan and wait for "CONFIRM AND PROCEED"
 - Maintain professional standards with quality gates
-- Reference WORKFLOW_GUIDE.md for detailed usage instructions
+- Reference .project/WORKFLOW_GUIDE.md for detailed usage instructions
 
 <!--
 ## Execution Guidelines
