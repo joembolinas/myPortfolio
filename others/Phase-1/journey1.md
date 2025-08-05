@@ -6,6 +6,8 @@
 
 ## The Spark: Conception & Initial Research
 
+TODO: CHANGE SNR ADMIN
+
 The idea for my Growth Journey Portfolio didn't come from a sudden flash of inspiration—it emerged from a very real, pressing need. As a second-year college student transitioning from my background in SNR administration and procurement to the tech world, I found myself in a peculiar position. I had transferable skills, a growing knowledge base from platforms like LeetCode, TryHackMe, and roadmap.sh, but no way to effectively communicate this journey to potential employers.
 
 The traditional resume wasn't cutting it. How do you explain to a hiring manager that your problem-solving skills from procurement translate beautifully to debugging code? How do you showcase continuous learning and growth mindset in a static PDF? I needed something more—something that could tell my story dynamically and authentically.
