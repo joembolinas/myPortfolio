@@ -6,24 +6,26 @@ export const contactMethods: ContactMethod[] = [
     type: 'email',
     icon: '📧',
     label: 'Email',
-    value: 'joem@example.com',
-    url: 'mailto:joem@example.com'
+    value: 'bolinasjoem@gmail.com',
+    url: 'mailto:bolinasjoem@gmail.com'
   },
   {
     type: 'linkedin',
     icon: '💼',
     label: 'LinkedIn',
     value: 'linkedin.com/in/joem',
-    url: 'https://linkedin.com/in/joem'
+    url: 'https://linkedin.com/in/joembolinas'
   },
   {
     type: 'github',
     icon: '💻',
     label: 'GitHub',
-    value: 'github.com/joem',
-    url: 'https://github.com/joem'
+    value: 'github.com/joembolinas',
+    url: 'https://github.com/joembolinas'
   }
 ];
+
+// TODO: SOON WILL ADD tryhackme, leetcode, roadmap.sh
 
 // Navigation items matching our sections
 export const navigationItems: NavigationItem[] = [

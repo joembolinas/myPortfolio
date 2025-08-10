@@ -146,8 +146,8 @@ npm run a11y-test
 
 ### Core Technologies
 
-| Technology                                      | Version | Purpose      |
-| ----------------------------------------------- | ------- | ------------ |
+| Technology                                   | Version | Purpose      |
+| -------------------------------------------- | ------- | ------------ |
 | [React](https://reactjs.org/)                   | 18+     | UI Framework |
 | [TypeScript](https://www.typescriptlang.org/)   | 5.0+    | Type Safety  |
 | [Vite](https://vitejs.dev/)                     | 5.0+    | Build Tool   |
@@ -210,24 +210,110 @@ npm run a11y-test
 
 ```
 growth-journey-portfolio/
-├── public/                 # Static assets
-│   ├── images/            # Optimized images
-│   ├── icons/             # Icon assets
-│   └── resume/            # Resume PDF
-├── src/
-│   ├── components/        # Reusable components
-│   │   ├── ui/           # Base UI components
-│   │   ├── layout/       # Layout components
-│   │   └── features/     # Feature-specific components
-│   ├── pages/            # Page components
-│   ├── hooks/            # Custom React hooks
-│   ├── utils/            # Utility functions
-│   ├── types/            # TypeScript definitions
-│   ├── styles/           # Global styles
-│   └── data/             # Static data files
-├── tests/                # Test files
-├── docs/                 # Documentation
-└── config/               # Configuration files
+├── public/                                   # [NEW] Public static assets served as-is (Vite will copy)
+│   ├── favicon.ico                           # [NEW] Site icon
+│   ├── images/                               # [MOVE] from assets/images (optimized export versions)
+│   ├── fonts/                                # [NEW] Self-hosted font files if added
+│   ├── robots.txt                            # [NEW] SEO crawler directives
+│   ├── sitemap.xml                           # [NEW] Generated sitemap
+│   └── resume/                               # [NEW] PDF resume(s)
+├── assets/                                   # [EXISTS] Authoring/source assets (unoptimized originals)
+│   └── images/                               # [EXISTS] Raw/high-res images (optimize to public/images)
+├── src/                                      # [EXISTS] Application source code
+│   ├── main.tsx                              # [EXISTS] App bootstrap (React root)
+│   ├── App.tsx                               # [EXISTS] Top-level composition
+│   ├── index.css                             # [EXISTS] Tailwind + global resets
+│   ├── components/                           # [EXISTS]
+│   │   ├── layout/                           # [EXISTS] Shell & persistent UI (Navigation, Footer)
+│   │   ├── sections/                         # [EXISTS] Page structural sections (Hero, About, etc.)
+│   │   ├── ui/                               # [EXISTS] Reusable primitive UI (Button, Card)
+│   │   └── animations/                       # [NEW] Shared motion wrappers/variants (Framer Motion)
+│   ├── features/                             # [NEW] Feature modules (e.g. github, contact, timeline)
+│   │   ├── github/                           # [NEW] GitHub API integration (hooks, components)
+│   │   ├── contact/                          # [NEW] Contact form logic & validation
+│   │   └── accessibility/                    # [NEW] A11y helpers (focus management, skip links)
+│   ├── hooks/                                # [EXISTS] Custom React logic (useActiveSection, useScrollTo)
+│   ├── utils/                                # [NEW] Pure helper functions (formatters, guards)
+│   ├── services/                             # [NEW] External API clients (GitHub, email)
+│   ├── data/                                 # [EXISTS] Static structured data (projects, skills)
+│   ├── types/                                # [EXISTS] Shared TypeScript types/interfaces
+│   ├── styles/                               # [NEW] Additional style modules (animations.css, tokens.css)
+│   ├── config/                               # [NEW] Runtime configs (endpoints, feature flags)
+│   └── __tests__/                            # [NEW] Co-located unit tests for core app elements
+├── tests/                                    # [NEW] Higher-level tests
+│   ├── unit/                                 # [NEW] Non co-located unit tests
+│   ├── integration/                          # [NEW] Component flow tests (e.g. nav → scroll)
+│   ├── e2e/                                  # [NEW] Playwright specs
+│   ├── accessibility/                        # [NEW] Axe/Lighthouse scripted checks
+│   └── performance/                          # [NEW] Performance budget assertions (har/lhci)
+├── docs/                                     # [NEW] Public-facing & developer docs (clean copies)
+│   ├── architecture.md                       # [MOVE] From TECHNICAL_DOCS.md distilled
+│   ├── project-charter.md                    # [MOVE] From PROJECT_CHARTER.md canonical
+│   ├── phase-outline.md                      # [MOVE] From MASTER_OUTLINE.md normalized
+│   ├── backlog.md                            # [MOVE] From PHASE2_BACKLOG.md (public version)
+│   ├── contributing.md                       # [MOVE] From CONTRIBUTING.md
+│   ├── effort-estimation.md                  # [MOVE] From EFFORT_ESTIMATION.md
+│   ├── troubleshooting.md                    # [MOVE] From TROUBLESHOOTING_GUIDE.md
+│   ├── logging-system.md                     # [MOVE] Summarize logging-system/docs
+│   ├── workflow-guide.md                     # [MOVE] From .project/WORKFLOW_GUIDE.md (public copy)
+│   └── CHANGELOG.md                          # [NEW] Versioned change tracking
+├── .project/                                 # [EXISTS] Internal process/workflow system
+│   ├── workflow-config.json                  # [EXISTS] Canonical workflow definition
+│   ├── WORKFLOW_GUIDE.md                     # [EXISTS] Internal detailed guide (keep internal if docs copy exists)
+│   ├── README.md                             # [EXISTS] Directory explanation
+│   └── generated-docs/                       # [EXISTS] Auto-generated artifacts (phase summaries, reports)
+├── logging-system/                           # [EXISTS] Structured logging framework
+│   ├── docs/                                 # [EXISTS] Logging references
+│   ├── scripts/                              # [EXISTS] Log automation scripts
+│   └── templates/                            # [EXISTS] Log entry templates
+├── scripts/                                  # [NEW] General automation (build, analyze, deploy wrappers)
+│   ├── lighthouse-ci.mjs                     # [NEW] Scripted Lighthouse run
+│   ├── optimize-images.mjs                   # [NEW] Image optimization pipeline
+│   └── generate-sitemap.mjs                  # [NEW] Sitemap generation
+├── config/                                   # [NEW] Tool/infra configuration (separate from root clutter)
+│   ├── jest.config.ts                        # [NEW] Jest/Vitest bridge if needed
+│   ├── playwright.config.ts                  # [NEW] E2E configuration
+│   ├── lighthouse.config.js                  # [MOVE] from lighthouserc.json (rename)
+│   └── security-audit.yml                    # [NEW] Policy/severity baseline
+├── ci/                                       # [NEW] Reusable workflow fragments & composite actions
+│   ├── actions/                              # [NEW] Composite GitHub Actions
+│   └── templates/                            # [NEW] Reusable job YAML snippets
+├── .github/                                  # [EXISTS] GitHub meta
+│   ├── workflows/                            # [EXISTS] CI/CD pipelines (quality-checks, deploy)
+│   ├── issue-templates/                      # [EXISTS] Specific issue content bodies
+│   ├── ISSUE_TEMPLATE/                       # [EXISTS] Standardized GH templates
+│   ├── pull_request_template.md              # [EXISTS] PR checklist
+│   └── copilot-instructions.md               # [EXISTS] Interaction guidelines
+├── .husky/                                   # [EXISTS] Git hooks
+│   └── _/husky.sh                            # [EXISTS] Husky bootstrap script
+├── legacy/                                   # [NEW] Archive of pre-React assets
+│   ├── index.html                            # [MOVE] Original static entry
+│   ├── css/                                  # [MOVE] Old styles
+│   ├── js/                                   # [MOVE] Old script.js
+│   ├── ui-2.html                             # [MOVE] Prototype variant
+│   └── old-README.md                         # [MOVE] Historical README
+├── archives/                                 # [NEW] Historical documents & superseded drafts
+│   ├── PROJECT_CHARTER-2.md                  # [MOVE] Older draft
+│   ├── MASTER_OUTLINE.md                     # [DUPLICATE] Archive copy
+│   ├── PHASE1_COMPLETION_SUMMARY.md          # [DUPLICATE] Archived if canonical lives in docs/
+│   └── Phase-1/chat                          # [MOVE] Raw conversation log
+├── README.md                                 # [EXISTS] Main entry (should link to docs/)
+├── CHANGELOG.md                              # [NEW] High-level version log (mirrors docs/CHANGELOG.md if wanted)
+├── project.log                               # [EXISTS] Operational timeline (keep at root for visibility)
+├── package.json                              # [EXISTS] Scripts & dependencies
+├── package-lock.json                         # [EXISTS]
+├── tsconfig.json                             # [EXISTS]
+├── tsconfig.node.json                        # [EXISTS]
+├── tailwind.config.js                        # [EXISTS]
+├── postcss.config.js                         # [EXISTS]
+├── vite.config.ts                            # [EXISTS]
+├── .eslintrc.json                            # [EXISTS]
+├── lighthouserc.json                         # [EXISTS] (rename/move to config/lighthouse.config.js)
+├── .gitignore                                # [EXISTS]
+├── .vscode/                                  # [EXISTS] Editor settings/snippets only
+│   └── project-log.code-snippets             # [EXISTS]
+├── CONTRIBUTING.md                           # [EXISTS] (canonical should migrate to docs/)
+└── LICENSE                                   # [NEW] MIT or chosen license (if not added)
 ```
 
 ---
