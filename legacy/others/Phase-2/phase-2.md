@@ -429,10 +429,7 @@ The fact that you're asking these questions already puts you ahead of many devel
 
 ---
 
-
-
 # 4
-
 
 Made changes.
 
@@ -606,3 +603,100 @@ Your portfolio now has a solid React foundation that employers will recognize as
 Want to continue with Phase 2.2 enhanced features, or do you want to test the current version first?
 
 **This is already a huge win - you now have a modern React portfolio that preserves everything great about your original design!** 🚀
+
+
+---
+
+
+
+# Phase 2.2 (Issue #16) - Context Gathering Questions
+
+Following our workflow-config.json process, I need to gather detailed context before creating the action plan. Here are my clarifying questions:
+
+## 1. Animation Priorities & Sections
+
+Based on your new Figma design, what's the final section order and which animations are most important to you?
+
+**Expected sections:** Hero, About, Skills/Tech, Projects, Learning Journey, Contact
+
+* Which sections need entrance animations? (fadeIn as they scroll into view?)
+* Any specific animations you want? (cards that lift on hover, timeline items that slide in, etc.)
+
+"""
+FINAL SECTION
+1 Hero
+2 about me
+3 skills/tech stach
+4 projects
+5 learning journey
+6 blog & post ( this section is a space for the blogs created by me i use this as medium to practice and excercising my personal branding plan to be soon)
+7 contacts
+
+ANIMATION OR TRANSITION
+
+this choices of effect is i assign on this to you
+as long as the choice you make is modern and fit to my website is okay to me
+and also the performance is not much affeted
+
+if i remember it easy tho change this im a right or no?
+if not easy to change provide simple explanation
+"""
+
+## 2. Motion Style Preference
+
+What animation feel matches your portfolio personality?
+
+* **Subtle & smooth:** Gentle fades, small movements (feels more serious/business)
+* **Dynamic & bouncy:** Spring animations, more movement (feels more creative/energetic)
+* **Minimal:** Just essential transitions (fastest performance)
+
+## 3. Performance Constraints
+
+Since you have a 70% performance / 30% visual target:
+
+* Should animations automatically disable on slower devices?
+  YES IF POSIBLE
+* Want animations that respect user's "prefers-reduced-motion" setting?
+  NO NEED I THINK IT MUCH RESOURCES
+
+  MY VISITOR/CLIENT IS NO OBLIGATION TO ADJUST THIS
+  IF ON THE 1ST TRY ON MY WEB IS NOT WELL PERFORM
+  IT CAN POSIBLE TO AFFECT TO MY SATISFACTION OR CHANCE OF BEING HIRED
+* Any animation budget limits? (like max 2-3 animated elements visible at once)
+  PLEASE REMEMBER THIS
+  THAT WHAT  I WANT IN ANIMATION
+
+  1 IF THEY SCROLL THEY FEEL AMAZE ON MY WEBSITE
+  LIKE IN MICROSOFT VIVA EFFECTS AND ANIMATION
+
+  2 HOVER EFFECT GLOW IN CARD
+
+  3 UNIQUE OR MUST ONLY 10-20% OF THE DEVELIPOER DISCOVER THIS STYLE OF EFFECT ANIMATION
+
+  4 PLEASE MAKE IT VERTICAL SCROLL ( I VISIT OTHER SITE THE SCROLL IS ZOOMING AND HORIZONTAL EFFECT
+  THIS IS NOT MAKE SENSE ON MY WEBSITE IT TURN OUTS TO SLOW IN THE LONG RUN I THINK)
+
+## 4. New Figma Layout Order
+
+Can you confirm the section order from your updated wireframe? I want to make sure animations flow properly between sections.
+
+YES CONFIRM
+
+## 5. Animation Primitives You Like
+
+What names make sense to you for reusable animation components?
+
+* `FadeInOnScroll` for sections appearing? - LET TRY IT
+* `HoverLift` for cards that rise on hover? - IS A MUST
+* `StaggerChildren` for lists that animate in sequence? - SLOWLY IMPLEMENT THIS NOT ENTIRELY
+* `SlideInLeft/Right` for timeline items? - DONT USE THIS
+
+## 6. GitHub Integration Timing
+
+Issue #16 is focused on Framer Motion, but should I prep the animation hooks to work with the GitHub API data that's coming in Issue #17? (Like animated project cards that will show real GitHub repos) - OKAY PROCEED 
+
+## 7. Learning Journey Section
+
+This seems like a key section for your career story - any specific animation ideas for showing your progression from admin/procurement → coding? - YES PLEASE AS LONG AS THE INFO AND DETAILS IS NOT AFFECTED
+
+"CONFIRM AND PROCEED"
