@@ -3,21 +3,25 @@ import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ProjectsSection } from '@/components/sections/ProjectsSection';
+import { LearningJourneySection } from '@/components/sections/LearningJourneySection';
+import { BlogSection } from '@/components/sections/BlogSection';
 import { WebsitesSection } from '@/components/sections/WebsitesSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 
-// Main App component - putting it all together
+// Main App component with enhanced sections and animations
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden">
       {/* Fixed navigation */}
       <Navigation />
       
-      {/* All sections */}
-      <main>
+      {/* All sections with enhanced animations */}
+      <main className="relative">
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
+        <LearningJourneySection />
+        <BlogSection />
         <WebsitesSection />
         <ContactSection />
       </main>
