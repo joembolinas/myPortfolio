@@ -1,0 +1,16 @@
+{
+  "name": "Growth Journey Portfolio",
+  "short_name": "Portfolio",
+  "description": "Joe M. Bolinas - Career transition from admin/procurement to tech professional",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

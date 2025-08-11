@@ -1,5 +1,3 @@
-# 📚 Enhanced README Template - Growth Journey Portfolio
-
 [![Lighthouse Performance](https://img.shields.io/badge/Lighthouse-Performance%2090%2B-brightgreen?style=for-the-badge&logo=lighthouse)](https://growth-journey-portfolio.vercel.app)
 [![Lighthouse Accessibility](https://img.shields.io/badge/Lighthouse-Accessibility%2090%2B-brightgreen?style=for-the-badge&logo=lighthouse)](https://growth-journey-portfolio.vercel.app)
 [![WCAG AA Compliant](https://img.shields.io/badge/WCAG-AA%20Compliant-blue?style=for-the-badge)](https://www.w3.org/WAI/WCAG21/quickref/)
@@ -24,28 +22,54 @@
 
 ## 🎯 Project Overview
 
-**🌟 Current Status: Phase 1 COMPLETED ✅ - Ready for Phase 2 Architecture & Design**
+**🌟 Current Status: Phase 2.4 IN PROGRESS ⚠️ - Contact System Implementation**
 
-Welcome to my portfolio — a chronicle of professional transformation from SNR Admin/Procurement to emerging technology professional.
+Welcome to my portfolio — a chronicle of professional transformation from SNR Admin/Procurement to
+emerging technology professional.
 
-This project represents more than a portfolio—it's a strategic career transition tool built with modern web technologies and a performance-first mindset. Thoughtfully crafted to emphasize accessibility, user experience, and technical excellence, it mirrors my approach to both learning and professional practice: methodical, purposeful, and growth-oriented.
+This project represents more than a portfolio—it's a strategic career transition tool built with
+modern web technologies and a performance-first mindset. Thoughtfully crafted to emphasize
+accessibility, user experience, and technical excellence, it mirrors my approach to both learning
+and professional practice: methodical, purposeful, and growth-oriented.
 
-### 🏆 Phase 1 Achievements (COMPLETED)
+### 🏆 Phase 2.4 Progress (IN PROGRESS - August 11, 2025)
 
-- ✅ **Strategic Planning** - Project charter with confirmed technical decisions
-- ✅ **Professional GitHub Setup** - Enterprise-level repository configuration
-- ✅ **Development Environment** - Complete toolchain (React + Vite + TypeScript + Tailwind)
-- ✅ **Quality Standards** - 90+ Lighthouse performance targets established
-- ✅ **Documentation System** - Comprehensive guides with automation
-- ✅ **Activity Logging** - PowerShell/batch script automation for development tracking
-- ✅ **Project Management** - GitHub Project Board with workflow automation
+- ✅ **Contact Form Foundation** - Comprehensive form handling with validation and state management
+- ✅ **Form Components** - Complete UI integration with ContactSection, field validation, and error
+  handling
+- ✅ **Anti-Spam Protection** - Honeypot fields and submission cooldown system
+- ✅ **Accessibility Features** - ARIA live regions for status updates and screen reader support
+- ✅ **Enhanced Button Component** - Extended with form submission support and type attributes
+- ⚠️ **Testing & Documentation** - Test coverage and documentation updates in progress
+
+### 🏆 Phase 2.3 Achievements (COMPLETED - August 11, 2025)
+
+- ✅ **GitHub API Integration** - Complete REST API service with authentication and caching
+- ✅ **Live Data Display** - Real-time repository stats, contribution charts, activity tracking
+- ✅ **Professional Components** - GitHubStats, GitHubRepos, GitHubContributions with animations
+- ✅ **Custom React Hooks** - Optimized data fetching with loading states and error handling
+- ✅ **Tabbed Interface** - Overview/Repositories/Activity sections with smooth transitions
+- ✅ **Performance Maintained** - 70:30 ratio preserved with intelligent caching strategies
+- ✅ **Environment Setup** - Complete configuration for API authentication and rate limiting
+- ✅ **Accessibility Enhancements** - Landmarks, skip link, semantic nav, ARIA form validation,
+  reduced motion support, automated axe test
+
+### 🏆 Previous Phase Achievements
+
+**Phase 2.2 (Animation System):**
+
+- ✅ Complete Framer Motion integration with Microsoft Viva-inspired effects
+- ✅ Device-adaptive animations with performance optimization
+- ✅ Interactive timeline, particle backgrounds, expandable cards
+- ✅ Skills architecture and project showcase structure
 
 ### 🎯 Confirmed Technical Approach
 
 - **Archetype:** "The Technical Storyteller" - narrative-driven with interactive timeline
-- **Performance Priority:** 70% performance, 30% visual appeal
+- **Performance Priority:** 70% performance, 30% visual appeal (user-confirmed)
 - **Technology Stack:** React 18+ + Vite 5+ + TypeScript + Tailwind CSS + Framer Motion
-- **Core Features:** Interactive timeline, GitHub visualization, contact integration, resume download
+- **Animation Strategy:** Microsoft Viva-inspired effects with performance adaptation
+- **Core Features:** Interactive timeline, particle background, expandable cards, GitHub integration
 
 ---
 
@@ -53,18 +77,23 @@ This project represents more than a portfolio—it's a strategic career transiti
 
 ### 🎨 Core Portfolio Features
 
-- **Interactive Career Timeline** - Visual progression from admin/procurement to tech journey with milestone markers
-- **Skills Progression Visualization** - Dynamic tracking of learning journey (TryHackMe, roadmap.sh, LeetCode)
-- **Real-time GitHub Integration** - Live contribution visualization and repository showcase
+- **Interactive Career Timeline** - Visual progression from admin/procurement to tech journey with
+  milestone markers
+- **Skills Progression Visualization** - Dynamic tracking of learning journey (TryHackMe,
+  roadmap.sh, LeetCode)
+- ✅ **Real-time GitHub Integration** - Live contribution visualization and repository showcase
+  (COMPLETED)
 - **Project Showcase** - Curated portfolio with live demos, GitHub links, and technical deep-dives
 - **Blog System** - Regular updates on learning journey, technical insights, and career development
-- **Contact & Scheduling** - Professional contact form with calendar integration for collaboration
+- ✅ **Contact System** - Professional contact form with validation, anti-spam protection, and
+  accessible feedback (COMPLETED)
 - **Resume Download** - One-click PDF resume download with latest achievements
 - **Feedback System** - Visitor feedback collection for continuous improvement
 
 ### 🔧 Technical Features
 
-- **Performance Optimization** - Code splitting, lazy loading, image optimization (90+ Lighthouse scores)
+- **Performance Optimization** - Code splitting, lazy loading, image optimization (90+ Lighthouse
+  scores)
 - **SEO Excellence** - Meta tags, structured data, sitemap generation for discoverability
 - **Accessibility First** - Screen reader support, keyboard navigation, WCAG AA compliance
 - **Progressive Enhancement** - Works on all browsers with graceful degradation
@@ -210,24 +239,110 @@ npm run a11y-test
 
 ```
 growth-journey-portfolio/
-├── public/                 # Static assets
-│   ├── images/            # Optimized images
-│   ├── icons/             # Icon assets
-│   └── resume/            # Resume PDF
-├── src/
-│   ├── components/        # Reusable components
-│   │   ├── ui/           # Base UI components
-│   │   ├── layout/       # Layout components
-│   │   └── features/     # Feature-specific components
-│   ├── pages/            # Page components
-│   ├── hooks/            # Custom React hooks
-│   ├── utils/            # Utility functions
-│   ├── types/            # TypeScript definitions
-│   ├── styles/           # Global styles
-│   └── data/             # Static data files
-├── tests/                # Test files
-├── docs/                 # Documentation
-└── config/               # Configuration files
+├── public/                                   # [NEW] Public static assets served as-is (Vite will copy)
+│   ├── favicon.ico                           # [NEW] Site icon
+│   ├── images/                               # [MOVE] from assets/images (optimized export versions)
+│   ├── fonts/                                # [NEW] Self-hosted font files if added
+│   ├── robots.txt                            # [NEW] SEO crawler directives
+│   ├── sitemap.xml                           # [NEW] Generated sitemap
+│   └── resume/                               # [NEW] PDF resume(s)
+├── assets/                                   # [EXISTS] Authoring/source assets (unoptimized originals)
+│   └── images/                               # [EXISTS] Raw/high-res images (optimize to public/images)
+├── src/                                      # [EXISTS] Application source code
+│   ├── main.tsx                              # [EXISTS] App bootstrap (React root)
+│   ├── App.tsx                               # [EXISTS] Top-level composition
+│   ├── index.css                             # [EXISTS] Tailwind + global resets
+│   ├── components/                           # [EXISTS]
+│   │   ├── layout/                           # [EXISTS] Shell & persistent UI (Navigation, Footer)
+│   │   ├── sections/                         # [EXISTS] Page structural sections (Hero, About, etc.)
+│   │   ├── ui/                               # [EXISTS] Reusable primitive UI (Button, Card)
+│   │   └── animations/                       # [NEW] Shared motion wrappers/variants (Framer Motion)
+│   ├── features/                             # [NEW] Feature modules (e.g. github, contact, timeline)
+│   │   ├── github/                           # [NEW] GitHub API integration (hooks, components)
+│   │   ├── contact/                          # [NEW] Contact form logic & validation
+│   │   └── accessibility/                    # [NEW] A11y helpers (focus management, skip links)
+│   ├── hooks/                                # [EXISTS] Custom React logic (useActiveSection, useScrollTo)
+│   ├── utils/                                # [NEW] Pure helper functions (formatters, guards)
+│   ├── services/                             # [NEW] External API clients (GitHub, email)
+│   ├── data/                                 # [EXISTS] Static structured data (projects, skills)
+│   ├── types/                                # [EXISTS] Shared TypeScript types/interfaces
+│   ├── styles/                               # [NEW] Additional style modules (animations.css, tokens.css)
+│   ├── config/                               # [NEW] Runtime configs (endpoints, feature flags)
+│   └── __tests__/                            # [NEW] Co-located unit tests for core app elements
+├── tests/                                    # [NEW] Higher-level tests
+│   ├── unit/                                 # [NEW] Non co-located unit tests
+│   ├── integration/                          # [NEW] Component flow tests (e.g. nav → scroll)
+│   ├── e2e/                                  # [NEW] Playwright specs
+│   ├── accessibility/                        # [NEW] Axe/Lighthouse scripted checks
+│   └── performance/                          # [NEW] Performance budget assertions (har/lhci)
+├── docs/                                     # [NEW] Public-facing & developer docs (clean copies)
+│   ├── architecture.md                       # [MOVE] From TECHNICAL_DOCS.md distilled
+│   ├── project-charter.md                    # [MOVE] From PROJECT_CHARTER.md canonical
+│   ├── phase-outline.md                      # [MOVE] From MASTER_OUTLINE.md normalized
+│   ├── backlog.md                            # [MOVE] From PHASE2_BACKLOG.md (public version)
+│   ├── contributing.md                       # [MOVE] From CONTRIBUTING.md
+│   ├── effort-estimation.md                  # [MOVE] From EFFORT_ESTIMATION.md
+│   ├── troubleshooting.md                    # [MOVE] From TROUBLESHOOTING_GUIDE.md
+│   ├── logging-system.md                     # [MOVE] Summarize logging-system/docs
+│   ├── workflow-guide.md                     # [MOVE] From .project/WORKFLOW_GUIDE.md (public copy)
+│   └── CHANGELOG.md                          # [NEW] Versioned change tracking
+├── .project/                                 # [EXISTS] Internal process/workflow system
+│   ├── workflow-config.json                  # [EXISTS] Canonical workflow definition
+│   ├── WORKFLOW_GUIDE.md                     # [EXISTS] Internal detailed guide (keep internal if docs copy exists)
+│   ├── README.md                             # [EXISTS] Directory explanation
+│   └── generated-docs/                       # [EXISTS] Auto-generated artifacts (phase summaries, reports)
+├── logging-system/                           # [EXISTS] Structured logging framework
+│   ├── docs/                                 # [EXISTS] Logging references
+│   ├── scripts/                              # [EXISTS] Log automation scripts
+│   └── templates/                            # [EXISTS] Log entry templates
+├── scripts/                                  # [NEW] General automation (build, analyze, deploy wrappers)
+│   ├── lighthouse-ci.mjs                     # [NEW] Scripted Lighthouse run
+│   ├── optimize-images.mjs                   # [NEW] Image optimization pipeline
+│   └── generate-sitemap.mjs                  # [NEW] Sitemap generation
+├── config/                                   # [NEW] Tool/infra configuration (separate from root clutter)
+│   ├── jest.config.ts                        # [NEW] Jest/Vitest bridge if needed
+│   ├── playwright.config.ts                  # [NEW] E2E configuration
+│   ├── lighthouse.config.js                  # [MOVE] from lighthouserc.json (rename)
+│   └── security-audit.yml                    # [NEW] Policy/severity baseline
+├── ci/                                       # [NEW] Reusable workflow fragments & composite actions
+│   ├── actions/                              # [NEW] Composite GitHub Actions
+│   └── templates/                            # [NEW] Reusable job YAML snippets
+├── .github/                                  # [EXISTS] GitHub meta
+│   ├── workflows/                            # [EXISTS] CI/CD pipelines (quality-checks, deploy)
+│   ├── issue-templates/                      # [EXISTS] Specific issue content bodies
+│   ├── ISSUE_TEMPLATE/                       # [EXISTS] Standardized GH templates
+│   ├── pull_request_template.md              # [EXISTS] PR checklist
+│   └── copilot-instructions.md               # [EXISTS] Interaction guidelines
+├── .husky/                                   # [EXISTS] Git hooks
+│   └── _/husky.sh                            # [EXISTS] Husky bootstrap script
+├── legacy/                                   # [NEW] Archive of pre-React assets
+│   ├── index.html                            # [MOVE] Original static entry
+│   ├── css/                                  # [MOVE] Old styles
+│   ├── js/                                   # [MOVE] Old script.js
+│   ├── ui-2.html                             # [MOVE] Prototype variant
+│   └── old-README.md                         # [MOVE] Historical README
+├── archives/                                 # [NEW] Historical documents & superseded drafts
+│   ├── PROJECT_CHARTER-2.md                  # [MOVE] Older draft
+│   ├── MASTER_OUTLINE.md                     # [DUPLICATE] Archive copy
+│   ├── PHASE1_COMPLETION_SUMMARY.md          # [DUPLICATE] Archived if canonical lives in docs/
+│   └── Phase-1/chat                          # [MOVE] Raw conversation log
+├── README.md                                 # [EXISTS] Main entry (should link to docs/)
+├── CHANGELOG.md                              # [NEW] High-level version log (mirrors docs/CHANGELOG.md if wanted)
+├── project.log                               # [EXISTS] Operational timeline (keep at root for visibility)
+├── package.json                              # [EXISTS] Scripts & dependencies
+├── package-lock.json                         # [EXISTS]
+├── tsconfig.json                             # [EXISTS]
+├── tsconfig.node.json                        # [EXISTS]
+├── tailwind.config.js                        # [EXISTS]
+├── postcss.config.js                         # [EXISTS]
+├── vite.config.ts                            # [EXISTS]
+├── .eslintrc.json                            # [EXISTS]
+├── lighthouserc.json                         # [EXISTS] (rename/move to config/lighthouse.config.js)
+├── .gitignore                                # [EXISTS]
+├── .vscode/                                  # [EXISTS] Editor settings/snippets only
+│   └── project-log.code-snippets             # [EXISTS]
+├── CONTRIBUTING.md                           # [EXISTS] (canonical should migrate to docs/)
+└── LICENSE                                   # [NEW] MIT or chosen license (if not added)
 ```
 
 ---
@@ -393,7 +508,8 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ### Project Feedback
 
 - **Issues:** [GitHub Issues](https://github.com/your-username/growth-journey-portfolio/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/your-username/growth-journey-portfolio/discussions)
+- **Discussions:**
+  [GitHub Discussions](https://github.com/your-username/growth-journey-portfolio/discussions)
 - **Feedback Form:** Available on the live website
 
 ---
@@ -415,3 +531,56 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
     <a href="https://github.com/your-username/growth-journey-portfolio">⭐ Star on GitHub</a>
   </p>
 </div>
+
+---
+
+## 🔌 MCP GitHub Integration (Automation)
+
+You can enable the GitHub Model Context Protocol (MCP) server (used by Copilot Chat) without manual
+editing.
+
+### Quick Setup (PowerShell – recommended)
+
+```powershell
+# From project root
+pwsh ./scripts/setup-mcp-github.ps1
+```
+
+You will be asked for a Personal Access Token (classic). Scopes usually needed:
+
+- repo
+- read:user
+- user:email (Add gist if you want gist access, read:org if querying org data.)
+
+What the script does:
+
+1. Validates the token against https://api.github.com/user
+2. Stores it as a user environment variable GITHUB_TOKEN (persistent) – NOT committed
+3. Creates / updates `.vscode/mcp.json` referencing `${env:GITHUB_TOKEN}`
+4. Prints your remaining rate limit
+
+Then reload VS Code and run: Command Palette → Check MCP Setup
+
+### Batch Alternative (CMD)
+
+```cmd
+scripts\setup-mcp-github.bat
+```
+
+Same behavior but simpler output.
+
+### Security Notes
+
+- Do NOT commit your token. It never gets written to repo files.
+- To rotate: create a new token, re-run the script, then revoke the old one in GitHub settings.
+- To remove: delete the user env var GITHUB_TOKEN (System Properties → Environment Variables) and
+  restart VS Code.
+
+### Troubleshooting
+
+| Symptom                             | Fix                                                                                   |
+| ----------------------------------- | ------------------------------------------------------------------------------------- |
+| Bad credentials                     | Token typo or missing scope – create new classic token with listed scopes             |
+| Still unauthenticated after running | Fully close VS Code (not just window reload) so new env var loads                     |
+| Fine-grained token fails            | Ensure it includes the specific repo + metadata read permissions or switch to classic |
+| Rate limit low                      | Wait / create new token if necessary                                                  |

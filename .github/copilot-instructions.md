@@ -42,13 +42,25 @@
 - **Interactive Development:** Career timeline, GitHub integration, contact systems
 - **Content Strategy:** Career transition narrative with learning journey showcase
 
-## ACTIVITY LOGGING SYSTEM
+## ACTIVITY LOGGING SYSTEM - MANDATORY COMPLIANCE
 
-- All changes, actions, and activities are logged in project.log
+- **CRITICAL:** All changes, actions, and achievements MUST be logged in project.log immediately
+- **NO EXCEPTIONS:** Every major action requires immediate logging before proceeding
 - Session timestamps use Unix format for consistency
-- Action types: INIT, DECISION, SETUP, CREATE, UPDATE, DELETE, DEPLOY, SYNTHESIS
+- Action types: INIT, DECISION, SETUP, CREATE, UPDATE, DELETE, DEPLOY, SYNTHESIS, IMPLEMENTATION, FEEDBACK, MILESTONE
 - Logging automation available via PowerShell scripts in logging-system/ folder
+- **FAIL-SAFE:** Always update project.log when making changes to the codebase
+- **REFERENCE:** See .project/LOGGING_REMINDER_SYSTEM.md for mandatory logging protocols
 - Always update project.log when making changes to the codebase
+
+## WORKFLOW SYSTEM
+
+- Follow .project/workflow-config.json for all phase development
+- 8-step standardized process: Initiation → Context Gathering → Refinement → Planning → Confirmation → Implementation → Documentation → Logging
+- Always ask clarifying questions before implementation
+- Present high-level action plan and wait for "CONFIRM AND PROCEED"
+- Maintain professional standards with quality gates
+- Reference .project/WORKFLOW_GUIDE.md for detailed usage instructions
 
 <!--
 ## Execution Guidelines
