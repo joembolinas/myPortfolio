@@ -5,7 +5,6 @@ import { AboutSection } from '@/components/sections/AboutSection';
 import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { LearningJourneySection } from '@/components/sections/LearningJourneySection';
 import { BlogSection } from '@/components/sections/BlogSection';
-import { WebsitesSection } from '@/components/sections/WebsitesSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 
 // Main App component with enhanced sections and animations
@@ -22,7 +21,6 @@ function App() {
         <ProjectsSection />
         <LearningJourneySection />
         <BlogSection />
-        <WebsitesSection />
         <ContactSection />
       </main>
       
