@@ -1,8 +1,8 @@
 import React from 'react';
 import { CardProps } from '@/types';
 
-// Base card component for consistent styling across the portfolio
-export const Card: React.FC<CardProps> = ({
+// Base card component for consistent styling across the portfolio - optimized with React.memo
+export const Card: React.FC<CardProps> = React.memo(({
   children,
   className = '',
   gradient = '',
@@ -17,4 +17,6 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div className={`${baseStyles} ${hoverStyles} ${gradientStyles} ${className}`}>{children}</div>
   );
-};
+});
+
+Card.displayName = 'Card';

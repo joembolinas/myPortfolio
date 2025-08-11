@@ -1,8 +1,8 @@
 import React from 'react';
 import { ButtonProps } from '@/types';
 
-// Reusable button component with variants matching our design
-export const Button: React.FC<ButtonProps> = ({
+// Reusable button component with variants matching our design - optimized with React.memo
+export const Button: React.FC<ButtonProps> = React.memo(({
   children,
   variant = 'primary',
   size = 'md',
@@ -43,4 +43,6 @@ export const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
+});
+
+Button.displayName = 'Button';
