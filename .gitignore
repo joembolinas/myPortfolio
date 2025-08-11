@@ -1,3 +1,22 @@
 node_modules
 
 /net-commander
+
+# Archive folder for development artifacts
+.archieved/
+
+# Development process files to archive
+phases/
+others/
+legacy/
+logging-system/
+log-entry.ps1
+simple-log.ps1
+-terminal.log
+image/
+config/
+copilot-instructions.md
+
+# Optional: Keep these archived but not in git
+*.log
+.vscode/
