@@ -65,8 +65,8 @@ export function useContactForm(opts: UseContactFormOptions = {}) {
       return { ok: false, error: err, receivedAt: Date.now() } as ContactSubmitResult;
     }
     setState((s) => ({ ...s, status: 'submitting', errors: {} }));
-    const { company, ...payload } = state; // Exclude honeypot if empty
-    const res = await submitContact(payload as ContactFormData);
+    const { name, email, subject, message } = state;
+    const res = await submitContact({ name, email, subject, message });
     if (res.ok) {
       setState((s) => ({ ...s, status: 'success' }));
       opts.onSuccess?.(res);
