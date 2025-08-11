@@ -38,7 +38,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
       {
         threshold: 0.1,
         rootMargin: '50px', // Start loading 50px before the image enters viewport
-      }
+      },
     );
 
     if (imgRef.current) {
@@ -112,7 +112,7 @@ export const useLazyLoad = (threshold = 0.1, rootMargin = '0px') => {
           }
         });
       },
-      { threshold, rootMargin }
+      { threshold, rootMargin },
     );
 
     if (ref.current) {

@@ -35,9 +35,12 @@ export function useContactForm(opts: UseContactFormOptions = {}) {
     errors: {},
   });
 
-  const update = useCallback(<K extends keyof ContactFormData>(key: K, value: ContactFormData[K]) => {
-    setState((s) => ({ ...s, [key]: value }));
-  }, []);
+  const update = useCallback(
+    <K extends keyof ContactFormData>(key: K, value: ContactFormData[K]) => {
+      setState((s) => ({ ...s, [key]: value }));
+    },
+    [],
+  );
 
   const reset = useCallback(() => {
     setState({
@@ -57,7 +60,11 @@ export function useContactForm(opts: UseContactFormOptions = {}) {
     const errors = validate(state);
     if (Object.keys(errors).length) {
       setState((s) => ({ ...s, errors, status: 'error' }));
-      return { ok: false, error: 'Validation failed', receivedAt: Date.now() } as ContactSubmitResult;
+      return {
+        ok: false,
+        error: 'Validation failed',
+        receivedAt: Date.now(),
+      } as ContactSubmitResult;
     }
     if (!canSubmit(state.email, COOLDOWN_MS)) {
       const err = 'Please wait before sending another message.';

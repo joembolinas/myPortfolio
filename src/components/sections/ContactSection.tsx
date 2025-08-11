@@ -5,14 +5,7 @@ import { useContactForm } from '@/hooks/useContactForm';
 
 // Contact section with social links, contact form, and resume download
 export const ContactSection: React.FC = () => {
-  const {
-    state,
-    update,
-    submit,
-    isSubmitting,
-    isSuccess,
-    isError,
-  } = useContactForm();
+  const { state, update, submit, isSubmitting, isSuccess, isError } = useContactForm();
 
   const handleContactClick = (url?: string) => {
     if (url) {
@@ -33,7 +26,9 @@ export const ContactSection: React.FC = () => {
       role="contentinfo"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 id="contact-heading" className="text-4xl font-bold mb-16 text-center text-blue-400">Get In Touch</h2>
+        <h2 id="contact-heading" className="text-4xl font-bold mb-16 text-center text-blue-400">
+          Get In Touch
+        </h2>
 
         {/* Contact methods grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -52,24 +47,34 @@ export const ContactSection: React.FC = () => {
 
         {/* Contact Form */}
         <div className="max-w-2xl mx-auto mb-16" aria-labelledby="contact-form-heading">
-          <h3 id="contact-form-heading" className="text-2xl font-semibold mb-8 text-center">Send a Message</h3>
-          
+          <h3 id="contact-form-heading" className="text-2xl font-semibold mb-8 text-center">
+            Send a Message
+          </h3>
+
           {/* Status Messages */}
-      <div className="mb-6" aria-live="polite" aria-atomic="true">
+          <div className="mb-6" aria-live="polite" aria-atomic="true">
             {isSuccess && (
-        <div className="bg-green-600 text-white p-4 rounded-lg text-center" role="alert">
+              <div className="bg-green-600 text-white p-4 rounded-lg text-center" role="alert">
                 Message sent successfully! I'll get back to you soon.
               </div>
             )}
             {isError && Object.keys(state.errors).length > 0 && (
-        <div className="bg-red-600 text-white p-4 rounded-lg text-center" role="alert">
+              <div className="bg-red-600 text-white p-4 rounded-lg text-center" role="alert">
                 Please fix the errors below and try again.
               </div>
             )}
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6" noValidate aria-describedby="form-instructions" role="form">
-      <p id="form-instructions" className="sr-only">Fields marked with * are required.</p>
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6"
+            noValidate
+            aria-describedby="form-instructions"
+            role="form"
+          >
+            <p id="form-instructions" className="sr-only">
+              Fields marked with * are required.
+            </p>
             {/* Name Field */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -83,11 +88,13 @@ export const ContactSection: React.FC = () => {
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors"
                 placeholder="Your full name"
                 required
-        aria-invalid={!!state.errors.name}
-        aria-describedby={state.errors.name ? 'name-error' : undefined}
+                aria-invalid={!!state.errors.name}
+                aria-describedby={state.errors.name ? 'name-error' : undefined}
               />
               {state.errors.name && (
-        <p id="name-error" className="text-red-400 text-sm mt-1">{state.errors.name}</p>
+                <p id="name-error" className="text-red-400 text-sm mt-1">
+                  {state.errors.name}
+                </p>
               )}
             </div>
 
@@ -108,7 +115,9 @@ export const ContactSection: React.FC = () => {
                 aria-describedby={state.errors.email ? 'email-error' : undefined}
               />
               {state.errors.email && (
-                <p id="email-error" className="text-red-400 text-sm mt-1">{state.errors.email}</p>
+                <p id="email-error" className="text-red-400 text-sm mt-1">
+                  {state.errors.email}
+                </p>
               )}
             </div>
 
@@ -128,7 +137,9 @@ export const ContactSection: React.FC = () => {
                 aria-describedby={state.errors.subject ? 'subject-error' : undefined}
               />
               {state.errors.subject && (
-                <p id="subject-error" className="text-red-400 text-sm mt-1">{state.errors.subject}</p>
+                <p id="subject-error" className="text-red-400 text-sm mt-1">
+                  {state.errors.subject}
+                </p>
               )}
             </div>
 
@@ -149,7 +160,9 @@ export const ContactSection: React.FC = () => {
                 aria-describedby={state.errors.message ? 'message-error' : undefined}
               />
               {state.errors.message && (
-                <p id="message-error" className="text-red-400 text-sm mt-1">{state.errors.message}</p>
+                <p id="message-error" className="text-red-400 text-sm mt-1">
+                  {state.errors.message}
+                </p>
               )}
             </div>
 
@@ -164,12 +177,7 @@ export const ContactSection: React.FC = () => {
             />
 
             {/* Submit Button */}
-            <Button
-              type="submit"
-              variant="primary"
-              disabled={isSubmitting}
-              className="w-full"
-            >
+            <Button type="submit" variant="primary" disabled={isSubmitting} className="w-full">
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
           </form>

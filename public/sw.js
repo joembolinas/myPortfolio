@@ -13,7 +13,8 @@ const DYNAMIC_CACHE = 'portfolio-dynamic-v1';
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches
+      .open(CACHE_NAME)
       .then((cache) => {
         console.log('Opened cache');
         return cache.addAll(STATIC_ASSETS);
@@ -21,26 +22,29 @@ self.addEventListener('install', (event) => {
       .then(() => {
         // Force the waiting service worker to become the active service worker
         return self.skipWaiting();
-      })
+      }),
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME && cacheName !== DYNAMIC_CACHE) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => {
-      // Claim control of all clients
-      return self.clients.claim();
-    })
+    caches
+      .keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (cacheName !== CACHE_NAME && cacheName !== DYNAMIC_CACHE) {
+              console.log('Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            }
+          }),
+        );
+      })
+      .then(() => {
+        // Claim control of all clients
+        return self.clients.claim();
+      }),
   );
 });
 
@@ -128,8 +132,19 @@ async function staleWhileRevalidate(request) {
 
 // Helper function to determine if a URL is a static asset
 function isStaticAsset(pathname) {
-  const staticExtensions = ['.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.woff', '.woff2'];
-  return staticExtensions.some(ext => pathname.endsWith(ext)) || pathname.includes('/assets/');
+  const staticExtensions = [
+    '.js',
+    '.css',
+    '.png',
+    '.jpg',
+    '.jpeg',
+    '.gif',
+    '.svg',
+    '.ico',
+    '.woff',
+    '.woff2',
+  ];
+  return staticExtensions.some((ext) => pathname.endsWith(ext)) || pathname.includes('/assets/');
 }
 
 // Handle background sync for offline actions
@@ -155,9 +170,7 @@ self.addEventListener('push', (event) => {
       data: data.url,
     };
 
-    event.waitUntil(
-      self.registration.showNotification(data.title, options)
-    );
+    event.waitUntil(self.registration.showNotification(data.title, options));
   }
 });
 
@@ -166,8 +179,6 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
   if (event.notification.data) {
-    event.waitUntil(
-      clients.openWindow(event.notification.data)
-    );
+    event.waitUntil(clients.openWindow(event.notification.data));
   }
 });

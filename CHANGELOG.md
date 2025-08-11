@@ -8,6 +8,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 ### Added
+
 - Phase 2.3 Accessibility improvements: landmarks (main, banner, navigation, contentinfo)
 - Skip link for keyboard users
 - Semantic navigation with anchor links and aria-current
@@ -18,11 +19,14 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Automated axe accessibility test (jest-axe + vitest)
 
 ### Changed
+
 - Converted nav buttons to list of links for better semantics and URL support
 - Adjusted form inputs to include aria-invalid and aria-describedby
 
 ### Notes
-- Color contrast for gradient text intentionally excluded from automated rule; manual verification required
+
+- Color contrast for gradient text intentionally excluded from automated rule; manual verification
+  required
 
 ### Added - Contact System Implementation (August 11, 2025)
 

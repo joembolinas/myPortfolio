@@ -5,12 +5,32 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { LoadingSection } from '@/components/lazy/LazySection';
 
 // Lazy load non-critical sections for better performance
-const AboutSection = lazy(() => import('@/components/sections/AboutSection').then(module => ({ default: module.AboutSection })));
-const ProjectsSection = lazy(() => import('@/components/sections/ProjectsSection').then(module => ({ default: module.ProjectsSection })));
-const LearningJourneySection = lazy(() => import('@/components/sections/LearningJourneySection').then(module => ({ default: module.LearningJourneySection })));
-const GitHubSection = lazy(() => import('@/components/sections/GitHubSection').then(module => ({ default: module.GitHubSection })));
-const BlogSection = lazy(() => import('@/components/sections/BlogSection').then(module => ({ default: module.BlogSection })));
-const ContactSection = lazy(() => import('@/components/sections/ContactSection').then(module => ({ default: module.ContactSection })));
+const AboutSection = lazy(() =>
+  import('@/components/sections/AboutSection').then((module) => ({ default: module.AboutSection })),
+);
+const ProjectsSection = lazy(() =>
+  import('@/components/sections/ProjectsSection').then((module) => ({
+    default: module.ProjectsSection,
+  })),
+);
+const LearningJourneySection = lazy(() =>
+  import('@/components/sections/LearningJourneySection').then((module) => ({
+    default: module.LearningJourneySection,
+  })),
+);
+const GitHubSection = lazy(() =>
+  import('@/components/sections/GitHubSection').then((module) => ({
+    default: module.GitHubSection,
+  })),
+);
+const BlogSection = lazy(() =>
+  import('@/components/sections/BlogSection').then((module) => ({ default: module.BlogSection })),
+);
+const ContactSection = lazy(() =>
+  import('@/components/sections/ContactSection').then((module) => ({
+    default: module.ContactSection,
+  })),
+);
 
 // Main App component with enhanced sections and code splitting
 function App() {

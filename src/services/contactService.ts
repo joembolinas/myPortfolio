@@ -16,7 +16,7 @@ const defaultOptions: Required<ContactServiceOptions> = {
 
 export async function submitContact(
   data: ContactFormData,
-  options: ContactServiceOptions = {}
+  options: ContactServiceOptions = {},
 ): Promise<ContactSubmitResult> {
   const { simulateDelay, cooldownMs } = { ...defaultOptions, ...options };
 

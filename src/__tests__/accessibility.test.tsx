@@ -11,8 +11,8 @@ describe('Accessibility', () => {
     const results = await axe(container, {
       rules: {
         // Allow color contrast for dynamic gradient text to be manually verified
-        'color-contrast': { enabled: false }
-      }
+        'color-contrast': { enabled: false },
+      },
     });
     expect(results).toHaveNoViolations();
   });

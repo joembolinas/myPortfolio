@@ -7,18 +7,18 @@ export interface PerformanceMetrics {
   lcp?: number; // Largest Contentful Paint
   fid?: number; // First Input Delay
   cls?: number; // Cumulative Layout Shift
-  
+
   // Navigation timing
   loadTime?: number;
   domContentLoaded?: number;
-  
+
   // Memory info (if available)
   memoryUsage?: {
     used: number;
     total: number;
     percentage: number;
   };
-  
+
   // Network info
   connection?: {
     effectiveType: string;
@@ -45,9 +45,9 @@ export const usePerformanceMonitoring = () => {
     try {
       new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+        const fcpEntry = entries.find((entry) => entry.name === 'first-contentful-paint');
         if (fcpEntry) {
-          setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
+          setMetrics((prev) => ({ ...prev, fcp: fcpEntry.startTime }));
         }
       }).observe({ entryTypes: ['paint'] });
     } catch (error) {
@@ -59,7 +59,7 @@ export const usePerformanceMonitoring = () => {
       new PerformanceObserver((list) => {
         const entries = list.getEntries();
         const lastEntry = entries[entries.length - 1];
-        setMetrics(prev => ({ ...prev, lcp: lastEntry.startTime }));
+        setMetrics((prev) => ({ ...prev, lcp: lastEntry.startTime }));
       }).observe({ entryTypes: ['largest-contentful-paint'] });
     } catch (error) {
       console.warn('LCP measurement failed:', error);
@@ -71,7 +71,7 @@ export const usePerformanceMonitoring = () => {
         const entries = list.getEntries();
         const fidEntry = entries[0] as any;
         if (fidEntry) {
-          setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
+          setMetrics((prev) => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
         }
       }).observe({ entryTypes: ['first-input'] });
     } catch (error) {
@@ -85,7 +85,7 @@ export const usePerformanceMonitoring = () => {
         for (const entry of list.getEntries() as any[]) {
           if (!entry.hadRecentInput) {
             clsValue += entry.value;
-            setMetrics(prev => ({ ...prev, cls: clsValue }));
+            setMetrics((prev) => ({ ...prev, cls: clsValue }));
           }
         }
       }).observe({ entryTypes: ['layout-shift'] });
@@ -102,7 +102,7 @@ export const usePerformanceMonitoring = () => {
     const loadTime = timing.loadEventEnd - timing.navigationStart;
     const domContentLoaded = timing.domContentLoadedEventEnd - timing.navigationStart;
 
-    setMetrics(prev => ({
+    setMetrics((prev) => ({
       ...prev,
       loadTime,
       domContentLoaded,
@@ -117,7 +117,7 @@ export const usePerformanceMonitoring = () => {
       const total = memory.totalJSHeapSize;
       const percentage = (used / total) * 100;
 
-      setMetrics(prev => ({
+      setMetrics((prev) => ({
         ...prev,
         memoryUsage: { used, total, percentage },
       }));
@@ -128,7 +128,7 @@ export const usePerformanceMonitoring = () => {
   const measureNetworkInfo = useCallback(() => {
     if ('connection' in navigator) {
       const connection = (navigator as any).connection;
-      setMetrics(prev => ({
+      setMetrics((prev) => ({
         ...prev,
         connection: {
           effectiveType: connection.effectiveType,
@@ -154,7 +154,13 @@ export const usePerformanceMonitoring = () => {
     return () => {
       clearInterval(memoryInterval);
     };
-  }, [isSupported, measureWebVitals, measureNavigationTiming, measureMemoryUsage, measureNetworkInfo]);
+  }, [
+    isSupported,
+    measureWebVitals,
+    measureNavigationTiming,
+    measureMemoryUsage,
+    measureNetworkInfo,
+  ]);
 
   // Log performance metrics (for development)
   const logMetrics = useCallback(() => {

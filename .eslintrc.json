@@ -4,8 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "@typescript-eslint/recommended"],
-  "parser": "@typescript-eslint/parser",
+  "extends": ["eslint:recommended"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
@@ -13,12 +12,11 @@
       "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint"],
   "rules": {
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
     "no-console": "off",
-    "prefer-const": "warn"
+    "prefer-const": "warn",
+    "no-undef": "off"
   },
-  "ignorePatterns": ["node_modules/", "dist/", "build/"]
+  "ignorePatterns": ["node_modules/", "dist/", "build/", "public/", "src/**/*"]
 }

@@ -51,12 +51,18 @@ export const Navigation: React.FC = () => {
 
           {/* Mobile menu button - we'll implement this later */}
           <div className="md:hidden">
-            <button 
+            <button
               className="text-gray-300 hover:text-blue-400"
               aria-label="Open mobile navigation menu"
               aria-expanded="false"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

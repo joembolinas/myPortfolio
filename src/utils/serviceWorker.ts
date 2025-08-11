@@ -57,7 +57,7 @@ export const isOnline = (): boolean => navigator.onLine;
 // Listen for online/offline status changes
 export const setupOfflineDetection = (
   onOnline?: () => void,
-  onOffline?: () => void
+  onOffline?: () => void,
 ): (() => void) => {
   const handleOnline = () => {
     console.log('App is online');
@@ -83,9 +83,7 @@ export const setupOfflineDetection = (
 export const clearAllCaches = async (): Promise<void> => {
   if ('caches' in window) {
     const cacheNames = await caches.keys();
-    await Promise.all(
-      cacheNames.map(name => caches.delete(name))
-    );
+    await Promise.all(cacheNames.map((name) => caches.delete(name)));
     console.log('All caches cleared');
   }
 };

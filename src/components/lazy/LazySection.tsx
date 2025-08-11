@@ -20,9 +20,7 @@ const SectionSkeleton: React.FC = () => (
 );
 
 // Enhanced loading component with animation
-const LoadingSection: React.FC<{ message?: string }> = ({ 
-  message = "Loading section..." 
-}) => (
+const LoadingSection: React.FC<{ message?: string }> = ({ message = 'Loading section...' }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -32,7 +30,7 @@ const LoadingSection: React.FC<{ message?: string }> = ({
     <div className="max-w-6xl mx-auto text-center">
       <motion.div
         animate={{ rotate: 360 }}
-        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
         className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"
       />
       <p className="text-gray-400">{message}</p>
@@ -44,7 +42,7 @@ const LoadingSection: React.FC<{ message?: string }> = ({
 export const withLazySection = <P extends object>(
   Component: React.ComponentType<P>,
   fallback?: React.ComponentType,
-  errorFallback?: React.ComponentType<{ error: Error; resetErrorBoundary: () => void }>
+  errorFallback?: React.ComponentType<{ error: Error; resetErrorBoundary: () => void }>,
 ) => {
   const LazySection: React.FC<P> = (props) => {
     const ErrorComponent = errorFallback || DefaultErrorFallback;
@@ -67,19 +65,15 @@ export const withLazySection = <P extends object>(
 };
 
 // Default error fallback
-const DefaultErrorFallback: React.FC<{ error: Error; resetErrorBoundary: () => void }> = ({ 
-  error, 
-  resetErrorBoundary 
+const DefaultErrorFallback: React.FC<{ error: Error; resetErrorBoundary: () => void }> = ({
+  error,
+  resetErrorBoundary,
 }) => (
   <div className="py-20 px-4">
     <div className="max-w-2xl mx-auto text-center">
       <div className="text-6xl mb-4">⚠️</div>
-      <h3 className="text-xl font-semibold text-red-400 mb-2">
-        Something went wrong
-      </h3>
-      <p className="text-gray-400 mb-6">
-        {error.message || "Failed to load this section"}
-      </p>
+      <h3 className="text-xl font-semibold text-red-400 mb-2">Something went wrong</h3>
+      <p className="text-gray-400 mb-6">{error.message || 'Failed to load this section'}</p>
       <button
         onClick={resetErrorBoundary}
         className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors"

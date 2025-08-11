@@ -35,7 +35,7 @@ describe('contactService', () => {
       };
 
       const result = await submitContact(validData);
-      
+
       expect(result.ok).toBe(true);
       expect(result.receivedAt).toBeDefined();
     });
@@ -50,7 +50,7 @@ describe('contactService', () => {
       };
 
       const result = await submitContact(spamData);
-      
+
       expect(result.ok).toBe(false);
       expect(result.error).toBe('Spam detected');
     });
@@ -60,37 +60,37 @@ describe('contactService', () => {
     it('should allow submission for new email', () => {
       const email = 'new@example.com';
       const cooldownMs = 60000; // 1 minute
-      
+
       const result = canSubmit(email, cooldownMs);
-      
+
       expect(result).toBe(true);
     });
 
     it('should prevent submission during cooldown period', () => {
       const email = 'test@example.com';
       const cooldownMs = 60000; // 1 minute
-      
+
       // Simulate a recent submission
       const cooldowns = new Map();
       cooldowns.set(email, Date.now() - 30000); // 30 seconds ago
       (globalThis as any).contactCooldowns = cooldowns;
-      
+
       const result = canSubmit(email, cooldownMs);
-      
+
       expect(result).toBe(false);
     });
 
     it('should allow submission after cooldown period expires', () => {
       const email = 'test@example.com';
       const cooldownMs = 60000; // 1 minute
-      
+
       // Simulate an old submission
       const cooldowns = new Map();
       cooldowns.set(email, Date.now() - 70000); // 70 seconds ago
       (globalThis as any).contactCooldowns = cooldowns;
-      
+
       const result = canSubmit(email, cooldownMs);
-      
+
       expect(result).toBe(true);
     });
   });

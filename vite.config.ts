@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -35,5 +36,11 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['src/__tests__/setup.ts'],
+    css: true,
   },
 });

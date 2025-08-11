@@ -44,7 +44,9 @@ html {
 }
 
 /* High contrast helper class for any borderline contrast text */
-.hc-text { @apply text-gray-100; }
+.hc-text {
+  @apply text-gray-100;
+}
 
 /* Utility for improved focus visibility on dark backgrounds */
 .focus-ring-strong:focus-visible {
