@@ -22,7 +22,7 @@ export const skills: Skill[] = [
   { name: 'TryHackMe', category: 'network', proficiency: 'beginner', icon: 'tryhackme' },
   { name: 'Penetration Testing', category: 'network', proficiency: 'beginner', icon: 'pentest' },
 
-  // Data Analytics Skills  
+  // Data Analytics Skills
   { name: 'Data Analysis', category: 'data', proficiency: 'beginner', icon: 'chart' },
   { name: 'SQL', category: 'data', proficiency: 'beginner', icon: 'database' },
   { name: 'PostgreSQL', category: 'data', proficiency: 'beginner', icon: 'postgresql' },
@@ -33,7 +33,7 @@ export const skills: Skill[] = [
   { name: 'Machine Learning', category: 'ai', proficiency: 'beginner', icon: 'ai' },
   { name: 'AI Fundamentals', category: 'ai', proficiency: 'beginner', icon: 'brain' },
   { name: 'Prompt Engineering', category: 'ai', proficiency: 'intermediate', icon: 'prompt' },
-  { name: 'LLM Integration', category: 'ai', proficiency: 'beginner', icon: 'llm' }
+  { name: 'LLM Integration', category: 'ai', proficiency: 'beginner', icon: 'llm' },
 ];
 
 export const skillCategories = {
@@ -41,28 +41,28 @@ export const skillCategories = {
     title: 'Development',
     description: 'Frontend & backend development technologies',
     color: 'from-blue-500 to-cyan-500',
-    icon: '💻'
+    icon: '💻',
   },
   network: {
     title: 'Network & CyberSec',
     description: 'Security, networking, and ethical hacking',
     color: 'from-red-500 to-orange-500',
-    icon: '🔒'
+    icon: '🔒',
   },
   data: {
     title: 'Data Analytics',
     description: 'Data analysis, databases, and visualization',
     color: 'from-green-500 to-emerald-500',
-    icon: '📊'
+    icon: '📊',
   },
   ai: {
     title: 'AI & Machine Learning',
     description: 'Artificial intelligence and machine learning',
     color: 'from-purple-500 to-pink-500',
-    icon: '🤖'
-  }
+    icon: '🤖',
+  },
 };
 
 export const getSkillsByCategory = (category: string) => {
-  return skills.filter(skill => skill.category === category);
+  return skills.filter((skill) => skill.category === category);
 };

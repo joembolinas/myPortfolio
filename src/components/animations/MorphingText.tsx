@@ -14,7 +14,7 @@ export const MorphingText = ({
   highlightWords = [],
   morphDuration = 2,
   glowColor = 'rgb(59, 130, 246)',
-  className = ''
+  className = '',
 }: MorphingTextProps) => {
   const [currentHighlight, setCurrentHighlight] = useState(0);
 
@@ -22,7 +22,7 @@ export const MorphingText = ({
     if (highlightWords.length === 0) return;
 
     const interval = setInterval(() => {
-      setCurrentHighlight(prev => (prev + 1) % highlightWords.length);
+      setCurrentHighlight((prev) => (prev + 1) % highlightWords.length);
     }, morphDuration * 1000);
 
     return () => clearInterval(interval);
@@ -33,10 +33,10 @@ export const MorphingText = ({
 
     const currentWord = highlightWords[currentHighlight];
     const regex = new RegExp(`(${highlightWords.join('|')})`, 'gi');
-    
+
     return text.split(regex).map((part, index) => {
-      const isHighlighted = highlightWords.some(word => 
-        part.toLowerCase() === word.toLowerCase()
+      const isHighlighted = highlightWords.some(
+        (word) => part.toLowerCase() === word.toLowerCase(),
       );
       const isCurrentHighlight = part.toLowerCase() === currentWord.toLowerCase();
 
@@ -47,13 +47,13 @@ export const MorphingText = ({
             className="relative"
             animate={{
               color: isCurrentHighlight ? glowColor : 'inherit',
-              textShadow: isCurrentHighlight 
-                ? `0 0 20px ${glowColor}40, 0 0 40px ${glowColor}20` 
-                : 'none'
+              textShadow: isCurrentHighlight
+                ? `0 0 20px ${glowColor}40, 0 0 40px ${glowColor}20`
+                : 'none',
             }}
             transition={{
               duration: 0.8,
-              ease: [0.25, 0.4, 0.25, 1]
+              ease: [0.25, 0.4, 0.25, 1],
             }}
           >
             {part}
@@ -62,14 +62,14 @@ export const MorphingText = ({
                 className="absolute inset-0"
                 style={{
                   background: `linear-gradient(90deg, transparent, ${glowColor}20, transparent)`,
-                  filter: 'blur(1px)'
+                  filter: 'blur(1px)',
                 }}
                 animate={{
-                  x: ['-100%', '100%']
+                  x: ['-100%', '100%'],
                 }}
                 transition={{
                   duration: 1.5,
-                  ease: 'easeInOut'
+                  ease: 'easeInOut',
                 }}
               />
             )}
@@ -94,14 +94,14 @@ export const MorphingText = ({
 };
 
 // Letter-by-letter reveal animation
-export const RevealText = ({ 
-  children, 
-  delay = 0, 
-  className = '' 
-}: { 
-  children: string; 
-  delay?: number; 
-  className?: string; 
+export const RevealText = ({
+  children,
+  delay = 0,
+  className = '',
+}: {
+  children: string;
+  delay?: number;
+  className?: string;
 }) => {
   const letters = children.split('');
 
@@ -115,7 +115,7 @@ export const RevealText = ({
           transition={{
             duration: 0.5,
             delay: delay + index * 0.05,
-            ease: [0.25, 0.4, 0.25, 1]
+            ease: [0.25, 0.4, 0.25, 1],
           }}
         >
           {letter === ' ' ? '\u00A0' : letter}
@@ -126,14 +126,14 @@ export const RevealText = ({
 };
 
 // Typewriter effect
-export const TypewriterText = ({ 
-  children, 
-  speed = 50, 
+export const TypewriterText = ({
+  children,
+  speed = 50,
   className = '',
-  showCursor = true 
-}: { 
-  children: string; 
-  speed?: number; 
+  showCursor = true,
+}: {
+  children: string;
+  speed?: number;
   className?: string;
   showCursor?: boolean;
 }) => {
@@ -156,9 +156,9 @@ export const TypewriterText = ({
 
   useEffect(() => {
     if (!showCursor) return;
-    
+
     const cursorTimer = setInterval(() => {
-      setShowCursorState(prev => !prev);
+      setShowCursorState((prev) => !prev);
     }, 500);
 
     return () => clearInterval(cursorTimer);

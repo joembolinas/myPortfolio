@@ -18,7 +18,7 @@ export const useActiveSection = (sectionIds: string[]) => {
 
     const observer = new IntersectionObserver(handleIntersection, {
       threshold: 0.3, // Trigger when 30% of section is visible
-      rootMargin: '-10% 0px -10% 0px' // Add some margin for better UX
+      rootMargin: '-10% 0px -10% 0px', // Add some margin for better UX
     });
 
     // Observe all sections

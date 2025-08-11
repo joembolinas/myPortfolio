@@ -14,14 +14,14 @@ export const HoverLift = ({
   className = '',
   liftHeight = 8,
   glowIntensity = 'medium',
-  disabled = false
+  disabled = false,
 }: HoverLiftProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const glowShadows = {
     subtle: '0 4px 20px rgba(59, 130, 246, 0.15)',
     medium: '0 8px 30px rgba(59, 130, 246, 0.25)',
-    strong: '0 12px 40px rgba(59, 130, 246, 0.35)'
+    strong: '0 12px 40px rgba(59, 130, 246, 0.35)',
   };
 
   const variants = {
@@ -31,8 +31,8 @@ export const HoverLift = ({
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
       transition: {
         duration: 0.3,
-        ease: [0.25, 0.4, 0.25, 1]
-      }
+        ease: [0.25, 0.4, 0.25, 1],
+      },
     },
     hover: {
       y: -liftHeight,
@@ -40,9 +40,9 @@ export const HoverLift = ({
       boxShadow: glowShadows[glowIntensity],
       transition: {
         duration: 0.3,
-        ease: [0.25, 0.4, 0.25, 1]
-      }
-    }
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    },
   };
 
   if (disabled) {
@@ -59,11 +59,11 @@ export const HoverLift = ({
       className={`cursor-pointer ${className}`}
       style={{
         borderRadius: '0.75rem', // rounded-xl
-        transformOrigin: 'center'
+        transformOrigin: 'center',
       }}
     >
       {children}
-      
+
       {/* Optional glow overlay for enhanced effect */}
       {isHovered && (
         <motion.div
@@ -79,7 +79,13 @@ export const HoverLift = ({
 };
 
 // Specialized version for project cards
-export const ProjectCardHover = ({ children, className = '' }: { children: ReactNode; className?: string }) => {
+export const ProjectCardHover = ({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
   return (
     <HoverLift
       liftHeight={12}
@@ -92,13 +98,15 @@ export const ProjectCardHover = ({ children, className = '' }: { children: React
 };
 
 // Specialized version for skill cards
-export const SkillCardHover = ({ children, className = '' }: { children: ReactNode; className?: string }) => {
+export const SkillCardHover = ({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
   return (
-    <HoverLift
-      liftHeight={6}
-      glowIntensity="subtle"
-      className={`relative ${className}`}
-    >
+    <HoverLift liftHeight={6} glowIntensity="subtle" className={`relative ${className}`}>
       {children}
     </HoverLift>
   );

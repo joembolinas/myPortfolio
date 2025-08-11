@@ -1,5 +1,3 @@
-# 📚 Enhanced README Template - Growth Journey Portfolio
-
 [![Lighthouse Performance](https://img.shields.io/badge/Lighthouse-Performance%2090%2B-brightgreen?style=for-the-badge&logo=lighthouse)](https://growth-journey-portfolio.vercel.app)
 [![Lighthouse Accessibility](https://img.shields.io/badge/Lighthouse-Accessibility%2090%2B-brightgreen?style=for-the-badge&logo=lighthouse)](https://growth-journey-portfolio.vercel.app)
 [![WCAG AA Compliant](https://img.shields.io/badge/WCAG-AA%20Compliant-blue?style=for-the-badge)](https://www.w3.org/WAI/WCAG21/quickref/)
@@ -24,22 +22,34 @@
 
 ## 🎯 Project Overview
 
-**🌟 Current Status: Phase 2.2 COMPLETED ✅ - Animation System & User Corrections Implemented**
+**🌟 Current Status: Phase 2.3 COMPLETED ✅ - GitHub API Integration Implemented**
 
-Welcome to my portfolio — a chronicle of professional transformation from SNR Admin/Procurement to emerging technology professional.
+Welcome to my portfolio — a chronicle of professional transformation from SNR Admin/Procurement to
+emerging technology professional.
 
-This project represents more than a portfolio—it's a strategic career transition tool built with modern web technologies and a performance-first mindset. Thoughtfully crafted to emphasize accessibility, user experience, and technical excellence, it mirrors my approach to both learning and professional practice: methodical, purposeful, and growth-oriented.
+This project represents more than a portfolio—it's a strategic career transition tool built with
+modern web technologies and a performance-first mindset. Thoughtfully crafted to emphasize
+accessibility, user experience, and technical excellence, it mirrors my approach to both learning
+and professional practice: methodical, purposeful, and growth-oriented.
 
-### 🏆 Phase 2.2 Achievements (COMPLETED)
+### 🏆 Phase 2.3 Achievements (COMPLETED - August 11, 2025)
 
-- ✅ **Animation System** - Complete Framer Motion integration with Microsoft Viva-inspired effects
-- ✅ **Performance Optimization** - Device-adaptive animations with 70:30 performance ratio
-- ✅ **Interactive Components** - Expandable learning journey timeline (12 cards), blog filtering
-- ✅ **Background Design** - Particle background (Hero) + Moving squares (Projects→Contact)
-- ✅ **Skills Architecture** - 4 categories: Development, Network & CyberSec, Data Analytics, AI & ML
-- ✅ **Project Structure** - Featured projects + Mini projects (converter, cheatsheet, calculator, todo)
-- ✅ **User Feedback Integration** - All requested corrections implemented exactly
-- ✅ **Code Quality** - TypeScript strict mode, component optimization, clean architecture
+- ✅ **GitHub API Integration** - Complete REST API service with authentication and caching
+- ✅ **Live Data Display** - Real-time repository stats, contribution charts, activity tracking
+- ✅ **Professional Components** - GitHubStats, GitHubRepos, GitHubContributions with animations
+- ✅ **Custom React Hooks** - Optimized data fetching with loading states and error handling
+- ✅ **Tabbed Interface** - Overview/Repositories/Activity sections with smooth transitions
+- ✅ **Performance Maintained** - 70:30 ratio preserved with intelligent caching strategies
+- ✅ **Environment Setup** - Complete configuration for API authentication and rate limiting
+
+### 🏆 Previous Phase Achievements
+
+**Phase 2.2 (Animation System):**
+
+- ✅ Complete Framer Motion integration with Microsoft Viva-inspired effects
+- ✅ Device-adaptive animations with performance optimization
+- ✅ Interactive timeline, particle backgrounds, expandable cards
+- ✅ Skills architecture and project showcase structure
 
 ### 🎯 Confirmed Technical Approach
 
@@ -55,8 +65,10 @@ This project represents more than a portfolio—it's a strategic career transiti
 
 ### 🎨 Core Portfolio Features
 
-- **Interactive Career Timeline** - Visual progression from admin/procurement to tech journey with milestone markers
-- **Skills Progression Visualization** - Dynamic tracking of learning journey (TryHackMe, roadmap.sh, LeetCode)
+- **Interactive Career Timeline** - Visual progression from admin/procurement to tech journey with
+  milestone markers
+- **Skills Progression Visualization** - Dynamic tracking of learning journey (TryHackMe,
+  roadmap.sh, LeetCode)
 - **Real-time GitHub Integration** - Live contribution visualization and repository showcase
 - **Project Showcase** - Curated portfolio with live demos, GitHub links, and technical deep-dives
 - **Blog System** - Regular updates on learning journey, technical insights, and career development
@@ -66,7 +78,8 @@ This project represents more than a portfolio—it's a strategic career transiti
 
 ### 🔧 Technical Features
 
-- **Performance Optimization** - Code splitting, lazy loading, image optimization (90+ Lighthouse scores)
+- **Performance Optimization** - Code splitting, lazy loading, image optimization (90+ Lighthouse
+  scores)
 - **SEO Excellence** - Meta tags, structured data, sitemap generation for discoverability
 - **Accessibility First** - Screen reader support, keyboard navigation, WCAG AA compliance
 - **Progressive Enhancement** - Works on all browsers with graceful degradation
@@ -148,8 +161,8 @@ npm run a11y-test
 
 ### Core Technologies
 
-| Technology                                   | Version | Purpose      |
-| -------------------------------------------- | ------- | ------------ |
+| Technology                                      | Version | Purpose      |
+| ----------------------------------------------- | ------- | ------------ |
 | [React](https://reactjs.org/)                   | 18+     | UI Framework |
 | [TypeScript](https://www.typescriptlang.org/)   | 5.0+    | Type Safety  |
 | [Vite](https://vitejs.dev/)                     | 5.0+    | Build Tool   |
@@ -481,7 +494,8 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ### Project Feedback
 
 - **Issues:** [GitHub Issues](https://github.com/your-username/growth-journey-portfolio/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/your-username/growth-journey-portfolio/discussions)
+- **Discussions:**
+  [GitHub Discussions](https://github.com/your-username/growth-journey-portfolio/discussions)
 - **Feedback Form:** Available on the live website
 
 ---
@@ -508,7 +522,8 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 🔌 MCP GitHub Integration (Automation)
 
-You can enable the GitHub Model Context Protocol (MCP) server (used by Copilot Chat) without manual editing.
+You can enable the GitHub Model Context Protocol (MCP) server (used by Copilot Chat) without manual
+editing.
 
 ### Quick Setup (PowerShell – recommended)
 
@@ -516,13 +531,15 @@ You can enable the GitHub Model Context Protocol (MCP) server (used by Copilot C
 # From project root
 pwsh ./scripts/setup-mcp-github.ps1
 ```
+
 You will be asked for a Personal Access Token (classic). Scopes usually needed:
+
 - repo
 - read:user
-- user:email
-(Add gist if you want gist access, read:org if querying org data.)
+- user:email (Add gist if you want gist access, read:org if querying org data.)
 
 What the script does:
+
 1. Validates the token against https://api.github.com/user
 2. Stores it as a user environment variable GITHUB_TOKEN (persistent) – NOT committed
 3. Creates / updates `.vscode/mcp.json` referencing `${env:GITHUB_TOKEN}`
@@ -531,20 +548,25 @@ What the script does:
 Then reload VS Code and run: Command Palette → Check MCP Setup
 
 ### Batch Alternative (CMD)
+
 ```cmd
 scripts\setup-mcp-github.bat
 ```
+
 Same behavior but simpler output.
 
 ### Security Notes
+
 - Do NOT commit your token. It never gets written to repo files.
 - To rotate: create a new token, re-run the script, then revoke the old one in GitHub settings.
-- To remove: delete the user env var GITHUB_TOKEN (System Properties → Environment Variables) and restart VS Code.
+- To remove: delete the user env var GITHUB_TOKEN (System Properties → Environment Variables) and
+  restart VS Code.
 
 ### Troubleshooting
-| Symptom | Fix |
-| ------ | ---- |
-| Bad credentials | Token typo or missing scope – create new classic token with listed scopes |
-| Still unauthenticated after running | Fully close VS Code (not just window reload) so new env var loads |
-| Fine-grained token fails | Ensure it includes the specific repo + metadata read permissions or switch to classic |
-| Rate limit low | Wait / create new token if necessary |
+
+| Symptom                             | Fix                                                                                   |
+| ----------------------------------- | ------------------------------------------------------------------------------------- |
+| Bad credentials                     | Token typo or missing scope – create new classic token with listed scopes             |
+| Still unauthenticated after running | Fully close VS Code (not just window reload) so new env var loads                     |
+| Fine-grained token fails            | Ensure it includes the specific repo + metadata read permissions or switch to classic |
+| Rate limit low                      | Wait / create new token if necessary                                                  |

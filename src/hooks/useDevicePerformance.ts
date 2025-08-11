@@ -17,7 +17,7 @@ export const useDevicePerformance = (): DevicePerformance => {
     isLowEnd: false,
     connectionSpeed: 'unknown',
     reducedMotion: false,
-    shouldReduceAnimations: false
+    shouldReduceAnimations: false,
   });
 
   useEffect(() => {
@@ -30,30 +30,36 @@ export const useDevicePerformance = (): DevicePerformance => {
       const deviceMemory = navigator.deviceMemory || 4; // Default to 4GB if not available
 
       // Detect network connection
-      const connection = (navigator.connection || navigator.mozConnection || navigator.webkitConnection) as any;
-      const connectionSpeed = connection ? 
-        (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g' ? 'slow' : 'fast') : 
-        'unknown';
+      const connection = (navigator.connection ||
+        navigator.mozConnection ||
+        navigator.webkitConnection) as any;
+      const connectionSpeed = connection
+        ? connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g'
+          ? 'slow'
+          : 'fast'
+        : 'unknown';
 
       // Detect if device is low-end based on multiple factors
-      const isLowEnd = 
+      const isLowEnd =
         deviceMemory < 2 || // Less than 2GB RAM
         connectionSpeed === 'slow' ||
         navigator.hardwareConcurrency < 4; // Less than 4 CPU cores
 
       // Get memory info if available (Chrome only)
-      const memoryInfo = (performance as any).memory ? {
-        totalJSHeapSize: (performance as any).memory.totalJSHeapSize,
-        usedJSHeapSize: (performance as any).memory.usedJSHeapSize,
-        jsHeapSizeLimit: (performance as any).memory.jsHeapSizeLimit
-      } : undefined;
+      const memoryInfo = (performance as any).memory
+        ? {
+            totalJSHeapSize: (performance as any).memory.totalJSHeapSize,
+            usedJSHeapSize: (performance as any).memory.usedJSHeapSize,
+            jsHeapSizeLimit: (performance as any).memory.jsHeapSizeLimit,
+          }
+        : undefined;
 
       setPerformance({
         isLowEnd,
         memoryInfo,
         connectionSpeed,
         reducedMotion: prefersReducedMotion,
-        shouldReduceAnimations: isLowEnd || prefersReducedMotion
+        shouldReduceAnimations: isLowEnd || prefersReducedMotion,
       });
     };
 
@@ -62,7 +68,7 @@ export const useDevicePerformance = (): DevicePerformance => {
     // Listen for changes in reduced motion preference
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const handleChange = () => detectPerformance();
-    
+
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
@@ -83,26 +89,26 @@ export const useFrameRate = () => {
     const measureFPS = () => {
       frameCount++;
       const currentTime = performance.now();
-      
+
       if (currentTime >= lastTime + 1000) {
         const currentFPS = Math.round((frameCount * 1000) / (currentTime - lastTime));
         fpsArray.push(currentFPS);
-        
+
         // Keep only last 10 measurements
         if (fpsArray.length > 10) {
           fpsArray = fpsArray.slice(-10);
         }
-        
+
         const avgFPS = fpsArray.reduce((a, b) => a + b, 0) / fpsArray.length;
         setFps(Math.round(avgFPS));
-        
+
         // Consider stable if FPS is consistently above 30
         setIsStable(avgFPS > 30);
-        
+
         frameCount = 0;
         lastTime = currentTime;
       }
-      
+
       requestAnimationFrame(measureFPS);
     };
 
@@ -125,7 +131,7 @@ export const useAdaptiveAnimations = () => {
         particles: false,
         heavyEffects: false,
         staggerDelay: 0.05,
-        quality: 'low'
+        quality: 'low',
       };
     }
 
@@ -135,7 +141,7 @@ export const useAdaptiveAnimations = () => {
         particles: false,
         heavyEffects: false,
         staggerDelay: 0.08,
-        quality: 'medium'
+        quality: 'medium',
       };
     }
 
@@ -144,7 +150,7 @@ export const useAdaptiveAnimations = () => {
       particles: true,
       heavyEffects: true,
       staggerDelay: 0.1,
-      quality: 'high'
+      quality: 'high',
     };
   };
 
@@ -152,6 +158,6 @@ export const useAdaptiveAnimations = () => {
     ...devicePerf,
     fps,
     isStable,
-    config: getAnimationConfig()
+    config: getAnimationConfig(),
   };
 };

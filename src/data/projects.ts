@@ -9,7 +9,7 @@ export const projects: Project[] = [
     technologies: ['React', 'Node.js', 'MongoDB'],
     gradient: 'from-blue-500 to-cyan-500',
     demoUrl: '#',
-    sourceUrl: '#'
+    sourceUrl: '#',
   },
   {
     id: 'task-management',
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     technologies: ['React', 'Socket.io', 'PostgreSQL'],
     gradient: 'from-purple-500 to-pink-500',
     demoUrl: '#',
-    sourceUrl: '#'
+    sourceUrl: '#',
   },
   {
     id: 'weather-dashboard',
@@ -27,6 +27,6 @@ export const projects: Project[] = [
     technologies: ['JavaScript', 'API Integration', 'CSS3'],
     gradient: 'from-green-500 to-teal-500',
     demoUrl: '#',
-    sourceUrl: '#'
-  }
+    sourceUrl: '#',
+  },
 ];

@@ -9,17 +9,13 @@ interface ScrollAnimationConfig {
 }
 
 export const useScrollAnimation = (config: ScrollAnimationConfig = {}) => {
-  const {
-    threshold = 0.1,
-    rootMargin = "-10% 0px -10% 0px",
-    triggerOnce = true
-  } = config;
+  const { threshold = 0.1, rootMargin = '-10% 0px -10% 0px', triggerOnce = true } = config;
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: triggerOnce,
     margin: rootMargin,
-    amount: threshold
+    amount: threshold,
   });
 
   return { ref, isInView };
@@ -32,7 +28,8 @@ export const useScrollProgress = () => {
   useEffect(() => {
     const updateScrollProgress = () => {
       const scrollPx = document.documentElement.scrollTop;
-      const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const winHeightPx =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = scrollPx / winHeightPx;
       setScrollProgress(scrolled);
     };
@@ -56,28 +53,29 @@ export const useSectionProgress = (sectionRefs: React.RefObject<HTMLElement>[]) 
 
         const rect = ref.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        
+
         // Calculate how much of the section is visible
         const visibleTop = Math.max(0, -rect.top);
         const visibleBottom = Math.min(rect.height, windowHeight - rect.top);
         const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-        
+
         return visibleHeight / rect.height;
       });
 
       setSectionProgresses(progresses);
 
       // Find the section that's most visible
-      const mostVisibleIndex = progresses.reduce((maxIndex, current, index) => 
-        current > progresses[maxIndex] ? index : maxIndex, 0
+      const mostVisibleIndex = progresses.reduce(
+        (maxIndex, current, index) => (current > progresses[maxIndex] ? index : maxIndex),
+        0,
       );
-      
+
       setActiveSection(mostVisibleIndex);
     };
 
     window.addEventListener('scroll', updateSectionProgress, { passive: true });
     window.addEventListener('resize', updateSectionProgress, { passive: true });
-    
+
     // Initial calculation
     updateSectionProgress();
 
@@ -107,7 +105,7 @@ export const useScrollTrigger = (callback: (progress: number) => void, dependenc
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
     const progress = scrollY / (documentHeight - windowHeight);
-    
+
     callback(Math.max(0, Math.min(1, progress)));
   }, [scrollY, callback, ...(dependency || [])]);
 

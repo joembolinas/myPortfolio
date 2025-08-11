@@ -1,0 +1,16 @@
+# Ignore dependencies and build output
+node_modules
+.dist
+dist
+build
+coverage
+
+# Logs
+*.log
+
+# Generated assets
+public/resume/
+
+# Archives & legacy
+.archieved
+legacy

@@ -14,11 +14,11 @@ export const ContactSection: React.FC = () => {
     <section id="contact" className="py-20 px-4 relative bg-grid-pattern">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-16 text-blue-400">Get In Touch</h2>
-        
+
         {/* Contact methods grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {contactMethods.map((contact) => (
-            <div 
+            <div
               key={contact.type}
               className="bg-gray-700 p-6 rounded-xl hover:bg-gray-600 transition-colors duration-300 cursor-pointer"
               onClick={() => handleContactClick(contact.url)}
@@ -29,9 +29,9 @@ export const ContactSection: React.FC = () => {
             </div>
           ))}
         </div>
-        
+
         {/* Resume download button */}
-        <Button 
+        <Button
           variant="secondary"
           onClick={() => {
             // TODO: Replace with actual resume download link

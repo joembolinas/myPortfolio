@@ -7,22 +7,22 @@ export const contactMethods: ContactMethod[] = [
     icon: '📧',
     label: 'Email',
     value: 'bolinasjoem@gmail.com',
-    url: 'mailto:bolinasjoem@gmail.com'
+    url: 'mailto:bolinasjoem@gmail.com',
   },
   {
     type: 'linkedin',
     icon: '💼',
     label: 'LinkedIn',
     value: 'linkedin.com/in/joem',
-    url: 'https://linkedin.com/in/joembolinas'
+    url: 'https://linkedin.com/in/joembolinas',
   },
   {
     type: 'github',
     icon: '💻',
     label: 'GitHub',
     value: 'github.com/joembolinas',
-    url: 'https://github.com/joembolinas'
-  }
+    url: 'https://github.com/joembolinas',
+  },
 ];
 
 // TODO: SOON WILL ADD tryhackme, leetcode, roadmap.sh
@@ -33,6 +33,7 @@ export const navigationItems: NavigationItem[] = [
   { id: 'about', label: 'about', href: '#about' },
   { id: 'projects', label: 'projects', href: '#projects' },
   { id: 'learning-journey', label: 'journey', href: '#learning-journey' },
+  { id: 'github', label: 'github', href: '#github' },
   { id: 'blog', label: 'blog', href: '#blog' },
-  { id: 'contact', label: 'contact', href: '#contact' }
+  { id: 'contact', label: 'contact', href: '#contact' },
 ];

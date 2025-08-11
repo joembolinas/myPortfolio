@@ -15,18 +15,18 @@ export const ProgressiveReveal = ({
   className = '',
   staggerDelay = 0.1,
   animationType = 'fade',
-  direction = 'up'
+  direction = 'up',
 }: ProgressiveRevealProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { 
-    once: true, 
-    margin: "-10% 0px -10% 0px" 
+  const isInView = useInView(ref, {
+    once: true,
+    margin: '-10% 0px -10% 0px',
   });
 
   const getVariants = () => {
     const baseTransition = {
       duration: 0.6,
-      ease: [0.25, 0.4, 0.25, 1]
+      ease: [0.25, 0.4, 0.25, 1],
     };
 
     switch (animationType) {
@@ -34,10 +34,14 @@ export const ProgressiveReveal = ({
         const slideDistance = 50;
         const getSlideInitial = () => {
           switch (direction) {
-            case 'up': return { y: slideDistance, opacity: 0 };
-            case 'down': return { y: -slideDistance, opacity: 0 };
-            case 'left': return { x: slideDistance, opacity: 0 };
-            case 'right': return { x: -slideDistance, opacity: 0 };
+            case 'up':
+              return { y: slideDistance, opacity: 0 };
+            case 'down':
+              return { y: -slideDistance, opacity: 0 };
+            case 'left':
+              return { x: slideDistance, opacity: 0 };
+            case 'right':
+              return { x: -slideDistance, opacity: 0 };
           }
         };
         return {
@@ -45,9 +49,9 @@ export const ProgressiveReveal = ({
             hidden: {},
             visible: {
               transition: {
-                staggerChildren: staggerDelay
-              }
-            }
+                staggerChildren: staggerDelay,
+              },
+            },
           },
           item: {
             hidden: getSlideInitial(),
@@ -55,9 +59,9 @@ export const ProgressiveReveal = ({
               x: 0,
               y: 0,
               opacity: 1,
-              transition: baseTransition
-            }
-          }
+              transition: baseTransition,
+            },
+          },
         };
 
       case 'scale':
@@ -66,18 +70,18 @@ export const ProgressiveReveal = ({
             hidden: {},
             visible: {
               transition: {
-                staggerChildren: staggerDelay
-              }
-            }
+                staggerChildren: staggerDelay,
+              },
+            },
           },
           item: {
             hidden: { scale: 0.8, opacity: 0 },
             visible: {
               scale: 1,
               opacity: 1,
-              transition: baseTransition
-            }
-          }
+              transition: baseTransition,
+            },
+          },
         };
 
       case 'rotate':
@@ -86,9 +90,9 @@ export const ProgressiveReveal = ({
             hidden: {},
             visible: {
               transition: {
-                staggerChildren: staggerDelay
-              }
-            }
+                staggerChildren: staggerDelay,
+              },
+            },
           },
           item: {
             hidden: { rotate: -10, scale: 0.9, opacity: 0 },
@@ -96,9 +100,9 @@ export const ProgressiveReveal = ({
               rotate: 0,
               scale: 1,
               opacity: 1,
-              transition: baseTransition
-            }
-          }
+              transition: baseTransition,
+            },
+          },
         };
 
       default: // fade
@@ -107,17 +111,17 @@ export const ProgressiveReveal = ({
             hidden: {},
             visible: {
               transition: {
-                staggerChildren: staggerDelay
-              }
-            }
+                staggerChildren: staggerDelay,
+              },
+            },
           },
           item: {
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: baseTransition
-            }
-          }
+              transition: baseTransition,
+            },
+          },
         };
     }
   };
@@ -130,14 +134,11 @@ export const ProgressiveReveal = ({
       ref={ref}
       variants={variants.container}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={isInView ? 'visible' : 'hidden'}
       className={className}
     >
       {childrenArray.map((child, index) => (
-        <motion.div
-          key={index}
-          variants={variants.item}
-        >
+        <motion.div key={index} variants={variants.item}>
           {child}
         </motion.div>
       ))}
@@ -146,19 +147,19 @@ export const ProgressiveReveal = ({
 };
 
 // Specialized component for revealing text lines
-export const RevealLines = ({ 
-  lines, 
+export const RevealLines = ({
+  lines,
   className = '',
   lineClassName = '',
-  staggerDelay = 0.2 
-}: { 
-  lines: string[]; 
+  staggerDelay = 0.2,
+}: {
+  lines: string[];
   className?: string;
   lineClassName?: string;
   staggerDelay?: number;
 }) => {
   return (
-    <ProgressiveReveal 
+    <ProgressiveReveal
       className={className}
       staggerDelay={staggerDelay}
       animationType="slide"
@@ -174,19 +175,19 @@ export const RevealLines = ({
 };
 
 // Specialized component for revealing cards/items
-export const RevealCards = ({ 
-  children, 
+export const RevealCards = ({
+  children,
   className = '',
   columns = 3,
-  staggerDelay = 0.1 
-}: { 
-  children: ReactNode; 
+  staggerDelay = 0.1,
+}: {
+  children: ReactNode;
   className?: string;
   columns?: number;
   staggerDelay?: number;
 }) => {
   return (
-    <ProgressiveReveal 
+    <ProgressiveReveal
       className={`grid grid-cols-1 md:grid-cols-${columns} gap-6 ${className}`}
       staggerDelay={staggerDelay}
       animationType="scale"

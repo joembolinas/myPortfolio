@@ -23,7 +23,7 @@ export const LearningJourneySection: React.FC = () => {
       work: '💼',
       skill: '🛠️',
       project: '🚀',
-      certification: '📜'
+      certification: '📜',
     };
     return icons[category];
   };
@@ -39,14 +39,12 @@ export const LearningJourneySection: React.FC = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <FadeInOnScroll>
           <div className="text-center mb-16">
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
-            >
+            <motion.h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               My Learning Journey
             </motion.h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From administrative excellence to technical proficiency - every step tells a story of growth, 
-              curiosity, and the determination to build a meaningful career in technology.
+              From administrative excellence to technical proficiency - every step tells a story of
+              growth, curiosity, and the determination to build a meaningful career in technology.
             </p>
           </div>
         </FadeInOnScroll>
@@ -60,24 +58,21 @@ export const LearningJourneySection: React.FC = () => {
           <div className="space-y-8">
             {displayedItems.map((item, index) => (
               <FadeInChild key={item.id}>
-                <div className={`flex items-start gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } flex-col md:items-center`}>
-                  
+                <div
+                  className={`flex items-start gap-8 ${
+                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  } flex-col md:items-center`}
+                >
                   {/* Timeline dot */}
                   <div className="absolute left-4 md:left-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transform md:-translate-x-1/2 flex items-center justify-center z-10">
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
 
                   {/* Content */}
-                  <div className={`flex-1 ml-12 md:ml-0 ${
-                    index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'
-                  }`}>
-                    <HoverLift 
-                      liftHeight={6} 
-                      glowIntensity="medium"
-                      className="relative"
-                    >
+                  <div
+                    className={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}
+                  >
+                    <HoverLift liftHeight={6} glowIntensity="medium" className="relative">
                       <motion.div
                         layout
                         className="bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 cursor-pointer"
@@ -86,7 +81,9 @@ export const LearningJourneySection: React.FC = () => {
                         {/* Card header */}
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex items-center gap-3">
-                            <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-lg flex items-center justify-center text-2xl`}>
+                            <div
+                              className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-lg flex items-center justify-center text-2xl`}
+                            >
                               {item.icon}
                             </div>
                             <div>
@@ -99,7 +96,7 @@ export const LearningJourneySection: React.FC = () => {
                               <h3 className="text-xl font-semibold text-white">{item.title}</h3>
                             </div>
                           </div>
-                          
+
                           <motion.div
                             animate={{ rotate: expandedCard === item.id ? 180 : 0 }}
                             transition={{ duration: 0.3 }}
@@ -125,7 +122,9 @@ export const LearningJourneySection: React.FC = () => {
                               <div className="border-t border-gray-700 pt-4 space-y-4">
                                 {/* Overview */}
                                 <div>
-                                  <h4 className="text-lg font-semibold text-blue-400 mb-2">Overview</h4>
+                                  <h4 className="text-lg font-semibold text-blue-400 mb-2">
+                                    Overview
+                                  </h4>
                                   <p className="text-gray-300 text-sm leading-relaxed">
                                     {item.expandedContent.overview}
                                   </p>
@@ -133,10 +132,15 @@ export const LearningJourneySection: React.FC = () => {
 
                                 {/* Key learnings */}
                                 <div>
-                                  <h4 className="text-lg font-semibold text-emerald-400 mb-2">Key Learnings</h4>
+                                  <h4 className="text-lg font-semibold text-emerald-400 mb-2">
+                                    Key Learnings
+                                  </h4>
                                   <ul className="space-y-1">
                                     {item.expandedContent.keyLearnings.map((learning, idx) => (
-                                      <li key={idx} className="text-gray-300 text-sm flex items-start gap-2">
+                                      <li
+                                        key={idx}
+                                        className="text-gray-300 text-sm flex items-start gap-2"
+                                      >
                                         <span className="text-emerald-400 mt-1">•</span>
                                         {learning}
                                       </li>
@@ -147,10 +151,12 @@ export const LearningJourneySection: React.FC = () => {
                                 {/* Technologies */}
                                 {item.expandedContent.technologies && (
                                   <div>
-                                    <h4 className="text-lg font-semibold text-purple-400 mb-2">Technologies</h4>
+                                    <h4 className="text-lg font-semibold text-purple-400 mb-2">
+                                      Technologies
+                                    </h4>
                                     <div className="flex flex-wrap gap-2">
                                       {item.expandedContent.technologies.map((tech, idx) => (
-                                        <span 
+                                        <span
                                           key={idx}
                                           className="text-xs px-2 py-1 bg-purple-500/20 text-purple-300 rounded-full"
                                         >
@@ -164,10 +170,15 @@ export const LearningJourneySection: React.FC = () => {
                                 {/* Achievements */}
                                 {item.expandedContent.achievements && (
                                   <div>
-                                    <h4 className="text-lg font-semibold text-yellow-400 mb-2">Achievements</h4>
+                                    <h4 className="text-lg font-semibold text-yellow-400 mb-2">
+                                      Achievements
+                                    </h4>
                                     <ul className="space-y-1">
                                       {item.expandedContent.achievements.map((achievement, idx) => (
-                                        <li key={idx} className="text-gray-300 text-sm flex items-start gap-2">
+                                        <li
+                                          key={idx}
+                                          className="text-gray-300 text-sm flex items-start gap-2"
+                                        >
                                           <span className="text-yellow-400 mt-1">★</span>
                                           {achievement}
                                         </li>
@@ -179,10 +190,15 @@ export const LearningJourneySection: React.FC = () => {
                                 {/* Challenges */}
                                 {item.expandedContent.challenges && (
                                   <div>
-                                    <h4 className="text-lg font-semibold text-red-400 mb-2">Challenges</h4>
+                                    <h4 className="text-lg font-semibold text-red-400 mb-2">
+                                      Challenges
+                                    </h4>
                                     <ul className="space-y-1">
                                       {item.expandedContent.challenges.map((challenge, idx) => (
-                                        <li key={idx} className="text-gray-300 text-sm flex items-start gap-2">
+                                        <li
+                                          key={idx}
+                                          className="text-gray-300 text-sm flex items-start gap-2"
+                                        >
                                           <span className="text-red-400 mt-1">⚡</span>
                                           {challenge}
                                         </li>
@@ -194,10 +210,15 @@ export const LearningJourneySection: React.FC = () => {
                                 {/* Next steps */}
                                 {item.expandedContent.nextSteps && (
                                   <div>
-                                    <h4 className="text-lg font-semibold text-cyan-400 mb-2">Next Steps</h4>
+                                    <h4 className="text-lg font-semibold text-cyan-400 mb-2">
+                                      Next Steps
+                                    </h4>
                                     <ul className="space-y-1">
                                       {item.expandedContent.nextSteps.map((step, idx) => (
-                                        <li key={idx} className="text-gray-300 text-sm flex items-start gap-2">
+                                        <li
+                                          key={idx}
+                                          className="text-gray-300 text-sm flex items-start gap-2"
+                                        >
                                           <span className="text-cyan-400 mt-1">→</span>
                                           {step}
                                         </li>
@@ -246,18 +267,20 @@ export const LearningJourneySection: React.FC = () => {
             <h3 className="text-2xl font-semibold text-center text-white mb-8">Journey Summary</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold text-blue-400 mb-2">{learningJourney.length}</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">
+                  {learningJourney.length}
+                </div>
                 <div className="text-gray-300 text-sm">Learning Milestones</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-emerald-400 mb-2">
-                  {learningJourney.filter(item => item.category === 'skill').length}
+                  {learningJourney.filter((item) => item.category === 'skill').length}
                 </div>
                 <div className="text-gray-300 text-sm">Skills Developed</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-purple-400 mb-2">
-                  {learningJourney.filter(item => item.category === 'project').length}
+                  {learningJourney.filter((item) => item.category === 'project').length}
                 </div>
                 <div className="text-gray-300 text-sm">Projects Completed</div>
               </div>
