@@ -50,6 +50,7 @@ export interface ButtonProps {
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export interface CardProps {
@@ -63,4 +64,27 @@ export interface SectionProps {
   id: string;
   children: React.ReactNode;
   className?: string;
+}
+
+// Contact form types
+export interface ContactFormData {
+  name: string;
+  email: string;
+  subject?: string;
+  message: string;
+  // Honeypot field (should remain empty)
+  company?: string;
+}
+
+export interface ContactFormState extends ContactFormData {
+  status: 'idle' | 'validating' | 'submitting' | 'success' | 'error';
+  errors: Partial<Record<keyof ContactFormData, string>>;
+  lastSubmittedAt?: number;
+}
+
+export interface ContactSubmitResult {
+  ok: boolean;
+  id?: string;
+  error?: string;
+  receivedAt: number;
 }

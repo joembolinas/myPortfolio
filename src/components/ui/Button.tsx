@@ -1,14 +1,15 @@
 import React from 'react';
 import { ButtonProps } from '@/types';
 
-// Reusable button component with variants matching our design
-export const Button: React.FC<ButtonProps> = ({
+// Reusable button component with variants matching our design - optimized with React.memo
+export const Button: React.FC<ButtonProps> = React.memo(({
   children,
   variant = 'primary',
   size = 'md',
   onClick,
   className = '',
   disabled = false,
+  type = 'button',
 }) => {
   // Base styles that all buttons share
   const baseStyles =
@@ -34,6 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      type={type}
       onClick={!disabled ? onClick : undefined}
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${disabledStyles} ${className}`}
       disabled={disabled}
@@ -41,4 +43,6 @@ export const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
+});
+
+Button.displayName = 'Button';
