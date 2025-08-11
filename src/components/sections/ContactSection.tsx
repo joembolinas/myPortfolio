@@ -9,7 +9,6 @@ export const ContactSection: React.FC = () => {
     state,
     update,
     submit,
-    reset,
     isSubmitting,
     isSuccess,
     isError,
@@ -27,9 +26,14 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 relative bg-grid-pattern">
+    <section
+      id="contact"
+      className="py-20 px-4 relative bg-grid-pattern"
+      aria-labelledby="contact-heading"
+      role="contentinfo"
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-16 text-center text-blue-400">Get In Touch</h2>
+        <h2 id="contact-heading" className="text-4xl font-bold mb-16 text-center text-blue-400">Get In Touch</h2>
 
         {/* Contact methods grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -47,24 +51,25 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="max-w-2xl mx-auto mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-center">Send a Message</h3>
+        <div className="max-w-2xl mx-auto mb-16" aria-labelledby="contact-form-heading">
+          <h3 id="contact-form-heading" className="text-2xl font-semibold mb-8 text-center">Send a Message</h3>
           
           {/* Status Messages */}
-          <div className="mb-6" aria-live="polite" aria-atomic="true">
+      <div className="mb-6" aria-live="polite" aria-atomic="true">
             {isSuccess && (
-              <div className="bg-green-600 text-white p-4 rounded-lg text-center">
+        <div className="bg-green-600 text-white p-4 rounded-lg text-center" role="alert">
                 Message sent successfully! I'll get back to you soon.
               </div>
             )}
             {isError && Object.keys(state.errors).length > 0 && (
-              <div className="bg-red-600 text-white p-4 rounded-lg text-center">
+        <div className="bg-red-600 text-white p-4 rounded-lg text-center" role="alert">
                 Please fix the errors below and try again.
               </div>
             )}
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" noValidate aria-describedby="form-instructions" role="form">
+      <p id="form-instructions" className="sr-only">Fields marked with * are required.</p>
             {/* Name Field */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -78,9 +83,11 @@ export const ContactSection: React.FC = () => {
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors"
                 placeholder="Your full name"
                 required
+        aria-invalid={!!state.errors.name}
+        aria-describedby={state.errors.name ? 'name-error' : undefined}
               />
               {state.errors.name && (
-                <p className="text-red-400 text-sm mt-1">{state.errors.name}</p>
+        <p id="name-error" className="text-red-400 text-sm mt-1">{state.errors.name}</p>
               )}
             </div>
 
@@ -97,9 +104,11 @@ export const ContactSection: React.FC = () => {
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors"
                 placeholder="your.email@example.com"
                 required
+                aria-invalid={!!state.errors.email}
+                aria-describedby={state.errors.email ? 'email-error' : undefined}
               />
               {state.errors.email && (
-                <p className="text-red-400 text-sm mt-1">{state.errors.email}</p>
+                <p id="email-error" className="text-red-400 text-sm mt-1">{state.errors.email}</p>
               )}
             </div>
 
@@ -115,9 +124,11 @@ export const ContactSection: React.FC = () => {
                 onChange={(e) => update('subject', e.target.value)}
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors"
                 placeholder="What's this about?"
+                aria-invalid={!!state.errors.subject}
+                aria-describedby={state.errors.subject ? 'subject-error' : undefined}
               />
               {state.errors.subject && (
-                <p className="text-red-400 text-sm mt-1">{state.errors.subject}</p>
+                <p id="subject-error" className="text-red-400 text-sm mt-1">{state.errors.subject}</p>
               )}
             </div>
 
@@ -134,9 +145,11 @@ export const ContactSection: React.FC = () => {
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors resize-vertical"
                 placeholder="Tell me about your project, question, or just say hi!"
                 required
+                aria-invalid={!!state.errors.message}
+                aria-describedby={state.errors.message ? 'message-error' : undefined}
               />
               {state.errors.message && (
-                <p className="text-red-400 text-sm mt-1">{state.errors.message}</p>
+                <p id="message-error" className="text-red-400 text-sm mt-1">{state.errors.message}</p>
               )}
             </div>
 
