@@ -503,3 +503,48 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
     <a href="https://github.com/your-username/growth-journey-portfolio">⭐ Star on GitHub</a>
   </p>
 </div>
+
+---
+
+## 🔌 MCP GitHub Integration (Automation)
+
+You can enable the GitHub Model Context Protocol (MCP) server (used by Copilot Chat) without manual editing.
+
+### Quick Setup (PowerShell – recommended)
+
+```powershell
+# From project root
+pwsh ./scripts/setup-mcp-github.ps1
+```
+You will be asked for a Personal Access Token (classic). Scopes usually needed:
+- repo
+- read:user
+- user:email
+(Add gist if you want gist access, read:org if querying org data.)
+
+What the script does:
+1. Validates the token against https://api.github.com/user
+2. Stores it as a user environment variable GITHUB_TOKEN (persistent) – NOT committed
+3. Creates / updates `.vscode/mcp.json` referencing `${env:GITHUB_TOKEN}`
+4. Prints your remaining rate limit
+
+Then reload VS Code and run: Command Palette → Check MCP Setup
+
+### Batch Alternative (CMD)
+```cmd
+scripts\setup-mcp-github.bat
+```
+Same behavior but simpler output.
+
+### Security Notes
+- Do NOT commit your token. It never gets written to repo files.
+- To rotate: create a new token, re-run the script, then revoke the old one in GitHub settings.
+- To remove: delete the user env var GITHUB_TOKEN (System Properties → Environment Variables) and restart VS Code.
+
+### Troubleshooting
+| Symptom | Fix |
+| ------ | ---- |
+| Bad credentials | Token typo or missing scope – create new classic token with listed scopes |
+| Still unauthenticated after running | Fully close VS Code (not just window reload) so new env var loads |
+| Fine-grained token fails | Ensure it includes the specific repo + metadata read permissions or switch to classic |
+| Rate limit low | Wait / create new token if necessary |
