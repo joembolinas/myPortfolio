@@ -13,7 +13,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  category: 'dev' | 'network' | 'data' | 'tools' | 'learning';
+  category: 'dev' | 'network' | 'data' | 'ai' | 'tools' | 'learning';
   proficiency: 'beginner' | 'intermediate' | 'advanced';
   icon?: string;
 }

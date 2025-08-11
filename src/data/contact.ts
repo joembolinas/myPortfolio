@@ -27,11 +27,12 @@ export const contactMethods: ContactMethod[] = [
 
 // TODO: SOON WILL ADD tryhackme, leetcode, roadmap.sh
 
-// Navigation items matching our sections
+// Navigation items matching our enhanced sections
 export const navigationItems: NavigationItem[] = [
   { id: 'home', label: 'home', href: '#home' },
   { id: 'about', label: 'about', href: '#about' },
   { id: 'projects', label: 'projects', href: '#projects' },
-  { id: 'websites', label: 'websites', href: '#websites' },
+  { id: 'learning-journey', label: 'journey', href: '#learning-journey' },
+  { id: 'blog', label: 'blog', href: '#blog' },
   { id: 'contact', label: 'contact', href: '#contact' }
 ];
