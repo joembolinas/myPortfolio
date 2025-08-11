@@ -7,6 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2024-12-24
+
+### Added - Animation System Implementation
+- Complete Framer Motion animation system with Microsoft Viva-inspired effects
+- FadeInOnScroll component for scroll-triggered animations
+- HoverLift component with glow effects and card lifting
+- ParticleBackground component with interactive particles for HeroSection
+- MorphingText and CyclicText components for dynamic text animations
+- ProgressiveReveal component with staggered element reveals
+- useDevicePerformance and useAdaptiveAnimations hooks for performance optimization
+
+### Added - Enhanced Sections & Features
+- Interactive LearningJourneySection with 12 expandable timeline cards
+- Modern BlogSection with category filtering and status management
+- Enhanced ProjectsSection with Featured + Mini projects structure
+- Enhanced HeroSection with particle background and cycling career titles
+- Mini projects: Unit Converter, CSS Cheatsheet, Simple Calculator, Todo List
+- Enhanced ProjectCard component with hover animations and tech indicators
+
+### Changed - User Feedback Integration
+- Skills structure: Separated AI from Data Analytics (now 4 categories: Dev/Network/Data/AI)
+- Background design: Kept particle background in Hero, restored moving squares for Projects→Contact
+- Excluded AboutSection from background animations for clean design
+- Updated TypeScript interfaces to support new skill categories
+- Restructured projects layout following wireframe specifications
+
+### Removed
+- WebsitesSection component (completely removed from app)
+- Combined "Data Analytics & AI" category (separated into Data and AI)
+- Static background from sections that now use moving squares pattern
+
+### Performance
+- Implemented 70% Performance : 30% Visual Effects ratio as requested
+- Device-adaptive animation quality with automatic performance scaling
+- Optimized animations for smooth 60fps experience
+- Proper motion preference support for accessibility
+
+### Technical Improvements
+- Enhanced component architecture with proper TypeScript typing
+- Improved data structure for skills, learning journey, and blog posts
+- Updated navigation to match new section structure
+- Build optimization and error-free compilation
+
+## [2.1.0] - 2024-12-04
+
 ### Added
 - Directory restructuring and cleanup for better organization
 - MIT License (2025 Joem Bolinas)

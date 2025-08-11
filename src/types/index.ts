@@ -13,8 +13,9 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  category: 'frontend' | 'backend' | 'tools' | 'learning';
+  category: 'dev' | 'network' | 'data' | 'ai' | 'tools' | 'learning';
   proficiency: 'beginner' | 'intermediate' | 'advanced';
+  icon?: string;
 }
 
 export interface WebsiteType {
