@@ -11,7 +11,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 relative z-10">
+    <section id="contact" className="py-20 px-4 relative bg-grid-pattern">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-16 text-blue-400">Get In Touch</h2>
         
