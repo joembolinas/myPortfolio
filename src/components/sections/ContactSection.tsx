@@ -1,22 +1,38 @@
 import React from 'react';
 import { contactMethods } from '@/data/contact';
 import { Button } from '@/components/ui/Button';
+import { useContactForm } from '@/hooks/useContactForm';
 
-// Contact section with social links and resume download
+// Contact section with social links, contact form, and resume download
 export const ContactSection: React.FC = () => {
+  const {
+    state,
+    update,
+    submit,
+    reset,
+    isSubmitting,
+    isSuccess,
+    isError,
+  } = useContactForm();
+
   const handleContactClick = (url?: string) => {
     if (url) {
       window.open(url, '_blank');
     }
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await submit();
+  };
+
   return (
     <section id="contact" className="py-20 px-4 relative bg-grid-pattern">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-16 text-blue-400">Get In Touch</h2>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold mb-16 text-center text-blue-400">Get In Touch</h2>
 
         {/* Contact methods grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {contactMethods.map((contact) => (
             <div
               key={contact.type}
@@ -30,16 +46,134 @@ export const ContactSection: React.FC = () => {
           ))}
         </div>
 
+        {/* Contact Form */}
+        <div className="max-w-2xl mx-auto mb-16">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Send a Message</h3>
+          
+          {/* Status Messages */}
+          <div className="mb-6" aria-live="polite" aria-atomic="true">
+            {isSuccess && (
+              <div className="bg-green-600 text-white p-4 rounded-lg text-center">
+                Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+            {isError && Object.keys(state.errors).length > 0 && (
+              <div className="bg-red-600 text-white p-4 rounded-lg text-center">
+                Please fix the errors below and try again.
+              </div>
+            )}
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name Field */}
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium mb-2">
+                Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={state.name}
+                onChange={(e) => update('name', e.target.value)}
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors"
+                placeholder="Your full name"
+                required
+              />
+              {state.errors.name && (
+                <p className="text-red-400 text-sm mt-1">{state.errors.name}</p>
+              )}
+            </div>
+
+            {/* Email Field */}
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={state.email}
+                onChange={(e) => update('email', e.target.value)}
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors"
+                placeholder="your.email@example.com"
+                required
+              />
+              {state.errors.email && (
+                <p className="text-red-400 text-sm mt-1">{state.errors.email}</p>
+              )}
+            </div>
+
+            {/* Subject Field */}
+            <div>
+              <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                value={state.subject}
+                onChange={(e) => update('subject', e.target.value)}
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors"
+                placeholder="What's this about?"
+              />
+              {state.errors.subject && (
+                <p className="text-red-400 text-sm mt-1">{state.errors.subject}</p>
+              )}
+            </div>
+
+            {/* Message Field */}
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium mb-2">
+                Message *
+              </label>
+              <textarea
+                id="message"
+                value={state.message}
+                onChange={(e) => update('message', e.target.value)}
+                rows={6}
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors resize-vertical"
+                placeholder="Tell me about your project, question, or just say hi!"
+                required
+              />
+              {state.errors.message && (
+                <p className="text-red-400 text-sm mt-1">{state.errors.message}</p>
+              )}
+            </div>
+
+            {/* Honeypot Field (hidden) */}
+            <input
+              type="text"
+              value={state.company}
+              onChange={(e) => update('company', e.target.value)}
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
+            {/* Submit Button */}
+            <Button
+              type="submit"
+              variant="primary"
+              disabled={isSubmitting}
+              className="w-full"
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+            </Button>
+          </form>
+        </div>
+
         {/* Resume download button */}
-        <Button
-          variant="secondary"
-          onClick={() => {
-            // TODO: Replace with actual resume download link
-            alert('Resume download will be implemented with actual resume file');
-          }}
-        >
-          Download Resume
-        </Button>
+        <div className="text-center">
+          <Button
+            variant="secondary"
+            onClick={() => {
+              // TODO: Replace with actual resume download link
+              alert('Resume download will be implemented with actual resume file');
+            }}
+          >
+            Download Resume
+          </Button>
+        </div>
       </div>
     </section>
   );

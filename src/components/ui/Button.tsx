@@ -9,6 +9,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   className = '',
   disabled = false,
+  type = 'button',
 }) => {
   // Base styles that all buttons share
   const baseStyles =
@@ -34,6 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      type={type}
       onClick={!disabled ? onClick : undefined}
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${disabledStyles} ${className}`}
       disabled={disabled}
