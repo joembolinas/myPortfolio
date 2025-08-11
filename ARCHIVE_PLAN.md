@@ -2,7 +2,7 @@
 **Date:** August 11, 2025  
 **Purpose:** Clean up project structure, keep only key documentation
 
-## 📁 ARCHIVED FOLDERS (.archieved/ + .gitignore)
+## 📁 ARCHIVED FOLDERS (.archived/ + .gitignore)
 
 ### Development Process Files
 - `phases/` - Phase documentation and tracking files
