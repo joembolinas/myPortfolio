@@ -40,30 +40,30 @@ export const GitHubStats: React.FC = () => {
       label: 'Repositories',
       value: stats.totalRepos,
       icon: '📁',
-      color: 'text-blue-400'
+      color: 'text-blue-400',
     },
     {
       label: 'Total Stars',
       value: stats.totalStars,
       icon: '⭐',
-      color: 'text-yellow-400'
+      color: 'text-yellow-400',
     },
     {
       label: 'Total Forks',
       value: stats.totalForks,
       icon: '🔀',
-      color: 'text-green-400'
+      color: 'text-green-400',
     },
     {
       label: 'Languages',
       value: Object.keys(stats.languageStats).length,
       icon: '💻',
-      color: 'text-purple-400'
-    }
+      color: 'text-purple-400',
+    },
   ];
 
   const topLanguages = Object.entries(stats.languageStats)
-    .sort(([,a], [,b]) => b - a)
+    .sort(([, a], [, b]) => b - a)
     .slice(0, 5);
 
   return (
@@ -73,7 +73,7 @@ export const GitHubStats: React.FC = () => {
         <HoverLift>
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700">
             <h3 className="text-xl font-semibold mb-6 text-center">GitHub Activity</h3>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {statItems.map((item, index) => (
                 <motion.div
@@ -100,11 +100,11 @@ export const GitHubStats: React.FC = () => {
           <HoverLift>
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700">
               <h4 className="text-lg font-semibold mb-4">Top Languages</h4>
-              
+
               <div className="space-y-3">
                 {topLanguages.map(([language, count], index) => {
                   const percentage = Math.round((count / stats.totalRepos) * 100);
-                  
+
                   return (
                     <motion.div
                       key={language}
@@ -118,7 +118,7 @@ export const GitHubStats: React.FC = () => {
                         <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
                         <span className="text-gray-300">{language}</span>
                       </div>
-                      
+
                       <div className="flex items-center space-x-2">
                         <div className="w-20 h-2 bg-gray-700 rounded-full overflow-hidden">
                           <motion.div
@@ -144,7 +144,7 @@ export const GitHubStats: React.FC = () => {
           <HoverLift>
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700">
               <h4 className="text-lg font-semibold mb-4">Recent Activity</h4>
-              
+
               <div className="space-y-3 max-h-64 overflow-y-auto">
                 {stats.recentActivity.slice(0, 5).map((commit, index) => (
                   <motion.div
@@ -156,16 +156,14 @@ export const GitHubStats: React.FC = () => {
                     viewport={{ once: true }}
                   >
                     <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                    
+
                     <div className="flex-1 min-w-0">
-                      <p className="text-gray-300 text-sm truncate">
-                        {commit.commit.message}
-                      </p>
+                      <p className="text-gray-300 text-sm truncate">{commit.commit.message}</p>
                       <p className="text-gray-500 text-xs mt-1">
                         {new Date(commit.commit.author.date).toLocaleDateString()}
                       </p>
                     </div>
-                    
+
                     <motion.a
                       href={commit.html_url}
                       target="_blank"

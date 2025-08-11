@@ -122,7 +122,7 @@ export const useRecentActivity = (repoName?: string) => {
     try {
       setLoading(true);
       setError(null);
-      
+
       if (repoName) {
         // Fetch commits from specific repository
         const commits = await githubAPI.getRepoCommits(repoName);
@@ -167,6 +167,6 @@ export const useAllGitHubData = () => {
     portfolioRepos: portfolioReposResult.portfolioRepos,
     loading,
     error,
-    refetch: refetchAll
+    refetch: refetchAll,
   };
 };

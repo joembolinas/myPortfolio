@@ -5,7 +5,13 @@
   "projectContext": {
     "projectName": "Growth Journey Portfolio",
     "currentPhase": "Phase 2.2",
-    "techStack": ["React", "Vite", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "techStack": [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
     "archetype": "Technical Storyteller",
     "performanceTarget": "70% performance, 30% visual"
   },

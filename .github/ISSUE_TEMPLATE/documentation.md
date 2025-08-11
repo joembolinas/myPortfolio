@@ -1,9 +1,9 @@
 ---
 name: Documentation
 about: Improvements or additions to documentation
-title: "[DOCS] "
-labels: "documentation, enhancement"
-assignees: ""
+title: '[DOCS] '
+labels: 'documentation, enhancement'
+assignees: ''
 ---
 
 ## 📚 Documentation Type

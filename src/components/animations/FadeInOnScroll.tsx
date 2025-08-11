@@ -21,21 +21,26 @@ export const FadeInOnScroll = ({
   distance = 50,
   className = '',
   stagger = false,
-  staggerDelay = 0.1
+  staggerDelay = 0.1,
 }: FadeInOnScrollProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { 
-    once: true, 
-    margin: "-10% 0px -10% 0px" // Trigger when 10% visible
+  const isInView = useInView(ref, {
+    once: true,
+    margin: '-10% 0px -10% 0px', // Trigger when 10% visible
   });
 
   const getInitialPosition = () => {
     switch (direction) {
-      case 'up': return { y: distance, opacity: 0 };
-      case 'down': return { y: -distance, opacity: 0 };
-      case 'left': return { x: distance, opacity: 0 };
-      case 'right': return { x: -distance, opacity: 0 };
-      default: return { y: distance, opacity: 0 };
+      case 'up':
+        return { y: distance, opacity: 0 };
+      case 'down':
+        return { y: -distance, opacity: 0 };
+      case 'left':
+        return { x: distance, opacity: 0 };
+      case 'right':
+        return { x: -distance, opacity: 0 };
+      default:
+        return { y: distance, opacity: 0 };
     }
   };
 
@@ -51,10 +56,10 @@ export const FadeInOnScroll = ({
         ease: [0.25, 0.4, 0.25, 1], // Custom cubic-bezier for smooth feel
         ...(stagger && {
           staggerChildren: staggerDelay,
-          delayChildren: delay
-        })
-      }
-    }
+          delayChildren: delay,
+        }),
+      },
+    },
   };
 
   return (
@@ -62,7 +67,7 @@ export const FadeInOnScroll = ({
       ref={ref}
       variants={variants}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={isInView ? 'visible' : 'hidden'}
       className={className}
     >
       {children}
@@ -71,7 +76,13 @@ export const FadeInOnScroll = ({
 };
 
 // Child component for staggered animations
-export const FadeInChild = ({ children, className = '' }: { children: ReactNode; className?: string }) => {
+export const FadeInChild = ({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
   const childVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -79,9 +90,9 @@ export const FadeInChild = ({ children, className = '' }: { children: ReactNode;
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: [0.25, 0.4, 0.25, 1]
-      }
-    }
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    },
   };
 
   return (

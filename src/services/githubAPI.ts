@@ -78,7 +78,7 @@ class GitHubAPIService {
   private async apiRequest<T>(endpoint: string): Promise<T> {
     const cacheKey = endpoint;
     const cached = this.getCached<T>(cacheKey);
-    
+
     if (cached) {
       return cached;
     }
@@ -86,7 +86,7 @@ class GitHubAPIService {
     try {
       const response = await fetch(`${this.baseURL}${endpoint}`, {
         headers: {
-          'Accept': 'application/vnd.github.v3+json',
+          Accept: 'application/vnd.github.v3+json',
           'User-Agent': 'Portfolio-App',
         },
       });
@@ -110,12 +110,14 @@ class GitHubAPIService {
   }
 
   // Fetch user repositories with optional filtering
-  async getRepositories(options: {
-    sort?: 'created' | 'updated' | 'pushed' | 'full_name';
-    direction?: 'asc' | 'desc';
-    per_page?: number;
-    type?: 'all' | 'owner' | 'member';
-  } = {}): Promise<GitHubRepo[]> {
+  async getRepositories(
+    options: {
+      sort?: 'created' | 'updated' | 'pushed' | 'full_name';
+      direction?: 'asc' | 'desc';
+      per_page?: number;
+      type?: 'all' | 'owner' | 'member';
+    } = {},
+  ): Promise<GitHubRepo[]> {
     const params = new URLSearchParams({
       sort: options.sort || 'updated',
       direction: options.direction || 'desc',
@@ -141,7 +143,7 @@ class GitHubAPIService {
     try {
       const [user, repos] = await Promise.all([
         this.getUser(),
-        this.getRepositories({ per_page: 100 })
+        this.getRepositories({ per_page: 100 }),
       ]);
 
       const languageStats: Record<string, number> = {};
@@ -149,7 +151,7 @@ class GitHubAPIService {
       let totalForks = 0;
 
       // Aggregate repository statistics
-      repos.forEach(repo => {
+      repos.forEach((repo) => {
         if (repo.language) {
           languageStats[repo.language] = (languageStats[repo.language] || 0) + 1;
         }
@@ -159,12 +161,12 @@ class GitHubAPIService {
 
       // Fetch recent commits from top repositories
       const topRepos = repos
-        .filter(repo => repo.pushed_at)
+        .filter((repo) => repo.pushed_at)
         .sort((a, b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime())
         .slice(0, 5);
 
       const recentActivity: GitHubCommit[] = [];
-      
+
       for (const repo of topRepos) {
         try {
           const commits = await this.getRepoCommits(repo.name, 3);
@@ -175,8 +177,9 @@ class GitHubAPIService {
       }
 
       // Sort recent activity by date
-      recentActivity.sort((a, b) => 
-        new Date(b.commit.author.date).getTime() - new Date(a.commit.author.date).getTime()
+      recentActivity.sort(
+        (a, b) =>
+          new Date(b.commit.author.date).getTime() - new Date(a.commit.author.date).getTime(),
       );
 
       return {
@@ -185,7 +188,7 @@ class GitHubAPIService {
         totalStars,
         totalForks,
         languageStats,
-        recentActivity: recentActivity.slice(0, 10)
+        recentActivity: recentActivity.slice(0, 10),
       };
     } catch (error) {
       console.error('Failed to fetch GitHub stats:', error);
@@ -196,14 +199,17 @@ class GitHubAPIService {
   // Get filtered repositories for portfolio display
   async getPortfolioRepos(): Promise<GitHubRepo[]> {
     const repos = await this.getRepositories({ sort: 'updated', per_page: 20 });
-    
+
     // Filter for portfolio-relevant repositories
-    return repos.filter(repo => 
-      repo.description && 
-      !repo.name.includes('config') &&
-      !repo.name.includes('dotfiles') &&
-      repo.size > 100 // Filter out very small repos
-    ).slice(0, 6); // Show top 6 for portfolio
+    return repos
+      .filter(
+        (repo) =>
+          repo.description &&
+          !repo.name.includes('config') &&
+          !repo.name.includes('dotfiles') &&
+          repo.size > 100, // Filter out very small repos
+      )
+      .slice(0, 6); // Show top 6 for portfolio
   }
 
   // Clear cache manually if needed

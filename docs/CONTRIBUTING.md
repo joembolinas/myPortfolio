@@ -1,6 +1,7 @@
 # 🤝 CONTRIBUTING GUIDELINES
 
-Thank you for your interest in contributing to the Growth Journey Portfolio! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to the Growth Journey Portfolio! This document provides
+guidelines and information for contributors.
 
 ## 📋 Table of Contents
 
@@ -19,7 +20,8 @@ Thank you for your interest in contributing to the Growth Journey Portfolio! Thi
 
 ### Our Pledge
 
-We are committed to providing a welcoming and inclusive environment for all contributors. We expect everyone to:
+We are committed to providing a welcoming and inclusive environment for all contributors. We expect
+everyone to:
 
 - Be respectful and considerate
 - Be collaborative and constructive
@@ -155,8 +157,8 @@ interface UserProfile {
 const createProfile = (data: Partial<UserProfile>): UserProfile => {
   return {
     id: generateId(),
-    name: data.name || "",
-    email: data.email || "",
+    name: data.name || '',
+    email: data.email || '',
     skills: data.skills || [],
   };
 };
@@ -172,29 +174,29 @@ const createProfile = (data: any): any => {
 ```tsx
 // ✅ Good: Proper component structure
 interface ButtonProps {
-  variant: "primary" | "secondary";
-  size: "sm" | "md" | "lg";
+  variant: 'primary' | 'secondary';
+  size: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  variant = "primary",
-  size = "md",
+  variant = 'primary',
+  size = 'md',
   children,
   onClick,
   disabled = false,
 }) => {
-  const baseClasses = "rounded-lg font-medium transition-colors";
+  const baseClasses = 'rounded-lg font-medium transition-colors';
   const variantClasses = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700",
-    secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
+    primary: 'bg-blue-600 text-white hover:bg-blue-700',
+    secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300',
   };
   const sizeClasses = {
-    sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2 text-base",
-    lg: "px-6 py-3 text-lg",
+    sm: 'px-3 py-1.5 text-sm',
+    md: 'px-4 py-2 text-base',
+    lg: 'px-6 py-3 text-lg',
   };
 
   return (
@@ -448,7 +450,7 @@ npm run test:e2e
  * @example
  * formatDate('2023-12-25') // 'Dec 25, 2023'
  */
-export const formatDate = (date: string, format = "MMM dd, yyyy"): string => {
+export const formatDate = (date: string, format = 'MMM dd, yyyy'): string => {
   // Implementation
 };
 ```
@@ -559,5 +561,4 @@ Contributors will be recognized in:
 
 Thank you for contributing to the Growth Journey Portfolio! 🚀
 
-**Document Version:** 1.0
-**Last Updated:** August 3, 2025
+**Document Version:** 1.0 **Last Updated:** August 3, 2025

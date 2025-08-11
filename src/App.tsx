@@ -14,7 +14,7 @@ function App() {
     <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden">
       {/* Fixed navigation */}
       <Navigation />
-      
+
       {/* All sections with enhanced animations */}
       <main className="relative">
         <HeroSection />
@@ -25,7 +25,7 @@ function App() {
         <BlogSection />
         <ContactSection />
       </main>
-      
+
       {/* Footer */}
       <Footer />
     </div>

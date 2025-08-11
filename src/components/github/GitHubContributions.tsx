@@ -17,56 +17,56 @@ export const GitHubContributions: React.FC = () => {
     const days = 365;
     const data = [];
     const today = new Date();
-    
+
     for (let i = days - 1; i >= 0; i--) {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
-      
+
       // Generate semi-realistic contribution counts
       const dayOfWeek = date.getDay();
       const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
       const baseActivity = isWeekend ? 0.3 : 0.7;
       const randomFactor = Math.random();
-      
+
       let count = 0;
       if (randomFactor < baseActivity) {
         count = Math.floor(Math.random() * 8) + 1;
       }
-      
+
       data.push({
         date: date.toISOString().split('T')[0],
         count,
-        level: count === 0 ? 0 : Math.min(Math.floor(count / 2) + 1, 4)
+        level: count === 0 ? 0 : Math.min(Math.floor(count / 2) + 1, 4),
       });
     }
-    
+
     return data;
   };
 
   const contributionData = generateContributionData();
-  
+
   // Calculate weeks for grid layout
   const weeks: any[][] = [];
   let currentWeek: any[] = [];
-  
+
   contributionData.forEach((day, index) => {
     const dayOfWeek = new Date(day.date).getDay();
-    
+
     if (index === 0) {
       // Fill in empty days at the start of the first week
       for (let i = 0; i < dayOfWeek; i++) {
         currentWeek.push(null);
       }
     }
-    
+
     currentWeek.push(day);
-    
+
     if (currentWeek.length === 7) {
       weeks.push(currentWeek);
       currentWeek = [];
     }
   });
-  
+
   // Add remaining days to the last week
   if (currentWeek.length > 0) {
     weeks.push(currentWeek);
@@ -84,7 +84,7 @@ export const GitHubContributions: React.FC = () => {
   };
 
   const totalContributions = contributionData.reduce((sum, day) => sum + day.count, 0);
-  const activeStreaks = contributionData.filter(day => day.count > 0).length;
+  const activeStreaks = contributionData.filter((day) => day.count > 0).length;
 
   if (loading) {
     return (
@@ -107,7 +107,7 @@ export const GitHubContributions: React.FC = () => {
                 {totalContributions} contributions in the last year
               </p>
             </div>
-            
+
             {user && (
               <motion.a
                 href={user.html_url}
@@ -116,12 +116,8 @@ export const GitHubContributions: React.FC = () => {
                 className="flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm"
                 whileHover={{ scale: 1.05 }}
               >
-                <img 
-                  src={user.avatar_url} 
-                  alt={user.name}
-                  className="w-6 h-6 rounded-full"
-                />
-                @{user.login}
+                <img src={user.avatar_url} alt={user.name} className="w-6 h-6 rounded-full" />@
+                {user.login}
               </motion.a>
             )}
           </div>
@@ -139,14 +135,14 @@ export const GitHubContributions: React.FC = () => {
                       }`}
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ 
+                      transition={{
                         delay: weekIndex * 0.01 + dayIndex * 0.001,
-                        duration: 0.2 
+                        duration: 0.2,
                       }}
                       viewport={{ once: true }}
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.5,
-                        transition: { duration: 0.1 }
+                        transition: { duration: 0.1 },
                       }}
                       title={day ? `${day.count} contributions on ${day.date}` : ''}
                     />
@@ -154,16 +150,13 @@ export const GitHubContributions: React.FC = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Legend */}
             <div className="flex items-center justify-between mt-4 text-xs text-gray-400">
               <span>Less</span>
               <div className="flex gap-1">
                 {[0, 1, 2, 3, 4].map((level) => (
-                  <div
-                    key={level}
-                    className={`w-3 h-3 rounded-sm ${getIntensityColor(level)}`}
-                  />
+                  <div key={level} className={`w-3 h-3 rounded-sm ${getIntensityColor(level)}`} />
                 ))}
               </div>
               <span>More</span>
@@ -176,12 +169,12 @@ export const GitHubContributions: React.FC = () => {
               <div className="text-2xl font-bold text-green-400">{totalContributions}</div>
               <div className="text-gray-400 text-sm">Total Contributions</div>
             </div>
-            
+
             <div className="text-center">
               <div className="text-2xl font-bold text-blue-400">{activeStreaks}</div>
               <div className="text-gray-400 text-sm">Active Days</div>
             </div>
-            
+
             <div className="text-center col-span-2 md:col-span-1">
               <div className="text-2xl font-bold text-purple-400">
                 {Math.round((activeStreaks / 365) * 100)}%
@@ -205,9 +198,7 @@ export const GitHubContributions: React.FC = () => {
                     viewport={{ once: true }}
                   >
                     <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-400 truncate flex-1">
-                      {commit.commit.message}
-                    </span>
+                    <span className="text-gray-400 truncate flex-1">{commit.commit.message}</span>
                     <span className="text-gray-500 text-xs">
                       {new Date(commit.commit.author.date).toLocaleDateString()}
                     </span>

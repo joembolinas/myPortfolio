@@ -11,8 +11,8 @@ export const WebsitesSection: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 text-blue-400">10 Essential Static Websites</h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Empower your small business with cost-effective, fast-loading, and secure static websites. 
-            Perfect for establishing a strong online presence without the complexity.
+            Empower your small business with cost-effective, fast-loading, and secure static
+            websites. Perfect for establishing a strong online presence without the complexity.
           </p>
         </div>
 

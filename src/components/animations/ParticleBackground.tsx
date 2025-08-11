@@ -29,7 +29,7 @@ export const ParticleBackground = ({
   minSize = 1,
   speed = 0.5,
   className = '',
-  enableMouse = true
+  enableMouse = true,
 }: ParticleBackgroundProps) => {
   const [particles, setParticles] = useState<Particle[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -45,7 +45,7 @@ export const ParticleBackground = ({
       opacity: Math.random() * 0.5 + 0.1,
       speedX: (Math.random() - 0.5) * speed,
       speedY: (Math.random() - 0.5) * speed,
-      color: colors[Math.floor(Math.random() * colors.length)]
+      color: colors[Math.floor(Math.random() * colors.length)],
     }));
   }, [particleCount, colors, maxSize, minSize, speed, dimensions]);
 
@@ -53,7 +53,7 @@ export const ParticleBackground = ({
     const updateDimensions = () => {
       setDimensions({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     };
 
@@ -81,8 +81,8 @@ export const ParticleBackground = ({
 
   useEffect(() => {
     const animateParticles = () => {
-      setParticles(prevParticles =>
-        prevParticles.map(particle => {
+      setParticles((prevParticles) =>
+        prevParticles.map((particle) => {
           let newX = particle.x + particle.speedX;
           let newY = particle.y + particle.speedY;
 
@@ -91,7 +91,7 @@ export const ParticleBackground = ({
             const dx = mousePosition.x - particle.x;
             const dy = mousePosition.y - particle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            
+
             if (distance < 100) {
               const force = (100 - distance) / 100;
               newX -= (dx / distance) * force * 2;
@@ -108,9 +108,9 @@ export const ParticleBackground = ({
           return {
             ...particle,
             x: newX,
-            y: newY
+            y: newY,
           };
-        })
+        }),
       );
     };
 
@@ -120,11 +120,7 @@ export const ParticleBackground = ({
 
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      <svg
-        width="100%"
-        height="100%"
-        className="absolute inset-0"
-      >
+      <svg width="100%" height="100%" className="absolute inset-0">
         {particles.map((particle) => (
           <motion.circle
             key={particle.id}
@@ -133,31 +129,30 @@ export const ParticleBackground = ({
             r={particle.size}
             fill={particle.color}
             initial={{ opacity: 0 }}
-            animate={{ 
+            animate={{
               opacity: particle.opacity,
-              scale: [1, 1.2, 1]
+              scale: [1, 1.2, 1],
             }}
             transition={{
               opacity: { duration: 2 },
-              scale: { 
-                duration: 3 + Math.random() * 2, 
+              scale: {
+                duration: 3 + Math.random() * 2,
                 repeat: Infinity,
-                ease: "easeInOut"
-              }
+                ease: 'easeInOut',
+              },
             }}
           />
         ))}
-        
+
         {/* Connecting lines between nearby particles */}
         {particles.map((particle, i) =>
           particles.slice(i + 1).map((otherParticle, j) => {
             const distance = Math.sqrt(
-              Math.pow(particle.x - otherParticle.x, 2) +
-              Math.pow(particle.y - otherParticle.y, 2)
+              Math.pow(particle.x - otherParticle.x, 2) + Math.pow(particle.y - otherParticle.y, 2),
             );
-            
+
             if (distance < 150) {
-              const opacity = (150 - distance) / 150 * 0.1;
+              const opacity = ((150 - distance) / 150) * 0.1;
               return (
                 <motion.line
                   key={`${i}-${j}`}
@@ -172,7 +167,7 @@ export const ParticleBackground = ({
               );
             }
             return null;
-          })
+          }),
         )}
       </svg>
     </div>

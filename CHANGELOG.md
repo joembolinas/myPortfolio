@@ -2,14 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project
+adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
 ## [2.2.0] - 2024-12-24
 
 ### Added - Animation System Implementation
+
 - Complete Framer Motion animation system with Microsoft Viva-inspired effects
 - FadeInOnScroll component for scroll-triggered animations
 - HoverLift component with glow effects and card lifting
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - useDevicePerformance and useAdaptiveAnimations hooks for performance optimization
 
 ### Added - Enhanced Sections & Features
+
 - Interactive LearningJourneySection with 12 expandable timeline cards
 - Modern BlogSection with category filtering and status management
 - Enhanced ProjectsSection with Featured + Mini projects structure
@@ -27,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced ProjectCard component with hover animations and tech indicators
 
 ### Changed - User Feedback Integration
+
 - Skills structure: Separated AI from Data Analytics (now 4 categories: Dev/Network/Data/AI)
 - Background design: Kept particle background in Hero, restored moving squares for Projects→Contact
 - Excluded AboutSection from background animations for clean design
@@ -34,17 +37,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Restructured projects layout following wireframe specifications
 
 ### Removed
+
 - WebsitesSection component (completely removed from app)
 - Combined "Data Analytics & AI" category (separated into Data and AI)
 - Static background from sections that now use moving squares pattern
 
 ### Performance
+
 - Implemented 70% Performance : 30% Visual Effects ratio as requested
 - Device-adaptive animation quality with automatic performance scaling
 - Optimized animations for smooth 60fps experience
 - Proper motion preference support for accessibility
 
 ### Technical Improvements
+
 - Enhanced component architecture with proper TypeScript typing
 - Improved data structure for skills, learning journey, and blog posts
 - Updated navigation to match new section structure
@@ -53,6 +59,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.0] - 2024-12-04
 
 ### Added
+
 - Directory restructuring and cleanup for better organization
 - MIT License (2025 Joem Bolinas)
 - CHANGELOG.md for tracking project changes
@@ -60,13 +67,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Lighthouse configuration as JS module (config/lighthouse.config.js)
 
 ### Changed
+
 - Moved primary documentation to docs/ directory
 - Converted lighthouserc.json to lighthouse.config.js for consistency
 - Reorganized project structure for Phase 2 development
 
 ### Moved
+
 - legacy/css/ - Static CSS from previous HTML version
-- legacy/js/ - Static JavaScript from previous HTML version  
+- legacy/js/ - Static JavaScript from previous HTML version
 - legacy/others/ - Phase 1 planning documents and drafts
 - docs/PROJECT_CHARTER.md - Project vision and goals
 - docs/MASTER_OUTLINE.md - 5-phase development plan
@@ -75,15 +84,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - docs/CONTRIBUTING.md - Development guidelines
 
 ### Removed
+
 - Duplicate workflow configuration files from root directory
 - Original lighthouserc.json (replaced by JS config)
 
 ### Deprecated
+
 - others/ directory path (replaced by docs/ and legacy/others)
 
 ## [1.0.0] - 2025-08-11
 
 ### Added
+
 - Initial portfolio project setup
 - React + Vite + TypeScript + Tailwind CSS foundation
 - Component architecture and data structure
@@ -92,6 +104,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Phase 1 foundation completion
 
 ### Technical Stack
+
 - React 18 with TypeScript
 - Vite for build tooling
 - Tailwind CSS for styling

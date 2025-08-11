@@ -12,7 +12,7 @@ export const CyclicText = ({
   texts,
   interval = 3000,
   className = '',
-  animationDuration = 0.5
+  animationDuration = 0.5,
 }: CyclicTextProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -20,7 +20,7 @@ export const CyclicText = ({
     if (texts.length <= 1) return;
 
     const timer = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % texts.length);
+      setCurrentIndex((prev) => (prev + 1) % texts.length);
     }, interval);
 
     return () => clearInterval(timer);
@@ -29,16 +29,16 @@ export const CyclicText = ({
   const slideVariants = {
     enter: {
       x: 20,
-      opacity: 0
+      opacity: 0,
     },
     center: {
       x: 0,
-      opacity: 1
+      opacity: 1,
     },
     exit: {
       x: -20,
-      opacity: 0
-    }
+      opacity: 0,
+    },
   };
 
   return (
@@ -52,7 +52,7 @@ export const CyclicText = ({
           exit="exit"
           transition={{
             duration: animationDuration,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
           className="block"
         >
