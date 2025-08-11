@@ -20,3 +20,15 @@ copilot-instructions.md
 # Optional: Keep these archived but not in git
 *.log
 .vscode/
+.lighthouse/localhost-index_html-2025_08_11_13_07_09.report.html
+.lighthouse/localhost-index_html-2025_08_11_13_03_56.report.html
+.lighthouse/localhost-index_html-2025_08_11_13_03_56.report.json
+.lighthouse/localhost-index_html-2025_08_11_13_07_09.report.json
+.lighthouse/localhost-index_html-2025_08_11_13_19_55.report.html
+.lighthouse/localhost-index_html-2025_08_11_13_19_55.report.json
+.lighthouse/localhost-index_html-2025_08_11_13_23_04.report.html
+.lighthouse/localhost-index_html-2025_08_11_13_23_04.report.json
+.lighthouse/manifest.json
+.lighthouseci/assertion-results.json
+.lighthouseci/lhr-1754918597215.html
+.lighthouseci/lhr-1754918597215.json

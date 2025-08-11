@@ -73,10 +73,11 @@ export const LearningJourneySection: React.FC = () => {
                     className={`flex-1 ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}
                   >
                     <HoverLift liftHeight={6} glowIntensity="medium" className="relative">
-                      <motion.div
-                        layout
-                        className="bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 cursor-pointer"
+                      <button
+                        className="bg-gray-800/80 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 cursor-pointer w-full text-left"
                         onClick={() => toggleCard(item.id)}
+                        aria-expanded={expandedCard === item.id}
+                        aria-controls={`learning-item-${item.id}`}
                       >
                         {/* Card header */}
                         <div className="flex items-start justify-between mb-4">
@@ -230,7 +231,7 @@ export const LearningJourneySection: React.FC = () => {
                             </motion.div>
                           )}
                         </AnimatePresence>
-                      </motion.div>
+                      </button>
                     </HoverLift>
                   </div>
                 </div>
