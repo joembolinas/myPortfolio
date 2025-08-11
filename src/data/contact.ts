@@ -33,6 +33,7 @@ export const navigationItems: NavigationItem[] = [
   { id: 'about', label: 'about', href: '#about' },
   { id: 'projects', label: 'projects', href: '#projects' },
   { id: 'learning-journey', label: 'journey', href: '#learning-journey' },
+  { id: 'github', label: 'github', href: '#github' },
   { id: 'blog', label: 'blog', href: '#blog' },
   { id: 'contact', label: 'contact', href: '#contact' }
 ];
