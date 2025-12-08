@@ -3,11 +3,13 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import path from 'path';
+import { journeyDataPlugin } from './src/vite/journeyDataPlugin';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    journeyDataPlugin(),
     // Bundle analyzer - generates stats.html when building
     visualizer({
       filename: 'dist/stats.html',
