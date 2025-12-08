@@ -17,7 +17,11 @@ export interface LearningJourneyItem {
   isExpanded?: boolean;
 }
 
-export const learningJourney: LearningJourneyItem[] = [
+// Import learning journey data from virtual module populated by Vite plugin
+// This reads all .md files from content/learningJourney/ at build time
+import { learningJourney as journeyData } from 'virtual:learning-journey-data';
+
+export const learningJourney: LearningJourneyItem[] = journeyData ?? [
   {
     id: 'career-start',
     title: 'Senior Admin/Procurement Officer',
@@ -445,3 +449,12 @@ export const learningJourney: LearningJourneyItem[] = [
     color: 'from-violet-500 to-violet-600',
   },
 ];
+
+// Fallback to empty array if virtual module fails to load
+// This ensures the app doesn't break during development before markdown files are created
+if (!journeyData || journeyData.length === 0) {
+  // Keep this fallback array for development
+  (learningJourney as any).push(
+    // Fallback items will be added here if needed
+  );
+}
