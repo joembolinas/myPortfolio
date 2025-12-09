@@ -17,11 +17,11 @@
 
 ## Overview
 
-This is an interactive portfolio and career transformation tool built with modern web technologies. It showcases my journey from SNR Admin/Procurement to an emerging technology professional, combining strategic storytelling with technical excellence.
-
-The portfolio emphasizes performance-first development (90+ Lighthouse scores), accessibility-first design (WCAG AA compliant), and user experience. It features real-time GitHub integration, an interactive career timeline, animated components, a contact system, and a blog showcasing my learning journey with TryHackMe, LeetCode, and roadmap.sh.
-
 **Current Phase:** Phase 2.4 - Contact System Implementation and Testing
+
+This is an interactive portfolio and career transformation tool built with modern web technologies. It highlights my evolution into an emerging technology professional through strategic storytelling and technical execution.
+
+The portfolio emphasizes performance-first development (90+ Lighthouse scores), accessibility-first design (WCAG AA compliant), and seamless user experience. It integrates real-time GitHub data, features an interactive career timeline, dynamic animated components, a contact system, and a blog showcasing my ongoing learning journey across platforms like TryHackMe, LeetCode, and roadmap.sh.
 
 ## Features
 
@@ -82,6 +82,7 @@ VITE_GITHUB_TOKEN=your_github_personal_access_token
 ```
 
 Generate a token at [GitHub Settings → Tokens](https://github.com/settings/tokens)
+
 - Required scopes: `public_repo` (read-only access)
 
 > [!NOTE]
@@ -147,15 +148,15 @@ config/                  # Build config (Tailwind, ESLint, etc.)
 
 ## Tech Stack
 
-| Tool | Purpose |
-|------|---------|
-| **React 18** | UI framework with concurrent features |
-| **Vite** | Lightning-fast build tool and dev server |
-| **TypeScript** | Static type safety |
-| **Tailwind CSS** | Utility-first styling |
-| **Framer Motion** | Advanced animations |
-| **Vitest** | Unit testing |
-| **Playwright** | E2E testing |
+| Tool                    | Purpose                                  |
+| ----------------------- | ---------------------------------------- |
+| **React 18**      | UI framework with concurrent features    |
+| **Vite**          | Lightning-fast build tool and dev server |
+| **TypeScript**    | Static type safety                       |
+| **Tailwind CSS**  | Utility-first styling                    |
+| **Framer Motion** | Advanced animations                      |
+| **Vitest**        | Unit testing                             |
+| **Playwright**    | E2E testing                              |
 
 ## Performance
 
