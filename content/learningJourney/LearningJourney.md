@@ -6,6 +6,17 @@ Transform the hardcoded `learningJourney` array in  C:\Users\ADMIN\Desktop\devel
 
 ---
 
+```plaintext
+┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐
+│  Markdown        │      │  Build & Parse   │      │  Deployed        │
+│  Content         │─────▶│  Pipeline       │─────▶│  Portfolio      │
+│  (           )   │      │  (Vite Plugin)   │      │  (Vercel)        │
+└──────────────────┘      └──────────────────┘      └──────────────────┘
+     content/                src/utils/              live website /
+     learningJourney/        Metadata Processing   
+
+```
+
 ## 📁 Directory Structure
 
 ```
@@ -26,11 +37,13 @@ project-root/
 │       ├── contacts/           (future)
 │       ├── projects/           (future)
 │       ├── skills/             (future)
-│       └── website/            (future)
+│       └── about/            (future)
+│       └── home/            (future)
+
 │
 ├── src/
 │   ├── data/
-│   │   └── learningJourney.ts  (imports from virtual module)
+│   │   └── learningJourney.ts 
 │   ├── utils/
 │   │   ├── markdownParser.ts   (NEW)
 │   │   └── iconColorGenerator.ts (NEW)
@@ -212,6 +225,23 @@ content/learningJourney/term-1/career-start.md
 - The plugin runs at **build time only**, improving runtime performance
 - **Period sorting** ensures chronological presentation
 - **Icon/color mapping** is centralized for easy customization
+
+## Use case
+
+### Common Tasks
+
+**Add new portfolio entry**:
+
+1. Create markdown file in `content/learningJourney/term-X/`
+2. Add YAML frontmatter with metadata
+3. Write your content
+4. run `md-parser-1.prompt/md`
+
+**Update existing entry**:
+
+1. Edit the markdown file
+2. run `md-parser-1.prompt/md`
+3. Browser refresh
 
 ---
 

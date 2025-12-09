@@ -21,14 +21,13 @@
 
 A performance-first, accessibility-focused portfolio showcasing career growth through strategic storytelling and technical execution. Built with React 18, TypeScript, and modern web technologies to achieve 90+ Lighthouse scores while maintaining WCAG AA compliance.
 
-**Current Phase:** Phase 2 - Architecture & Design
+**Current Phase:** Phase 2 - Architecture & Design (refinement)
 
 ### Key Highlights
 
 - Interactive career timeline with milestone tracking
-- Real-time GitHub integration (contributions, repositories, activity)
 - Performance-optimized animations with device adaptation
-- Learning journey across TryHackMe, LeetCode, and roadmap.sh
+- Learning journey across Coursera, LMS, TryHackMe, LeetCode, and roadmap.sh
 - Contact system with validation and anti-spam protection
 
 ## Features
@@ -36,32 +35,38 @@ A performance-first, accessibility-focused portfolio showcasing career growth th
 ### Portfolio Sections
 
 **Hero & Timeline**
+
 - Animated introduction with career archetype ("The Technical Storyteller")
 - Interactive timeline showing progression from admin/procurement to tech
 - Milestone markers highlighting key achievements and transitions
 
 **Skills & Projects**
+
 - Category-based skill visualization (Development, Networking, Data, AI/ML)
 - Project showcase with live demos and source code links
 - Technology stack badges and gradient-based visual hierarchy
 
 **GitHub Integration**
+
 - Live contribution graph with activity tracking
 - Repository showcase with stars, forks, and primary language
 - Automatic updates from GitHub API
 
 **Learning Journey**
+
 - Platform-specific progress (TryHackMe ranks, LeetCode stats, roadmap.sh paths)
 - Expandable learning cards with detailed achievements
 - Categorized by work experience, education, and technical skills
 
 **Contact & Blog**
+
 - Professional contact form with validation
 - Blog section for ongoing learning insights
 - Resume download capability
 
 ### Technical Features
 
+- 
 - **Performance**: Code splitting, lazy loading, image optimization
 - **Accessibility**: WCAG AA compliant, keyboard navigation, screen reader support, reduced motion
 - **UX**: Microsoft Viva-inspired animations that adapt to device performance
@@ -158,24 +163,24 @@ myPortfolio/
 
 ### Core Technologies
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| [React](https://reactjs.org/) | 18+ | UI Framework |
-| [TypeScript](https://www.typescriptlang.org/) | 5.0+ | Type Safety |
-| [Vite](https://vitejs.dev/) | 5.0+ | Build Tool |
-| [Tailwind CSS](https://tailwindcss.com/) | 3.0+ | Styling |
-| [Framer Motion](https://www.framer.com/motion/) | Latest | Animations |
+| Technology                                   | Version | Purpose      |
+| -------------------------------------------- | ------- | ------------ |
+| [React](https://reactjs.org/)                   | 18+     | UI Framework |
+| [TypeScript](https://www.typescriptlang.org/)   | 5.0+    | Type Safety  |
+| [Vite](https://vitejs.dev/)                     | 5.0+    | Build Tool   |
+| [Tailwind CSS](https://tailwindcss.com/)        | 3.0+    | Styling      |
+| [Framer Motion](https://www.framer.com/motion/) | Latest  | Animations   |
 
 ### Development Tools
 
-| Tool | Purpose |
-|------|---------|
-| ESLint | Code Quality |
-| Prettier | Code Formatting |
-| Vitest | Unit Testing |
-| Playwright | E2E Testing |
+| Tool          | Purpose                |
+| ------------- | ---------------------- |
+| ESLint        | Code Quality           |
+| Prettier      | Code Formatting        |
+| Vitest        | Unit Testing           |
+| Playwright    | E2E Testing            |
 | Lighthouse CI | Performance Monitoring |
-| axe-core | Accessibility Testing |
+| axe-core      | Accessibility Testing  |
 
 ### Key Dependencies
 
@@ -223,10 +228,10 @@ Contributions are welcome! Please read the [Contributing Guidelines](docs/CONTRI
 
 ### Current Phase: Phase 2 - Architecture & Design
 
-- [x] Phase 1: Foundation & Setup
-- [x] Phase 2.1: Component Architecture
-- [x] Phase 2.2: Animation System
-- [x] Phase 2.3: Accessibility Implementation
+- [ ] Phase 1: Foundation & Setup
+- [ ] Phase 2.1: Component Architecture
+- [ ] Phase 2.2: Animation System
+- [ ] Phase 2.3: Accessibility Implementation
 - [ ] Phase 2.4: Contact System & Testing
 - [ ] Phase 3: Content & Polish
 - [ ] Phase 4: Deployment & Monitoring
