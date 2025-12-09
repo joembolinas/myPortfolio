@@ -1,7 +1,69 @@
+---
+agent: "agent"
+name: "create-github-pull-request-from-specification"
+description: "Create or update a GitHub pull request from a specification template, auto-filling branch, issue, and change-type details."
+---
+## Purpose
+
+- Generate a single, well-structured pull request from a specification.
+- Auto-fill template details (branch info, related issues, change types) from repo state.
+- Enforce verification that no existing PR for the branch is already open.
+
+## Inputs
+
+- Specification template: `.github/pull_request #{}.md` (fill `{}` with PR number).
+- Current branch context and commit history (conventional commits expected).
+- Target branch (default to `main` unless the spec says otherwise).
+
+## Process
+
+1. Gather commits on the current branch (e.g., `git log --since=midnight --pretty=format:"%h %an %ad %s" --date=short`; if empty, fall back to full branch history). Capture type/scope and issue references.
+2. Load the spec template via search from `${workspaceFolder}/.github/pull_request #{}.md` to extract required sections and placeholders.
+3. Check for an existing PR for the current branch using `get_pull_request`. If one exists, skip creation and go to step 5.
+4. If none exists, create a draft PR on `${current:Branch}` with `create_pull_request`, using a clear title that references the specification and branch; set the target branch per spec (default `main`).
+5. Retrieve the PR diff with `get_pull_request_diff` and summarize the notable changes (features, fixes, docs, tests, performance, a11y).
+6. Update the PR title and body with `update_pull_request`, merging template data and detected context:
+   - **What does this PR do?** Summarize commit themes and diff highlights.
+   - **Related Issues / Closes / Fixes / Relates:** Auto-detect issue numbers from commit messages and branch name; fill the appropriate keywords.
+   - **Branch Information:**
+     - Source: current branch name.
+     - Target: template default or repository default branch.
+     - Branch Type: infer from branch prefix (`feature/`, `refactor/`, `docs/`, `hotfix/`, `release/`, `epic/`, `experiment/`, `ci/`, `chore/`).
+   - **Type of Change:** Map from commit types and diff:
+     - `feat` → New feature
+     - `fix` → Bug fix
+     - `refactor` → Refactor
+     - `perf` → Performance
+     - `docs` → Documentation
+     - `test` → Tests
+     - `build`/`ci` → Build/CI
+     - UI-related scopes → UI/UX; `a11y` scopes → Accessibility; security-related scopes → Security; mark Breaking change if commits contain `!` or `BREAKING CHANGE`.
+7. Switch the PR from draft to ready for review via `update_pull_request` once the body and title are complete.
+8. Get the creator username with `get_me` and assign the PR using `update_issue` (or equivalent assignment tool) to ensure ownership.
+9. Return the PR URL to the user.
+
+## Guardrails
+
+- Create only one PR per specification; never duplicate an existing PR for the branch.
+- Always verify for an existing PR before creation.
+- Keep the PR title explicit about the specification and branch.
+- Populate all relevant template fields; leave none blank if data is available.
+
+## Template
+
+`myPortfolio\.github\pull_request #{}.md`
+
+```
+---
+
+---
+
+
 ## Pull Request Overview
 
 branch `refactor/content`
-
+commit count:
+covered:
 
 ### What does this PR do?
 
@@ -11,9 +73,9 @@ branch `refactor/content`
 
 <!-- Link related issues using keywords -->
 
-Closes #`<!-- issue number -->`
-Fixes #`<!-- issue number -->`
-Relates to #`<!-- issue number -->`
+Closes #`<!-- auto-detect/issue number -->`
+Fixes #`<!--  auto-detect/issue number -->`
+Relates to #`<!--  auto-detect/issue number -->`
 
 ### Branch Information
 
@@ -394,3 +456,9 @@ Uses GPU-accelerated transforms for 60fps on low-end devices.
 
 Closes #42
 -->
+
+```
+
+```
+
+v1.1.0 | New | Last Updated: Dec 09 2025 - 12:00
