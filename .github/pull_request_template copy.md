@@ -1,5 +1,8 @@
 ## Pull Request Overview
 
+branch `refactor/content`
+
+
 ### What does this PR do?
 
 <!-- Brief description of the changes made -->
@@ -7,15 +10,16 @@
 ### Related Issues
 
 <!-- Link related issues using keywords -->
-Closes #<!-- issue number -->
-Fixes #<!-- issue number -->
-Relates to #<!-- issue number -->
+
+Closes #`<!-- issue number -->`
+Fixes #`<!-- issue number -->`
+Relates to #`<!-- issue number -->`
 
 ### Branch Information
 
-**Source Branch:** `<!-- your branch name -->`  
-**Target Branch:** `<!-- develop or main -->`  
-**Branch Type:** <!-- feature / refactor / docs / hotfix / release / epic / experiment / ci / chore -->
+**Source Branch:** `<!-- your branch name -->`
+**Target Branch:** `<!-- develop or main -->`
+**Branch Type:** `<!-- feature / refactor / docs / hotfix / release / epic / experiment / ci / chore -->`
 
 ---
 
@@ -40,6 +44,7 @@ Relates to #<!-- issue number -->
 ## Testing
 
 ### Test Execution
+
 - [ ] I have tested this change locally
 - [ ] All existing tests pass (`npm run test`)
 - [ ] I have added tests for my changes
@@ -47,12 +52,14 @@ Relates to #<!-- issue number -->
 - [ ] Edge cases tested
 
 ### Test Coverage
+
 - [ ] Unit tests added/updated
 - [ ] Integration tests added/updated
 - [ ] E2E tests added/updated (if applicable)
 - [ ] Test coverage maintained or improved
 
 **Test Commands:**
+
 ```bash
 npm run test          # Run all tests
 npm run test:watch    # Watch mode
@@ -64,16 +71,19 @@ npm run test:coverage # Coverage report
 ## Cross-Browser & Device Testing
 
 ### Desktop Browsers
+
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (latest)
 - [ ] Edge (latest)
 
 ### Mobile Browsers
+
 - [ ] Mobile Chrome (Android)
 - [ ] Mobile Safari (iOS)
 
 ### Responsive Breakpoints
+
 - [ ] Mobile (320px - 767px)
 - [ ] Tablet (768px - 1023px)
 - [ ] Desktop (1024px - 1439px)
@@ -84,6 +94,7 @@ npm run test:coverage # Coverage report
 ## Accessibility Compliance (WCAG AA)
 
 ### Core Requirements
+
 - [ ] WCAG AA compliance maintained
 - [ ] Semantic HTML used
 - [ ] ARIA labels provided where needed
@@ -91,12 +102,14 @@ npm run test:coverage # Coverage report
 - [ ] Color contrast ratios meet WCAG AA
 
 ### Assistive Technology Testing
+
 - [ ] Screen reader tested
 - [ ] Keyboard navigation working
 - [ ] Focus trap tested
 - [ ] Skip links functional
 
 ### Accessibility Tools
+
 - [ ] axe DevTools scan passed
 - [ ] Lighthouse accessibility score >= 90
 - [ ] WAVE accessibility checker passed
@@ -106,6 +119,7 @@ npm run test:coverage # Coverage report
 ## Performance Impact
 
 ### Performance Metrics
+
 - [ ] No performance regression introduced
 - [ ] Lighthouse Performance score >= 90
 - [ ] Bundle size impact assessed
@@ -114,6 +128,7 @@ npm run test:coverage # Coverage report
 - [ ] Lazy loading used where appropriate
 
 ### Lighthouse Scores (Target: 90+)
+
 ```
 Performance:    [ ] / 100
 Accessibility:  [ ] / 100
@@ -122,6 +137,7 @@ SEO:            [ ] / 100
 ```
 
 ### Bundle Size Analysis
+
 ```
 Before: [ ] KB
 After:  [ ] KB
@@ -145,6 +161,7 @@ Diff:   [ ] KB
 ## Code Quality
 
 ### Code Standards
+
 - [ ] Code follows project style guidelines
 - [ ] Self-review completed
 - [ ] Code commented (complex logic explained)
@@ -154,12 +171,14 @@ Diff:   [ ] KB
 - [ ] Error handling implemented
 
 ### Linting & Formatting
+
 - [ ] ESLint passes with no errors
 - [ ] Prettier formatting applied
 - [ ] TypeScript compilation successful
 - [ ] No console errors in browser
 
 ### Code Architecture
+
 - [ ] Follows Atomic Design principles (if UI component)
 - [ ] Uses path aliases
 - [ ] Virtual modules used for content (if applicable)
@@ -171,6 +190,7 @@ Diff:   [ ] KB
 ## Documentation
 
 ### Documentation Updates
+
 - [ ] README updated (if user-facing changes)
 - [ ] Code comments added where necessary
 - [ ] JSDoc comments for exported functions
@@ -179,6 +199,7 @@ Diff:   [ ] KB
 - [ ] ADR created (if architectural decision made)
 
 ### Related Documentation
+
 - [ ] Technology Stack Blueprint updated
 - [ ] Folder Structure Blueprint updated
 - [ ] Code Exemplars updated (if new pattern)
@@ -189,19 +210,22 @@ Diff:   [ ] KB
 ## Architecture & Design
 
 ### Architectural Decisions
+
 - [ ] Follows existing ADRs
 - [ ] New ADR created (if needed)
 - [ ] Design pattern documented
 
 **Related ADRs:**
+
 - [ ] ADR-001: Build-Time vs Runtime Parsing
 - [ ] ADR-002: Virtual Modules vs Import Aliases
 - [ ] ADR-003: Single vs Multiple Plugins
 - [ ] ADR-004: Markdown vs CMS
 - [ ] ADR-005: TypeScript Strict Mode
-- [ ] ADR-XXX: <!-- New ADR if created -->
+- [ ] ADR-XXX: `<!-- New ADR if created -->`
 
 ### Component Structure (if applicable)
+
 ```
 Type: [ ] Atom / [ ] Molecule / [ ] Organism / [ ] Section
 Location: src/components/<!-- path -->
@@ -215,12 +239,15 @@ Exports: Named / Default
 ### Screenshots/Videos
 
 **Before:**
+
 <!-- Add screenshot or video of before state -->
 
 **After:**
+
 <!-- Add screenshot or video of after state -->
 
 ### UI/UX Changes
+
 - [ ] Design mockups provided
 - [ ] User flow documented
 - [ ] Animation/transition details specified
@@ -230,10 +257,12 @@ Exports: Named / Default
 ## Breaking Changes & Migration
 
 ### Breaking Changes
+
 - [ ] No breaking changes
 - [ ] Contains breaking changes (see migration guide below)
 
 ### Migration Guide
+
 <!-- If breaking changes, provide step-by-step migration instructions -->
 
 ---
@@ -241,6 +270,7 @@ Exports: Named / Default
 ## Deployment Checklist
 
 ### Pre-Deployment
+
 - [ ] All tests passing in CI/CD
 - [ ] Preview deployment reviewed
 - [ ] Database migrations tested (if applicable)
@@ -248,6 +278,7 @@ Exports: Named / Default
 - [ ] Feature flags configured (if applicable)
 
 ### Post-Deployment
+
 - [ ] Production deployment successful
 - [ ] Smoke tests passed
 - [ ] Monitoring alerts configured
@@ -258,6 +289,7 @@ Exports: Named / Default
 ## Reviewer Checklist
 
 **For Reviewers:**
+
 - [ ] Code follows project conventions
 - [ ] Logic is clear and maintainable
 - [ ] Tests are comprehensive and pass
@@ -268,6 +300,7 @@ Exports: Named / Default
 - [ ] No obvious bugs or edge cases missed
 
 **Review Type:**
+
 - [ ] Code review
 - [ ] Design review
 - [ ] Accessibility review
@@ -279,15 +312,19 @@ Exports: Named / Default
 ## Additional Context
 
 ### Related Work
+
 <!-- Link to related PRs, issues, or discussions -->
 
 ### Implementation Notes
+
 <!-- Any technical details reviewers should know -->
 
 ### Known Limitations
+
 <!-- Any known issues or future improvements needed -->
 
 ### Dependencies
+
 <!-- External dependencies or blockers -->
 
 ---
@@ -295,6 +332,7 @@ Exports: Named / Default
 ## Pre-Merge Checklist
 
 **Before requesting review:**
+
 - [ ] All checkboxes above completed
 - [ ] Self-review done thoroughly
 - [ ] Tests written and passing
@@ -304,6 +342,7 @@ Exports: Named / Default
 - [ ] Branch up to date with target branch
 
 **Before merging:**
+
 - [ ] All reviewer comments addressed
 - [ ] Required approvals obtained
 - [ ] CI/CD checks passed
@@ -337,6 +376,7 @@ Exports: Named / Default
 ---
 
 **Conventional Commit Summary:**
+
 ```
 <type>(<scope>): <subject>
 
