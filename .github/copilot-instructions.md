@@ -13,15 +13,46 @@
 - [X] Development Environment - React + Vite + TypeScript + Tailwind CSS ready
 - [X] Quality Standards - Performance targets, logging system, documentation complete
 
-<!--
   ✅ PHASE 1 COMPLETION VERIFIED:
+
   - All foundation objectives achieved
   - Professional infrastructure established
   - Strategic decisions confirmed and documented
   - Development environment prepared for Phase 2
   - Comprehensive logging and project management systems active
   - Ready for Phase 2: Architecture & Design
--->
+
+## General Guidelines
+
+- No confirmation needed for `commit.prompt.md`
+
+- Always ask for clarification when encountering unclear or conflicting information - It's always better to confirm than to guess
+- 
+
+### Documentation
+
+- All functions should have JSDoc comments
+- Explain the "why" not just the "what"
+- Link to relevant project specifications
+- Always put footnote on files: `{Version} | {file status} | {Last Updated: MMM DD YYYY - HH:MM}`
+- use ASCII art for Diagrams or any visualization / you can use mermaid code once i request in prompt
+
+### Commit Reminder
+
+Always suggest git commit and provide a message at the end of each task. Generate conventional commit messages following the Conventional Commits specification. Use `commit.prompt` for detailed guidance.
+
+## Available Agents
+
+### @mentor
+
+Use the mentor agent for:
+
+- Learning new concepts
+- Understanding project architecture
+- Getting guided help with debugging
+- Code review with educational feedback
+
+**Invoke with**: "As my mentor, help me understand..."
 
 ## PHASE 1 COMPLETION & PHASE 2 PREPARATION
 
