@@ -155,7 +155,7 @@ src/components/
 │   ├── AboutSection.tsx
 │   ├── SkillsSection.tsx
 │   ├── ProjectsSection.tsx
-│   ├── BlogsSection.tsx
+│   ├── BlogSection.tsx
 │   ├── ContactSection.tsx
 │   └── JourneyTimeline.tsx
 └── layout/         # Templates

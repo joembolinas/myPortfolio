@@ -259,7 +259,7 @@ if (element instanceof HTMLDivElement) {
 
 - [TypeScript Strict Mode Documentation](https://www.typescriptlang.org/tsconfig#strict)
 - [TypeScript Handbook - Strict Mode](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#strictness)
-- [REQ-003: Type-Safe Content Access](../ARCHITECTURE.md#req-003)
+- [REQ-003: Type-Safe Content Access](../Architecture_Blueprint.md#req-003)
 - [Technology Stack Blueprint - TypeScript Configuration](../Technology_Stack_Blueprint.md#32-typescript-configuration)
 
 ## Follow-Up Actions
@@ -278,7 +278,7 @@ if (element instanceof HTMLDivElement) {
 
 | Date | Author | Changes |
 |------|--------|---------|
-| 2025-12-09 | Growth Journey Team | Initial version extracted from ARCHITECTURE.md |
+| 2025-12-09 | Growth Journey Team | Initial version extracted from Architecture_Blueprint.md |
 
 ---
 

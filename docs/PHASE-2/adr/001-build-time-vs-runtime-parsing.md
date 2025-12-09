@@ -214,8 +214,8 @@ export const projects: Project[] =
 
 ## References
 
-- [PERF-004: Eliminate Runtime Content Parsing](../ARCHITECTURE.md#perf-004)
-- [REQ-003: Type-Safe Content Access](../ARCHITECTURE.md#req-003)
+- [PERF-004: Eliminate Runtime Content Parsing](../Architecture_Blueprint.md#perf-004)
+- [REQ-003: Type-Safe Content Access](../Architecture_Blueprint.md#req-003)
 - [Vite Plugin API Documentation](https://vitejs.dev/guide/api-plugin.html)
 - [Virtual Modules Pattern](https://vitejs.dev/guide/api-plugin.html#virtual-modules-convention)
 - [Technology Stack Blueprint](../Technology_Stack_Blueprint.md#32-content-processing)
@@ -236,7 +236,7 @@ export const projects: Project[] =
 
 | Date | Author | Changes |
 |------|--------|---------|
-| 2025-12-09 | Growth Journey Team | Initial version extracted from ARCHITECTURE.md |
+| 2025-12-09 | Growth Journey Team | Initial version extracted from Architecture_Blueprint.md |
 
 ---
 

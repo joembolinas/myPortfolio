@@ -223,8 +223,8 @@ Current architecture (virtual modules with re-export layer) supports future migr
 
 ## References
 
-- [CON-005: No External Content API Dependencies](../ARCHITECTURE.md#con-005)
-- [GUD-003: Git Version Control](../ARCHITECTURE.md#gud-003)
+- [CON-005: No External Content API Dependencies](../Architecture_Blueprint.md#con-005)
+- [GUD-003: Git Version Control](../Architecture_Blueprint.md#gud-003)
 - [Markdown Content System Specification](../../spec/markdown-content-system.md)
 
 ## Follow-Up Actions
@@ -242,7 +242,7 @@ Current architecture (virtual modules with re-export layer) supports future migr
 
 | Date | Author | Changes |
 |------|--------|---------|
-| 2025-12-09 | Growth Journey Team | Initial version extracted from ARCHITECTURE.md |
+| 2025-12-09 | Growth Journey Team | Initial version extracted from Architecture_Blueprint.md |
 
 ---
 

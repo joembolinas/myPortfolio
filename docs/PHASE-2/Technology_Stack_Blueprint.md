@@ -17,7 +17,7 @@ date: 2025-12-09
 The Growth Journey Portfolio is a modern React-based single-page application built with TypeScript, Vite, and Tailwind CSS. The stack emphasizes performance (Lighthouse 90+ target), accessibility (WCAG AA compliance), and developer experience through type safety, hot module replacement, and comprehensive testing.
 
 **Primary Technology:** React.js 18.2 with TypeScript 5.0
-**Build System:** Vite 7.0 with custom content pipeline plugins
+**Build System:** Vite 5.x with custom content pipeline plugins
 **Styling:** Tailwind CSS 3.4 with custom theme extensions
 **Deployment:** Vercel (Node.js 18+ runtime)
 
@@ -275,7 +275,7 @@ const formatted = format(parseISO(isoDate), 'MMM dd, yyyy');
 
 \`\`\`json
 {
-  "vite": "^7.0.6",
+  "vite": "^5.0.0",
   "@vitejs/plugin-react": "^4.0.3"
 }
 \`\`\`
@@ -1394,40 +1394,40 @@ const apiUrl = import.meta.env.VITE_API_URL;
 **Advantages:**
 
 - âš¡ **Faster Dev Server:** ESBuild-powered, instant HMR
-- í³¦ **Better Build Performance:** 10-100x faster than Webpack
-- í¾¯ **Modern Defaults:** Native ESM, modern browser targets
-- í´Œ **Plugin Ecosystem:** Custom content pipeline plugins
-- í³Š **Bundle Size:** Smaller output with Rollup
+- ï¿½ï¿½ï¿½ **Better Build Performance:** 10-100x faster than Webpack
+- ï¿½ï¿½ï¿½ **Modern Defaults:** Native ESM, modern browser targets
+- ï¿½ï¿½ï¿½ **Plugin Ecosystem:** Custom content pipeline plugins
+- ï¿½ï¿½ï¿½ **Bundle Size:** Smaller output with Rollup
 
 ### 12.2 Why TypeScript
 
 **Benefits:**
 
 - âœ… **Type Safety:** Catch errors at compile time
-- í´– **Better IntelliSense:** IDE autocomplete and refactoring
-- í³š **Self-Documenting:** Type definitions serve as documentation
-- í´’ **Refactoring Confidence:** Safe large-scale changes
-- í·‘â€í²» **AI-Friendly:** Better code generation with type context
+- ï¿½ï¿½ï¿½ **Better IntelliSense:** IDE autocomplete and refactoring
+- ï¿½ï¿½ï¿½ **Self-Documenting:** Type definitions serve as documentation
+- ï¿½ï¿½ï¿½ **Refactoring Confidence:** Safe large-scale changes
+- ï¿½ï¿½ï¿½â€ï¿½ï¿½ï¿½ **AI-Friendly:** Better code generation with type context
 
 ### 12.3 Why Tailwind CSS
 
 **Rationale:**
 
-- íº€ **Rapid Development:** Utility-first approach for fast styling
-- í³¦ **Small Bundle:** Purges unused CSS automatically
-- í¾¨ **Consistent Design:** Theme configuration enforces standards
-- í´§ **Customizable:** Easy to extend with custom utilities
+- ï¿½ï¿½ï¿½ **Rapid Development:** Utility-first approach for fast styling
+- ï¿½ï¿½ï¿½ **Small Bundle:** Purges unused CSS automatically
+- ï¿½ï¿½ï¿½ **Consistent Design:** Theme configuration enforces standards
+- ï¿½ï¿½ï¿½ **Customizable:** Easy to extend with custom utilities
 - â™¿ **Accessibility:** Focus visible utilities built-in
 
 ### 12.4 Why Framer Motion
 
 **Benefits:**
 
-- í¾¬ **Declarative Animations:** React-friendly API
+- ï¿½ï¿½ï¿½ **Declarative Animations:** React-friendly API
 - âš¡ **Performance:** GPU-accelerated, optimized animations
-- í³± **Gestures:** Built-in drag, hover, tap interactions
+- ï¿½ï¿½ï¿½ **Gestures:** Built-in drag, hover, tap interactions
 - â™¿ **Accessibility:** Respects \`prefers-reduced-motion\`
-- í¾¯ **Type Safety:** Full TypeScript support
+- ï¿½ï¿½ï¿½ **Type Safety:** Full TypeScript support
 
 ## 13. Dependency Licenses
 

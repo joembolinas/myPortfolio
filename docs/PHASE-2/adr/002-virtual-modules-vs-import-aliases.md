@@ -317,7 +317,7 @@ export const projects: Project[] =
 - [Vite Plugin API](https://vitejs.dev/guide/api-plugin.html)
 - [TypeScript Module Declarations](https://www.typescriptlang.org/docs/handbook/modules.html#ambient-modules)
 - [Technology Stack Blueprint - Vite Plugins Section](../Technology_Stack_Blueprint.md#36-vite-plugins)
-- [REQ-002: Virtual Module Pattern](../ARCHITECTURE.md#req-002)
+- [REQ-002: Virtual Module Pattern](../Architecture_Blueprint.md#req-002)
 
 ## Follow-Up Actions
 
@@ -334,7 +334,7 @@ export const projects: Project[] =
 
 | Date | Author | Changes |
 |------|--------|---------|
-| 2025-12-09 | Growth Journey Team | Initial version extracted from ARCHITECTURE.md |
+| 2025-12-09 | Growth Journey Team | Initial version extracted from Architecture_Blueprint.md |
 
 ---
 

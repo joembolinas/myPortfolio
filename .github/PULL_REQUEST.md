@@ -101,11 +101,11 @@ npm run build         # Production build ✅
 
 ```
 docs/PHASE-2/
-├── ARCHITECTURE.md (58KB)
-├── TECH-STACK.md (44KB)
-├── Folder_Structure.md (44KB)
-├── Copilot_Instructions.md (30KB)
-├── Code_Exemplars.md (45KB)
+├── Architecture_Blueprint.md (58KB)
+├── Technology_Stack_Blueprint.md (44KB)
+├── Folder_Structure_Blueprint.md (44KB)
+├── Copilot_Instructions_Blueprint.md (30KB)
+├── Code_Exemplars_Blueprint.md (45KB)
 └── adr/
     ├── README.md
     ├── 000-template.md

@@ -178,7 +178,7 @@ export default defineConfig({
 
 | Date | Author | Changes |
 |------|--------|---------|
-| 2025-12-09 | Growth Journey Team | Initial version extracted from ARCHITECTURE.md |
+| 2025-12-09 | Growth Journey Team | Initial version extracted from Architecture_Blueprint.md |
 
 ---
 

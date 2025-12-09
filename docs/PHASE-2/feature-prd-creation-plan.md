@@ -7,6 +7,8 @@
 
 This document tracks the creation of fine-grained Feature PRDs for all three epics in the Markdown Content Pipeline project. Each feature is broken down into detailed Product Requirements Documents following the template structure.
 
+**Note:** This plan represents a more granular breakdown of features than presented in the high-level epic and architecture documents. It serves as a comprehensive checklist for implementation.
+
 ## Epic Breakdown
 
 ### EPIC-001: Core Plugin Infrastructure (9 Features)

@@ -54,8 +54,8 @@ Before generating code, scan the codebase to identify:
 
 Prioritize the following files in .github/copilot directory (if they exist):
 
-- **architecture.md**: System architecture guidelines
-- **tech-stack.md**: Technology versions and framework details
+- **Architecture_Blueprint.md**: System architecture guidelines
+- **Technology_Stack_Blueprint.md**: Technology versions and framework details
 - **coding-standards.md**: Code style and formatting standards
 - **folder-structure.md**: Project organization guidelines
 - **exemplars.md**: Exemplary code patterns to follow
