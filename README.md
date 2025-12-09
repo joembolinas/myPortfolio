@@ -3,235 +3,251 @@
 [![WCAG AA Compliant](https://img.shields.io/badge/WCAG-AA%20Compliant-blue?style=for-the-badge)](https://www.w3.org/WAI/WCAG21/quickref/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 
 <div align="center">
   <h1>Growth Journey Portfolio</h1>
-  <p><strong>Interactive career transition story from Admin/Procurement to Tech Professional</strong></p>
-
-[Live Demo](https://growth-journey-portfolio.vercel.app) • [Overview](#overview) • [Features](#features) • [Getting Started](#getting-started) • [Development](#development) • [Tech Stack](#tech-stack)
-
+  <p><strong>Interactive career transformation story from Admin/Procurement to Tech Professional</strong></p>
+  <p>
+    <a href="https://growth-journey-portfolio.vercel.app">Live Demo</a> •
+    <a href="#features">Features</a> •
+    <a href="#quick-start">Quick Start</a> •
+    <a href="#tech-stack">Tech Stack</a>
+  </p>
 </div>
 
 ---
 
 ## Overview
 
-**Current Phase:** Phase 2.4 - Contact System Implementation and Testing
+A performance-first, accessibility-focused portfolio showcasing career growth through strategic storytelling and technical execution. Built with React 18, TypeScript, and modern web technologies to achieve 90+ Lighthouse scores while maintaining WCAG AA compliance.
 
-This is an interactive portfolio and career transformation tool built with modern web technologies. It highlights my evolution into an emerging technology professional through strategic storytelling and technical execution.
+**Current Phase:** Phase 2 - Architecture & Design
 
-The portfolio emphasizes performance-first development (90+ Lighthouse scores), accessibility-first design (WCAG AA compliant), and seamless user experience. It integrates real-time GitHub data, features an interactive career timeline, dynamic animated components, a contact system, and a blog showcasing my ongoing learning journey across platforms like TryHackMe, LeetCode, and roadmap.sh.
+### Key Highlights
+
+- Interactive career timeline with milestone tracking
+- Real-time GitHub integration (contributions, repositories, activity)
+- Performance-optimized animations with device adaptation
+- Learning journey across TryHackMe, LeetCode, and roadmap.sh
+- Contact system with validation and anti-spam protection
 
 ## Features
 
-### Core Portfolio
+### Portfolio Sections
 
-- **Interactive Career Timeline** - Visual progression from admin/procurement to tech with milestone markers
-- **Skills Progression Visualization** - Learning journey tracking with TryHackMe, LeetCode, and roadmap.sh integration
-- **Real-time GitHub Integration** - Live contribution charts, repository showcase, and activity tracking
-- **Project & Blog Section** - Curated projects with demos and technical insights
-- **Contact System** - Professional form with validation, anti-spam protection, and email submission
-- **Resume Download** - One-click PDF download feature
+**Hero & Timeline**
+- Animated introduction with career archetype ("The Technical Storyteller")
+- Interactive timeline showing progression from admin/procurement to tech
+- Milestone markers highlighting key achievements and transitions
 
-### Technical Excellence
+**Skills & Projects**
+- Category-based skill visualization (Development, Networking, Data, AI/ML)
+- Project showcase with live demos and source code links
+- Technology stack badges and gradient-based visual hierarchy
 
-- **Performance Optimized** - Code splitting, lazy loading, image optimization, 90+ Lighthouse scores
-- **Accessibility First** - WCAG AA compliant with screen reader support, keyboard navigation, reduced motion
-- **Modern Stack** - React 18, Vite 5, TypeScript, Tailwind CSS, Framer Motion
-- **Animated UX** - Microsoft Viva-inspired effects with performance adaptation
-- **SEO Ready** - Meta tags, structured data, semantic HTML
+**GitHub Integration**
+- Live contribution graph with activity tracking
+- Repository showcase with stars, forks, and primary language
+- Automatic updates from GitHub API
 
-## Getting Started
+**Learning Journey**
+- Platform-specific progress (TryHackMe ranks, LeetCode stats, roadmap.sh paths)
+- Expandable learning cards with detailed achievements
+- Categorized by work experience, education, and technical skills
+
+**Contact & Blog**
+- Professional contact form with validation
+- Blog section for ongoing learning insights
+- Resume download capability
+
+### Technical Features
+
+- **Performance**: Code splitting, lazy loading, image optimization
+- **Accessibility**: WCAG AA compliant, keyboard navigation, screen reader support, reduced motion
+- **UX**: Microsoft Viva-inspired animations that adapt to device performance
+- **SEO**: Semantic HTML, meta tags, structured data
+- **Testing**: Unit tests (Vitest), E2E tests (Playwright), accessibility tests (axe-core)
+- **CI/CD**: Automated testing, Lighthouse CI, linting, and deployment
+
+## Quick Start
 
 ### Prerequisites
 
-- **Node.js** 18+ ([Download](https://nodejs.org/))
-- **npm** 9+ (included with Node.js)
-- **Git** ([Download](https://git-scm.com/))
+- Node.js 18+ ([Download](https://nodejs.org/))
+- npm 9+ (included with Node.js)
 
-### Quick Start
-
-Clone the repository:
+### Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/joembolinas/myPortfolio.git
 cd myPortfolio
-```
 
-Install dependencies:
-
-```bash
+# Install dependencies
 npm install
-```
 
-Start the development server:
-
-```bash
+# Start development server
 npm run dev
 ```
 
-The site will be available at `http://localhost:5173` (or the port Vite assigns).
+Visit `http://localhost:5173` to see the portfolio in action.
 
-### Environment Setup (Optional - GitHub Integration)
+### Optional: GitHub Integration
 
-To enable real-time GitHub data, create a `.env.local` file in the project root:
+To enable real-time GitHub data, create a `.env.local` file:
 
 ```env
-VITE_GITHUB_TOKEN=your_github_personal_access_token
+VITE_GITHUB_TOKEN=your_personal_access_token
 ```
 
-Generate a token at [GitHub Settings → Tokens](https://github.com/settings/tokens)
-
-- Required scopes: `public_repo` (read-only access)
-
-> [!NOTE]
-> The site works without this token, but GitHub data will be limited to public API requests (60 requests/hour).
+> **Note:** Generate a token at [GitHub Settings → Tokens](https://github.com/settings/tokens) with `public_repo` scope. The site functions without this token but GitHub API requests will be rate-limited (60/hour).
 
 ## Development
 
-### Available Scripts
+### Available Commands
 
 ```bash
-# Development server with hot reload
-npm run dev
+# Development
+npm run dev              # Start dev server with hot reload
+npm run build            # Build for production
+npm run preview          # Preview production build
 
-# Build for production
-npm run build
+# Testing
+npm run test             # Run unit tests
+npm run test:watch       # Run tests in watch mode
+npm run test:coverage    # Generate coverage report
+npm run test:e2e         # Run end-to-end tests
+npm run test:a11y        # Run accessibility tests
 
-# Preview production build locally
-npm run preview
-
-# Run tests
-npm run test              # Single run
-npm run test:watch       # Watch mode
-npm run test:coverage    # With coverage report
-
-# Run end-to-end tests
-npm run test:e2e
-
-# Accessibility testing
-npm run test:a11y
-
-# Linting & formatting
-npm run lint             # Check for issues
-npm run lint:fix         # Auto-fix issues
-npm run format          # Format code
-npm run format:check    # Check formatting
+# Code Quality
+npm run lint             # Check for linting issues
+npm run lint:fix         # Auto-fix linting issues
+npm run format           # Format code with Prettier
+npm run type-check       # TypeScript type checking
 
 # Performance
-npm run analyze         # Bundle analysis
-npm run lighthouse      # Lighthouse CI check
+npm run analyze          # Analyze bundle size
+npm run lighthouse       # Run Lighthouse CI
 ```
 
 ### Project Structure
 
 ```
-src/
-├── components/          # React components
-│   ├── animations/      # Framer Motion effects
-│   ├── github/          # GitHub integration
-│   ├── layout/          # Navigation, footer
-│   ├── sections/        # Page sections
-│   ├── ui/              # Reusable UI components
-│   └── lazy/            # Lazy-loaded sections
-├── hooks/               # Custom React hooks
-├── services/            # API services (GitHub, contact)
-├── data/                # Static data (projects, skills, etc.)
-├── utils/               # Helper functions
-├── types/               # TypeScript types
-└── vite/                # Vite plugins
-
-public/                  # Static assets
-config/                  # Build config (Tailwind, ESLint, etc.)
+myPortfolio/
+├── src/
+│   ├── components/          # React components
+│   │   ├── animations/      # Framer Motion effects
+│   │   ├── github/          # GitHub integration components
+│   │   ├── layout/          # Navigation, Footer
+│   │   ├── sections/        # Main page sections
+│   │   ├── ui/              # Reusable UI components
+│   │   └── lazy/            # Lazy-loaded sections
+│   ├── hooks/               # Custom React hooks
+│   ├── services/            # API services (GitHub, contact)
+│   ├── data/                # Static data (projects, skills)
+│   ├── utils/               # Helper functions
+│   ├── types/               # TypeScript type definitions
+│   └── __tests__/           # Test files
+├── public/                  # Static assets
+├── config/                  # Configuration files
+├── docs/                    # Documentation
+└── logging-system/          # Development logging utilities
 ```
 
 ## Tech Stack
 
-| Tool                    | Purpose                                  |
-| ----------------------- | ---------------------------------------- |
-| **React 18**      | UI framework with concurrent features    |
-| **Vite**          | Lightning-fast build tool and dev server |
-| **TypeScript**    | Static type safety                       |
-| **Tailwind CSS**  | Utility-first styling                    |
-| **Framer Motion** | Advanced animations                      |
-| **Vitest**        | Unit testing                             |
-| **Playwright**    | E2E testing                              |
+### Core Technologies
 
-## Performance
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| [React](https://reactjs.org/) | 18+ | UI Framework |
+| [TypeScript](https://www.typescriptlang.org/) | 5.0+ | Type Safety |
+| [Vite](https://vitejs.dev/) | 5.0+ | Build Tool |
+| [Tailwind CSS](https://tailwindcss.com/) | 3.0+ | Styling |
+| [Framer Motion](https://www.framer.com/motion/) | Latest | Animations |
 
-All pages target these Lighthouse metrics:
+### Development Tools
 
-- **Performance:** 90+
-- **Accessibility:** 90+
-- **Best Practices:** 90+
-- **SEO:** 95+
+| Tool | Purpose |
+|------|---------|
+| ESLint | Code Quality |
+| Prettier | Code Formatting |
+| Vitest | Unit Testing |
+| Playwright | E2E Testing |
+| Lighthouse CI | Performance Monitoring |
+| axe-core | Accessibility Testing |
 
-Check live metrics with `npm run lighthouse`.
+### Key Dependencies
 
-## Accessibility
+- **UI Components**: `@headlessui/react`, `lucide-react`
+- **Utilities**: `clsx`, `date-fns`, `gray-matter`
+- **Routing**: `react-router-dom`
+- **Error Handling**: `react-error-boundary`
 
-This site is built with accessibility as a core principle:
+## Performance & Accessibility
 
-- Keyboard navigation fully supported
-- Screen reader compatible (tested with NVDA, JAWS)
-- WCAG 2.1 AA compliant
-- Color contrast ratios meet standards
+### Performance Targets
+
+- Lighthouse Performance: 90+
+- First Contentful Paint: < 1.8s
+- Largest Contentful Paint: < 2.5s
+- Cumulative Layout Shift: < 0.1
+
+### Accessibility Standards
+
+- WCAG AA Compliant
+- Keyboard navigation support
+- Screen reader optimized
 - Reduced motion support
-- Semantic HTML throughout
-- ARIA labels and landmarks
+- High contrast mode compatible
+- Focus management utilities
 
-Run automated checks with `npm run test:a11y`.
+### Optimization Strategies
 
-## Browser Support
+- Code splitting with React.lazy
+- Image optimization and lazy loading
+- Device-adaptive animations
+- Memory usage monitoring
+- Bundle size analysis
 
-Modern browsers with ES2020+ support:
+## Contributing
 
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile browsers (iOS Safari 14+, Chrome Mobile)
+Contributions are welcome! Please read the [Contributing Guidelines](docs/CONTRIBUTING.md) for details on:
 
-## Deployment
+- Code standards and conventions
+- Testing requirements
+- Pull request process
+- Development workflow
 
-The portfolio is configured for deployment to Vercel (recommended) but works with any static host.
+## Roadmap
 
-### Vercel (Recommended)
+### Current Phase: Phase 2 - Architecture & Design
 
-1. Push code to GitHub
-2. Connect repository to [Vercel](https://vercel.com)
-3. Vercel auto-deploys on push to main
+- [x] Phase 1: Foundation & Setup
+- [x] Phase 2.1: Component Architecture
+- [x] Phase 2.2: Animation System
+- [x] Phase 2.3: Accessibility Implementation
+- [ ] Phase 2.4: Contact System & Testing
+- [ ] Phase 3: Content & Polish
+- [ ] Phase 4: Deployment & Monitoring
 
-### Manual Build
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
-```bash
-npm run build
-# Deploy the 'dist/' folder to your hosting
-```
+## Acknowledgments
 
-The build is optimized for production with tree-shaking, code splitting, and minification.
+Built with excellent open-source tools:
 
-## Learning Resources
-
-The portfolio documents my learning journey with these resources:
-
-- [roadmap.sh](https://roadmap.sh/) - Structured learning paths
-- [TryHackMe](https://tryhackme.com/) - Security & ethical hacking
-- [LeetCode](https://leetcode.com/) - Data structures & algorithms
-- [Microsoft Viva](https://www.microsoft.com/en-us/microsoft-viva/) - Design inspiration
-
-## Support & Feedback
-
-Found an issue or have feedback?
-
-- **Issues:** [Open an issue](https://github.com/joembolinas/myPortfolio/issues)
-- **Email:** [Contact form](https://growth-journey-portfolio.vercel.app/#contact)
-- **Social:** Find me on [GitHub](https://github.com/joembolinas)
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+- [React Team](https://reactjs.org/) for the UI framework
+- [Vite Team](https://vitejs.dev/) for the blazing-fast build tool
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- [Framer Motion](https://www.framer.com/motion/) for smooth animations
 
 ---
 
-**Status:** Phase 2.4 in progress - Contact form system complete, testing and documentation underway. See [CHANGELOG](CHANGELOG.md) for detailed updates.
+<div align="center">
+  <p>Built with modern web technologies and a focus on performance, accessibility, and user experience.</p>
+  <p>
+    <a href="https://growth-journey-portfolio.vercel.app">View Live Demo</a> •
+    <a href="https://github.com/joembolinas/myPortfolio">Star on GitHub</a>
+  </p>
+</div>
