@@ -675,3 +675,4 @@ NEXT ACTION: Merge Phase 2 work to main branch and prepare Phase 3 planning
 [1765243397] | UPDATE | GUIDELINES | Reorganized .github/copilot-instructions.md to match current React/Vite workflow and removed legacy static-site items | COMPLETED
 [1765250971] | UPDATE | CONTENT_PIPELINE | Defaulted blog readTime/category and contact icon fallback in markdown plugin | COMPLETED
 [1765281071] | COMMIT | GIT | Committed refactor(docs): reorganize phase 2 documentation and update blueprints | COMPLETED
+[09Tue122025] | UPDATE | DOCS | Updated README.md with improved structure, table of contents, and admonitions following prompt instructions | COMPLETED 

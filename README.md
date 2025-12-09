@@ -8,10 +8,11 @@
   <h1>Growth Journey Portfolio</h1>
   <p><strong>Interactive career transformation story from Admin/Procurement to Tech Professional</strong></p>
   <p>
-    <a href="https://growth-journey-portfolio.vercel.app">Live Demo</a> •
+    <a href="#overview">Overview</a> •
     <a href="#features">Features</a> •
     <a href="#quick-start">Quick Start</a> •
-    <a href="#tech-stack">Tech Stack</a>
+    <a href="#tech-stack">Tech Stack</a> •
+    <a href="#development">Development</a>
   </p>
 </div>
 
@@ -30,35 +31,38 @@ A performance-first, accessibility-focused portfolio showcasing career growth th
 - Learning journey across Coursera, LMS, TryHackMe, LeetCode, and roadmap.sh
 - Contact system with validation and anti-spam protection
 
+> [!TIP]
+> Check out the [live demo](https://growth-journey-portfolio.vercel.app) to see the portfolio in action.
+
 ## Features
 
 ### Portfolio Sections
 
-**Hero & Timeline**
+#### Hero & Timeline
 
 - Animated introduction with career archetype ("The Technical Storyteller")
 - Interactive timeline showing progression from admin/procurement to tech
 - Milestone markers highlighting key achievements and transitions
 
-**Skills & Projects**
+#### Skills & Projects
 
 - Category-based skill visualization (Development, Networking, Data, AI/ML)
 - Project showcase with live demos and source code links
 - Technology stack badges and gradient-based visual hierarchy
 
-**GitHub Integration**
+#### GitHub Integration
 
 - Live contribution graph with activity tracking
 - Repository showcase with stars, forks, and primary language
 - Automatic updates from GitHub API
 
-**Learning Journey**
+#### Learning Journey
 
 - Platform-specific progress (TryHackMe ranks, LeetCode stats, roadmap.sh paths)
 - Expandable learning cards with detailed achievements
 - Categorized by work experience, education, and technical skills
 
-**Contact & Blog**
+#### Contact & Blog
 
 - Professional contact form with validation
 - Blog section for ongoing learning insights
@@ -66,8 +70,12 @@ A performance-first, accessibility-focused portfolio showcasing career growth th
 
 ### Technical Features
 
-- 
 - **Performance**: Code splitting, lazy loading, image optimization
+- **Accessibility**: WCAG AA compliant, keyboard navigation, screen reader support, reduced motion
+- **UX**: Microsoft Viva-inspired animations that adapt to device performance
+- **SEO**: Semantic HTML, meta tags, structured data
+- **Testing**: Unit tests (Vitest), E2E tests (Playwright), accessibility tests (axe-core)
+- **CI/CD**: Automated testing, Lighthouse CI, linting, and deployment
 - **Accessibility**: WCAG AA compliant, keyboard navigation, screen reader support, reduced motion
 - **UX**: Microsoft Viva-inspired animations that adapt to device performance
 - **SEO**: Semantic HTML, meta tags, structured data
@@ -215,20 +223,11 @@ myPortfolio/
 - Memory usage monitoring
 - Bundle size analysis
 
-## Contributing
-
-Contributions are welcome! Please read the [Contributing Guidelines](docs/CONTRIBUTING.md) for details on:
-
-- Code standards and conventions
-- Testing requirements
-- Pull request process
-- Development workflow
-
 ## Roadmap
 
 ### Current Phase: Phase 2 - Architecture & Design
 
-- [ ] Phase 1: Foundation & Setup
+- [X] Phase 1: Foundation & Setup
 - [ ] Phase 2.1: Component Architecture
 - [ ] Phase 2.2: Animation System
 - [ ] Phase 2.3: Accessibility Implementation
