@@ -673,3 +673,4 @@ NEXT ACTION: Merge Phase 2 work to main branch and prepare Phase 3 planning
 [1765238377] | TEST | BUILD | Verified npm run build, lint, and format:check work with new config locations | VALIDATED
 
 [1765243397] | UPDATE | GUIDELINES | Reorganized .github/copilot-instructions.md to match current React/Vite workflow and removed legacy static-site items | COMPLETED
+[1765250971] | UPDATE | CONTENT_PIPELINE | Defaulted blog readTime/category and contact icon fallback in markdown plugin | COMPLETED
