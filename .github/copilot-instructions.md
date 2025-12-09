@@ -10,7 +10,7 @@
 
 ## Core Workflow & Logging
 
-- Follow `.project/workflow-config.json` (8-step flow); present a plan and wait for `CONFIRM AND PROCEED` before implementing.
+- Follow `.project/workflow-config.json` (8-step flow); present a plan and wait for `CONFIRM or PROCEED` before implementing.
 - Ask clarifying questions whenever anything is unclear.
 - Log every major action to `project.log` with Unix timestamps; use action types INIT/DECISION/SETUP/CREATE/UPDATE/DELETE/DEPLOY/SYNTHESIS/IMPLEMENTATION/FEEDBACK/MILESTONE. Logging scripts live in `logging-system/`.
 - No confirmation needed for `commit.prompt.md`; always suggest a Conventional Commit message after tasks.
