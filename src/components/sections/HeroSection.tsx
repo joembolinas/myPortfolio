@@ -41,8 +41,8 @@ export const HeroSection: React.FC = () => {
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
             Hello, I'm{' '}
-            <span className="relative">
-              Joem
+            <span className="relative inline-block">
+              <span className="relative z-10">Joem</span>
               <motion.div
                 className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-25"
                 animate={{

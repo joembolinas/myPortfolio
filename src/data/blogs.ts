@@ -1,3 +1,5 @@
+import { blogsData } from 'virtual:blogs-data';
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -10,9 +12,10 @@ export interface BlogPost {
   featured: boolean;
   image?: string;
   status: 'published' | 'draft' | 'coming-soon';
+  url?: string;
 }
 
-export const blogPosts: BlogPost[] = [
+const fallbackBlogPosts: BlogPost[] = [
   {
     id: 'career-transition-story',
     title: 'From Admin to Developer: My Career Transition Story',
@@ -109,6 +112,8 @@ export const blogPosts: BlogPost[] = [
     status: 'coming-soon',
   },
 ];
+
+export const blogPosts: BlogPost[] = Array.isArray(blogsData) && blogsData.length ? blogsData : fallbackBlogPosts;
 
 export const getBlogPostsByCategory = (category: BlogPost['category']) => {
   return blogPosts.filter((post) => post.category === category);

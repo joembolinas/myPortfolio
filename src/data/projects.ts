@@ -1,7 +1,7 @@
 import { Project } from '@/types';
+import { projectsData } from 'virtual:projects-data';
 
-// Project data extracted from our ui-2.html
-export const projects: Project[] = [
+const fallbackProjects: Project[] = [
   {
     id: 'ecommerce',
     title: 'E-Commerce Platform',
@@ -30,3 +30,5 @@ export const projects: Project[] = [
     sourceUrl: '#',
   },
 ];
+
+export const projects: Project[] = Array.isArray(projectsData) && projectsData.length ? projectsData : fallbackProjects;

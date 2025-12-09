@@ -655,3 +655,22 @@ NEXT ACTION: Merge Phase 2 work to main branch and prepare Phase 3 planning
 [1734985280] | PUSH | GIT | Pushed workflow change to trigger fresh pipeline run | COMPLETED
 [1734985300] | NOTE | DEBT | Plan to revert to 'npm ci' after stability confirmed; create follow-up issue for reinstating strict install | TRACKED
 
+# LEARNING JOURNEY DATA PIPELINE - SESSION [Tue 12/09/2025]
+[1765236459] | IMPLEMENTATION | VITE_PLUGIN | Added journeyDataPlugin to load and parse content/learningJourney markdown files into a virtual module | COMPLETED
+[1765236470] | FEATURE | CONTENT | Markdown parsing now builds typed learning journey items with overview, key learnings, and optional tech/achievements/challenges/next steps plus icon/color mapping per category | COMPLETED
+[1765236480] | DEVEX | HMR | Hot module reload invalidates the virtual learning journey data when markdown files change for instant refresh | COMPLETED
+[1765236490] | COMMIT | GIT | Committed Vite plugin work on branch refactor/content (feat: add Vite plugin for loading and parsing learning journey markdown files) | COMPLETED
+
+# PROJECT CLEANUP - SESSION [Tue 12/09/2025]
+[1765238149] | CLEANUP | FILES | Deleted .lighthouse/, .lighthouseci/, and .terminal.log (local generated artifacts) | COMPLETED
+[1765238150] | UPDATE | GITIGNORE | Updated .gitignore to ignore .lighthouse/ and .lighthouseci/ folders permanently | COMPLETED
+[1765238151] | DECISION | CONFIGS | Kept .husky/ (git hooks) and lighthouserc.json (CI config) in root per best practices | CONFIRMED
+
+# CONFIG CONSOLIDATION - SESSION [Tue 12/09/2025]
+[1765238374] | REFACTOR | CONFIGS | Moved .eslintrc.json, prettier.config.cjs, postcss.config.js, tailwind.config.js to config/ folder | COMPLETED
+[1765238375] | UPDATE | PACKAGE_JSON | Updated lint and lint:fix scripts with --config config/.eslintrc.json flag | COMPLETED
+[1765238376] | UPDATE | POSTCSS | Updated postcss.config.js to reference tailwind config in config/ folder | COMPLETED
+[1765238377] | TEST | BUILD | Verified npm run build, lint, and format:check work with new config locations | VALIDATED
+
+[1765243397] | UPDATE | GUIDELINES | Reorganized .github/copilot-instructions.md to match current React/Vite workflow and removed legacy static-site items | COMPLETED
+[1765250971] | UPDATE | CONTENT_PIPELINE | Defaulted blog readTime/category and contact icon fallback in markdown plugin | COMPLETED

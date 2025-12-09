@@ -1,31 +1,34 @@
 import { ContactMethod, NavigationItem } from '@/types';
+import { contactData } from 'virtual:contact-data';
 
-// Contact information (using placeholder data - user should update)
-export const contactMethods: ContactMethod[] = [
+const fallbackContacts: ContactMethod[] = [
   {
     type: 'email',
-    icon: '📧',
+    icon: 'email',
     label: 'Email',
     value: 'bolinasjoem@gmail.com',
     url: 'mailto:bolinasjoem@gmail.com',
   },
   {
     type: 'linkedin',
-    icon: '💼',
+    icon: 'briefcase',
     label: 'LinkedIn',
     value: 'linkedin.com/in/joem',
     url: 'https://linkedin.com/in/joembolinas',
   },
   {
     type: 'github',
-    icon: '💻',
+    icon: 'laptop',
     label: 'GitHub',
     value: 'github.com/joembolinas',
     url: 'https://github.com/joembolinas',
   },
 ];
 
-// TODO: SOON WILL ADD tryhackme, leetcode, roadmap.sh
+export const contactMethods: ContactMethod[] =
+  (contactData?.contacts as ContactMethod[] | undefined)?.length && contactData?.contacts
+    ? (contactData.contacts as ContactMethod[])
+    : fallbackContacts;
 
 // Navigation items matching our enhanced sections
 export const navigationItems: NavigationItem[] = [
