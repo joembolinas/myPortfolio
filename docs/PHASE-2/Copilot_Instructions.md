@@ -1094,7 +1094,7 @@ Reference these ADRs for architectural context:
 ## 15. Related Documentation
 
 - [Technology Stack Blueprint](./Technology_Stack_Blueprint.md) - Complete dependency documentation
-- [Folder Structure Blueprint](./Folder_Structure_Blueprint.md) - Directory organization guide
+- [Folder Structure Blueprint](./Folder_Structure.md) - Directory organization guide
 - [Project Architecture Blueprint](./ARCHITECTURE.md) - High-level architecture overview
 - [Markdown Content System Spec](../spec/markdown-content-system.md) - Content pipeline documentation
 
