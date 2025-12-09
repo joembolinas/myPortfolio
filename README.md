@@ -1,4 +1,3 @@
-[![Lighthouse Performance](https://img.shields.io/badge/Lighthouse-Performance%2090%2B-brightgreen?style=for-the-badge&logo=lighthouse)](https://growth-journey-portfolio.vercel.app)
 [![Lighthouse Accessibility](https://img.shields.io/badge/Lighthouse-Accessibility%2090%2B-brightgreen?style=for-the-badge&logo=lighthouse)](https://growth-journey-portfolio.vercel.app)
 [![WCAG AA Compliant](https://img.shields.io/badge/WCAG-AA%20Compliant-blue?style=for-the-badge)](https://www.w3.org/WAI/WCAG21/quickref/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
