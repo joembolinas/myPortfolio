@@ -13,13 +13,10 @@ contacts:
     label: GitHub
     value: github.com/joembolinas
     url: https://github.com/joembolinas
+  - type: phone
+    label: Phone
+    value: +63-900-000-0000
+    icon: phone
 ---
-
-## Contacts
-- type: phone
-  label: Phone
-  value: +63-900-000-0000
-  icon: phone
-
 ## Notes
 Typical response time: < 24 hours.
