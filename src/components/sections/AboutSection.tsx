@@ -54,7 +54,7 @@ export const AboutSection: React.FC = () => {
 
         {/* Career transition story */}
         <FadeInOnScroll direction="up" className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
               <h3 className="text-3xl font-semibold text-white mb-6">My Journey</h3>
               <ProgressiveReveal
@@ -149,13 +149,12 @@ export const AboutSection: React.FC = () => {
                               <div className="flex items-center justify-between">
                                 <span className="text-white font-medium">{skill.name}</span>
                                 <span
-                                  className={`text-xs px-2 py-1 rounded-full ${
-                                    skill.proficiency === 'advanced'
+                                  className={`text-xs px-2 py-1 rounded-full ${skill.proficiency === 'advanced'
                                       ? 'bg-green-500/20 text-green-400'
                                       : skill.proficiency === 'intermediate'
                                         ? 'bg-blue-500/20 text-blue-400'
                                         : 'bg-orange-500/20 text-orange-400'
-                                  }`}
+                                    }`}
                                 >
                                   {skill.proficiency}
                                 </span>

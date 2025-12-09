@@ -672,3 +672,4 @@ NEXT ACTION: Merge Phase 2 work to main branch and prepare Phase 3 planning
 [1765238376] | UPDATE | POSTCSS | Updated postcss.config.js to reference tailwind config in config/ folder | COMPLETED
 [1765238377] | TEST | BUILD | Verified npm run build, lint, and format:check work with new config locations | VALIDATED
 
+[1765243397] | UPDATE | GUIDELINES | Reorganized .github/copilot-instructions.md to match current React/Vite workflow and removed legacy static-site items | COMPLETED
