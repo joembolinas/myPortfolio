@@ -1,7 +1,44 @@
+/**
+ * Content Data Plugin - Core Vite Plugin for Markdown Content Pipeline
+ * 
+ * **Epic:** EPIC-001 - Core Plugin Infrastructure
+ * **Phase:** 3.1 - Foundation Establishment
+ * **Milestone:** M3.1.1-M3.1.9
+ * 
+ * This plugin implements the build-time markdown content transformation system
+ * for the Growth Journey Portfolio. It converts markdown files with YAML frontmatter
+ * into type-safe virtual modules that can be imported directly in React components.
+ * 
+ * **Architecture Pattern:**
+ * Content Layer (Markdown) → Processing Layer (Plugin) → Runtime Layer (Virtual Modules)
+ * 
+ * **Supported Sections:**
+ * - Home/Hero (single-file)
+ * - About (single-file)
+ * - Skills (multi-file aggregation)
+ * - Projects (multi-file)
+ * - Blogs (multi-file)
+ * - Contact (single-file)
+ * 
+ * **Performance Targets:**
+ * - Build-time processing: <2s for 100 files
+ * - HMR updates: <100ms
+ * - Zero runtime overhead (no parsers in client bundle)
+ * 
+ * @module contentDataPlugin
+ * @version 1.0.0
+ * @since Phase 3.1
+ */
+
 import type { Plugin } from 'vite';
 import * as fs from 'fs';
 import * as path from 'path';
 import matter from 'gray-matter';
+import { splitSections, extractBullets, ensureStringArray, slugFromPath } from '../utils/markdownParser';
+
+// ============================================================================
+// Virtual Module Configuration
+// ============================================================================
 
 // Virtual module identifiers
 const modules = {
@@ -112,6 +149,35 @@ interface MarkdownFile {
   content: string;
 }
 
+/**
+ * Vite plugin for content data transformation (F1: Vite Plugin Core Infrastructure)
+ * Transforms markdown files into virtual modules with type-safe exports
+ * 
+ * **Features Implemented:**
+ * - F1: Vite Plugin Core Infrastructure
+ * - F2: Markdown File Discovery & Reading  
+ * - F3: Content Parsing Pipeline
+ * - F4.1-F4.6: Section-Specific Parsers (Home, About, Skills, Projects, Blogs, Contact)
+ * - F6: Virtual Module Generation
+ * - F8: HMR Integration
+ * 
+ * **Non-Functional Requirements:**
+ * - NFR-001: <500ms plugin execution time per virtual module
+ * - NFR-003: <100ms HMR updates
+ * - NFR-004: No build-time libraries in client bundle
+ * - NFR-008-011: Graceful error handling with warnings
+ * 
+ * @returns Vite plugin instance
+ * @example
+ * ```typescript
+ * // In vite.config.ts
+ * import { contentDataPlugin } from './src/vite/contentDataPlugin';
+ * 
+ * export default defineConfig({
+ *   plugins: [contentDataPlugin()]
+ * });
+ * ```
+ */
 export function contentDataPlugin(): Plugin {
   let root = '';
 
@@ -138,25 +204,35 @@ export function contentDataPlugin(): Plugin {
     },
 
     resolveId(id) {
+      // FR-002: Register virtual module IDs
+      // FR-003: Resolve to internal IDs with null-byte prefix
       const entry = Object.entries(modules).find(([, virtualId]) => virtualId === id);
       if (entry) return resolved[entry[0] as keyof typeof modules];
       return null;
     },
 
     load(id) {
+      // FR-016-018: Virtual module generation with type-safe exports
       const entry = Object.entries(resolved).find(([, rid]) => rid === id);
       if (!entry) return null;
       const [key] = entry as [keyof typeof modules, string];
       const config = configs.find((c) => c.key === key);
       if (!config) return null;
+      
+      // F2: File discovery and reading
       const dirPath = path.resolve(root, config.dir);
       const files = readMarkdownFiles(dirPath);
+      
+      // F3: Content parsing pipeline
       const parsed = files.map((f) => config.parser(f)).filter(Boolean);
       const data = config.single ? parsed[0] ?? null : parsed;
+      
+      // F6: Virtual module generation with JSON serialization
       return `export const ${config.exporter} = ${JSON.stringify(data ?? (config.single ? null : []), null, 2)};`;
     },
 
     handleHotUpdate({ file, server }) {
+      // F8: HMR Integration - FR-020-023: Detect changes and invalidate cache
       const match = configs.find((c) => file.startsWith(path.resolve(root, c.dir)) && file.endsWith('.md'));
       if (match) {
         const mod = server.moduleGraph.getModuleById(resolved[match.key]);
@@ -169,6 +245,13 @@ export function contentDataPlugin(): Plugin {
   };
 }
 
+/**
+ * Read all markdown files from a directory recursively
+ * Skips files matching *spec.md pattern
+ * 
+ * @param contentPath - Absolute path to content directory
+ * @returns Array of markdown files with path and content
+ */
 function readMarkdownFiles(contentPath: string): MarkdownFile[] {
   const files: MarkdownFile[] = [];
   if (!fs.existsSync(contentPath)) return files;
@@ -191,17 +274,13 @@ function readMarkdownFiles(contentPath: string): MarkdownFile[] {
   return files;
 }
 
-function slugFromPath(filePath: string): string {
-  return filePath.replace(/\.md$/, '').replace(/\\/g, '/');
-}
-
-function ensureStringArray(value: any): string[] {
-  if (!value) return [];
-  if (Array.isArray(value)) return value.map(String).filter(Boolean);
-  if (typeof value === 'string') return value.split(',').map((v) => v.trim()).filter(Boolean);
-  return [];
-}
-
+/**
+ * Parse Home/Hero section markdown file
+ * Single-file parser for home page content
+ * 
+ * @param file - Markdown file with path and content
+ * @returns Parsed home data or null if invalid
+ */
 function parseHome(file: MarkdownFile): HomeData | null {
   const { data, content } = matter(file.content);
   if (!data.title) return null;
@@ -221,6 +300,13 @@ function parseHome(file: MarkdownFile): HomeData | null {
   };
 }
 
+/**
+ * Parse About section markdown file
+ * Single-file parser for about/bio content
+ * 
+ * @param file - Markdown file with path and content
+ * @returns Parsed about data or null if invalid
+ */
 function parseAbout(file: MarkdownFile): AboutData | null {
   const { data, content } = matter(file.content);
   if (!data.headline) return null;
@@ -243,6 +329,13 @@ function parseAbout(file: MarkdownFile): AboutData | null {
   };
 }
 
+/**
+ * Parse Skills section markdown file
+ * Multi-file parser that aggregates skill items from category files
+ * 
+ * @param file - Markdown file with path and content
+ * @returns Array of parsed skill items or null if empty
+ */
 function parseSkills(file: MarkdownFile): SkillDataItem[] | null {
   const { data } = matter(file.content);
   const skills = Array.isArray(data.skills) ? data.skills : [];
@@ -266,6 +359,13 @@ function parseSkills(file: MarkdownFile): SkillDataItem[] | null {
   return parsed.length ? parsed : null;
 }
 
+/**
+ * Parse Projects section markdown file
+ * Multi-file parser for project portfolio items
+ * 
+ * @param file - Markdown file with path and content
+ * @returns Parsed project data or null if invalid
+ */
 function parseProjects(file: MarkdownFile): ProjectDataItem | null {
   const { data, content } = matter(file.content);
   if (!data.title || !data.description) return null;
@@ -286,6 +386,13 @@ function parseProjects(file: MarkdownFile): ProjectDataItem | null {
   };
 }
 
+/**
+ * Parse Blogs section markdown file
+ * Multi-file parser for blog post items
+ * 
+ * @param file - Markdown file with path and content
+ * @returns Parsed blog data or null if invalid
+ */
 function parseBlogs(file: MarkdownFile): BlogDataItem | null {
   const { data, content } = matter(file.content);
   if (!data.title || !data.excerpt || !data.date) return null;
@@ -305,6 +412,13 @@ function parseBlogs(file: MarkdownFile): BlogDataItem | null {
   };
 }
 
+/**
+ * Parse Contact section markdown file
+ * Single-file parser for contact information
+ * 
+ * @param file - Markdown file with path and content
+ * @returns Parsed contact data or null if invalid
+ */
 function parseContact(file: MarkdownFile): ContactData | null {
   const { data, content } = matter(file.content);
   const sections = splitSections(content);
@@ -321,6 +435,13 @@ function parseContact(file: MarkdownFile): ContactData | null {
   };
 }
 
+/**
+ * Normalize raw contact data object to ContactDataItem
+ * Adds type-safe validation and URL synthesis
+ * 
+ * @param raw - Raw contact object from frontmatter
+ * @returns Normalized contact item or null if invalid
+ */
 function normalizeContact(raw: any): ContactDataItem | null {
   if (!raw?.type || !raw?.label || !raw?.value) return null;
   const type = (raw.type as ContactType) || 'email';
@@ -334,36 +455,27 @@ function normalizeContact(raw: any): ContactDataItem | null {
   };
 }
 
+/**
+ * Generate appropriate URL for contact type
+ * Creates mailto:/tel: URLs for email/phone
+ * 
+ * @param type - Contact type
+ * @param value - Contact value (email address, phone number)
+ * @returns Synthesized URL or undefined for unsupported types
+ */
 function synthesizeContactUrl(type: ContactType, value: string): string | undefined {
   if (type === 'email') return `mailto:${value}`;
   if (type === 'phone') return `tel:${value}`;
   return undefined;
 }
 
-function splitSections(markdown: string): Record<string, string> {
-  const sections: Record<string, string> = {};
-  const parts = markdown.split(/\n## /);
-  for (const part of parts) {
-    const [heading, ...rest] = part.split('\n');
-    if (!heading) continue;
-    const key = heading.trim().toLowerCase();
-    const text = rest.join('\n').trim();
-    if (text) sections[key] = text;
-  }
-  return sections;
-}
-
-function extractBullets(block?: string): string[] {
-  if (!block) return [];
-  const lines = block.split('\n');
-  const items: string[] = [];
-  for (const line of lines) {
-    const match = line.match(/^[\s]*[-*]\s+(.+)$/);
-    if (match) items.push(match[1].trim());
-  }
-  return items;
-}
-
+/**
+ * Extract contact items from markdown bullet list
+ * Parses structured contact lists from markdown sections
+ * 
+ * @param block - Markdown text block with contact list
+ * @returns Array of parsed contact items
+ */
 function extractContactItems(block?: string): ContactDataItem[] {
   if (!block) return [];
   const lines = block.split('\n');
