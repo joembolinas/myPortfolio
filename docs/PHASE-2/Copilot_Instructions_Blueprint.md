@@ -29,7 +29,7 @@ This document provides comprehensive instructions for AI-assisted development on
 Primary Language: TypeScript 5.0.2
 Runtime: Node.js 18+
 Framework: React 18.2.0
-Build Tool: Vite 7.0
+Build Tool: Vite 7.0.6
 Styling: Tailwind CSS 3.4
 Package Manager: npm 9+
 Module System: ES Modules (ESM)
@@ -41,23 +41,23 @@ Module System: ES Modules (ESM)
 
 - `framer-motion` ^10.16.0 - Animation and transitions
 - `react-error-boundary` ^6.0.0 - Error handling
-- `react-router-dom` ^6.15.0 - Client-side routing (future)
+- `react-router-dom` ^7.10.1 - Client-side routing
 
 **Markdown & Content:**
 
 - `gray-matter` ^4.0.3 - YAML frontmatter parsing
-- Virtual modules (`virtual:content/*`) - Build-time content pipeline
+- Virtual modules (`virtual:*-data`) - Build-time content pipeline
 
 **Testing:**
 
-- `vitest` ^1.0.0 - Unit testing framework
-- `@testing-library/react` ^14.0.0 - Component testing
-- `@testing-library/jest-dom` ^6.1.0 - DOM matchers
-- `@axe-core/react` ^4.8.0 - Accessibility testing
+- `vitest` ^3.2.4 - Unit testing framework
+- `@testing-library/react` ^13.4.0 - Component testing
+- `@testing-library/jest-dom` ^5.17.0 - DOM matchers
+- `@axe-core/cli` ^4.7.0 - Accessibility testing
 
 **Code Quality:**
 
-- `eslint` ^8.50.0 - JavaScript/TypeScript linting
+- `eslint` ^8.57.1 - JavaScript/TypeScript linting
 - `prettier` ^3.0.0 - Code formatting
 - `typescript` ^5.0.2 - Type checking
 
@@ -72,7 +72,7 @@ Module System: ES Modules (ESM)
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "vitest",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext js,jsx,ts,tsx --config config/.eslintrc.json --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   }
 }
@@ -138,6 +138,10 @@ module.exports = {
   bracketSpacing: true,      // Spaces in object literals
   arrowParens: 'always',     // Always wrap arrow function params
   endOfLine: 'lf',           // Unix line endings
+  overrides: [
+    { files: '*.md', options: { proseWrap: 'always' } },
+    { files: '*.json', options: { printWidth: 80 } },
+  ],
 };
 ```
 
@@ -482,7 +486,7 @@ import { Button } from '@/components/ui/Button';
 import type { Project } from '@/types';
 
 // 3. Virtual module imports (virtual:*)
-import { projectsData } from 'virtual:content/projects';
+import { projectsData } from 'virtual:projects-data';
 
 // 4. Relative imports (same directory)
 import { formatDate } from './utils';
@@ -524,7 +528,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Card } from '@/components/ui/Card';
 import type { Project, Skill } from '@/types';
 
-import { projectsData } from 'virtual:content/projects';
+import { projectsData } from 'virtual:projects-data';
 
 import { formatDate } from './utils';
 
@@ -819,8 +823,8 @@ const handleClick = useCallback((id: string) => {
 
 ```typescript
 // Import from virtual modules (build-time parsed)
-import { projectsData } from 'virtual:content/projects';
-import { skillsData } from 'virtual:content/skills';
+import { projectsData } from 'virtual:projects-data';
+import { skillsData } from 'virtual:skills-data';
 
 // ✅ GOOD: Data parsed at build time (no runtime overhead)
 export const projects: Project[] = projectsData ?? [];
@@ -889,10 +893,10 @@ date: 2025-12-09
 
 ```typescript
 // Import content data from virtual modules
-import { projectsData } from 'virtual:content/projects';
-import { skillsData } from 'virtual:content/skills';
-import { blogsData } from 'virtual:content/blogs';
-import { journeyData } from 'virtual:journey-data';
+import { projectsData } from 'virtual:projects-data';
+import { skillsData } from 'virtual:skills-data';
+import { blogsData } from 'virtual:blogs-data';
+import { learningJourney } from 'virtual:learning-journey-data';
 
 // Fallback pattern for missing data
 export const projects: Project[] = Array.isArray(projectsData) && projectsData.length
@@ -956,7 +960,7 @@ When generating code:
 - ✅ **Accessibility first** - Include ARIA, semantic HTML, keyboard support
 - ✅ **Error handling** - Return error states, use ErrorBoundary
 - ✅ **Path aliases** - Use `@/*` imports, not relative paths outside directory
-- ✅ **Virtual modules** - Import content from `virtual:content/*`
+- ✅ **Virtual modules** - Import content from `virtual:*-data`
 
 ### 12.2 Common Patterns to Use
 
@@ -1064,13 +1068,13 @@ import type { Type } from '@/types';                // src/types/
 
 ```typescript
 // Available virtual modules (Vite plugins)
-import { projectsData } from 'virtual:content/projects';
-import { skillsData } from 'virtual:content/skills';
-import { blogsData } from 'virtual:content/blogs';
-import { contactData } from 'virtual:content/contact';
-import { aboutData } from 'virtual:content/about';
-import { heroData } from 'virtual:content/hero';
-import { journeyData } from 'virtual:journey-data';
+import { projectsData } from 'virtual:projects-data';
+import { skillsData } from 'virtual:skills-data';
+import { blogsData } from 'virtual:blogs-data';
+import { contactData } from 'virtual:contact-data';
+import { aboutData } from 'virtual:about-data';
+import { homeData } from 'virtual:home-data';
+import { learningJourney } from 'virtual:learning-journey-data';
 ```
 
 ### 13.4 Common Imports
@@ -1121,37 +1125,7 @@ Reference these ADRs for architectural context:
 
 ---
 
-v1.0.0 | Active | Last Updated: Dec 09 2025 - 16:45
+v1.0.1 | Active | Last Updated: Dec 11 2025
 
 ---
 
-TODO: FIX
-
-```
- Inaccuracies Found
-Virtual Module Names (Critical):
-
-Blueprint: import { projectsData } from 'virtual:content/projects'
-Actual: import { projectsData } from 'virtual:projects-data'
-Same issue for all content modules
-Journey Data Module:
-
-Blueprint: import { journeyData } from 'virtual:journey-data'
-Actual: import { learningJourney as journeyData } from 'virtual:learning-journey-data'
-Vite Version:
-
-Blueprint: 5.0+
-Actual: 7.0.6
-Prettier Config:
-
-Blueprint shows basic config but actual has additional overrides for .md and .json files
-ESLint Configuration:
-
-Blueprint mentions ESLint but actual config is minimal; package.json includes additional plugins
-🔧 Recommendations for Updates
-Update Virtual Module Imports in Quick Reference section
-Correct Vite version to 7.0+
-Add Prettier overrides to the config example
-Clarify ESLint setup with plugin details
-Verify all import examples against actual usage
-```
