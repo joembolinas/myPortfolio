@@ -110,6 +110,8 @@ export function journeyDataPlugin(): Plugin {
         const mod = server.moduleGraph.getModuleById(RESOLVED_VIRTUAL_MODULE_ID);
         if (mod) {
           server.moduleGraph.invalidateModule(mod);
+          // Trigger full reload to ensure client receives update
+          server.ws.send({ type: 'full-reload' });
         }
         return [];
       }
@@ -120,6 +122,10 @@ export function journeyDataPlugin(): Plugin {
 /**
  * Read all markdown files from the content directory
  * Implements F2 (Markdown File Discovery & Reading)
+ * 
+ * **Security:** This function only reads files within the resolved content directory.
+ * The contentPath is constructed from config.root (set by Vite) and a hardcoded
+ * path 'content/learningJourney', preventing path traversal attacks.
  * 
  * @param contentPath - Absolute path to learning journey content
  * @returns Array of markdown files with normalized paths

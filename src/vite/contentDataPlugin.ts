@@ -228,6 +228,9 @@ export function contentDataPlugin(): Plugin {
       const data = config.single ? parsed[0] ?? null : parsed;
       
       // F6: Virtual module generation with JSON serialization
+      // IMPORTANT: Always return a valid module export, even if data is null/empty
+      // This ensures static imports in re-export files (e.g., src/data/home.ts) 
+      // can always resolve successfully, allowing fallback logic to work properly
       return `export const ${config.exporter} = ${JSON.stringify(data ?? (config.single ? null : []), null, 2)};`;
     },
 
@@ -248,6 +251,10 @@ export function contentDataPlugin(): Plugin {
 /**
  * Read all markdown files from a directory recursively
  * Skips files matching *spec.md pattern
+ * 
+ * **Security:** This function only reads files within the resolved content directory.
+ * The contentPath is constructed from config.root (set by Vite) and config.dir 
+ * (hardcoded in plugin configuration), preventing path traversal attacks.
  * 
  * @param contentPath - Absolute path to content directory
  * @returns Array of markdown files with path and content
@@ -283,7 +290,10 @@ function readMarkdownFiles(contentPath: string): MarkdownFile[] {
  */
 function parseHome(file: MarkdownFile): HomeData | null {
   const { data, content } = matter(file.content);
-  if (!data.title) return null;
+  if (!data.title) {
+    console.warn(`[contentDataPlugin] Missing required field 'title' in ${file.path}`);
+    return null;
+  }
   const sections = splitSections(content);
   return {
     id: slugFromPath(file.path),
@@ -309,7 +319,10 @@ function parseHome(file: MarkdownFile): HomeData | null {
  */
 function parseAbout(file: MarkdownFile): AboutData | null {
   const { data, content } = matter(file.content);
-  if (!data.headline) return null;
+  if (!data.headline) {
+    console.warn(`[contentDataPlugin] Missing required field 'headline' in ${file.path}`);
+    return null;
+  }
   const sections = splitSections(content);
   return {
     id: slugFromPath(file.path),
@@ -368,7 +381,10 @@ function parseSkills(file: MarkdownFile): SkillDataItem[] | null {
  */
 function parseProjects(file: MarkdownFile): ProjectDataItem | null {
   const { data, content } = matter(file.content);
-  if (!data.title || !data.description) return null;
+  if (!data.title || !data.description) {
+    console.warn(`[contentDataPlugin] Missing required fields 'title' or 'description' in ${file.path}`);
+    return null;
+  }
   const sections = splitSections(content);
   return {
     id: slugFromPath(file.path).split('/').pop() || slugFromPath(file.path),
@@ -395,7 +411,10 @@ function parseProjects(file: MarkdownFile): ProjectDataItem | null {
  */
 function parseBlogs(file: MarkdownFile): BlogDataItem | null {
   const { data, content } = matter(file.content);
-  if (!data.title || !data.excerpt || !data.date) return null;
+  if (!data.title || !data.excerpt || !data.date) {
+    console.warn(`[contentDataPlugin] Missing required fields 'title', 'excerpt', or 'date' in ${file.path}`);
+    return null;
+  }
   const sections = splitSections(content);
   return {
     id: slugFromPath(file.path).split('/').pop() || slugFromPath(file.path),
