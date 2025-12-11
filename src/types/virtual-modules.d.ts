@@ -52,3 +52,24 @@ declare module 'virtual:contact-data' {
   }
   export const contactData: ContactData | null;
 }
+
+declare module 'virtual:learning-journey-data' {
+  export interface LearningJourneyItem {
+    id: string;
+    title: string;
+    period: string;
+    category: 'education' | 'work' | 'skill' | 'project' | 'certification';
+    description: string;
+    expandedContent: {
+      overview: string;
+      keyLearnings: string[];
+      technologies?: string[];
+      achievements?: string[];
+      challenges?: string[];
+      nextSteps?: string[];
+    };
+    icon: string;
+    color: string;
+  }
+  export const learningJourney: LearningJourneyItem[];
+}
