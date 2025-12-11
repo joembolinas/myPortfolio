@@ -58,6 +58,12 @@ Module System: ES Modules (ESM)
 **Code Quality:**
 
 - `eslint` ^8.57.1 - JavaScript/TypeScript linting
+- `@typescript-eslint/eslint-plugin` ^8.39.0 - TypeScript-specific ESLint rules
+- `@typescript-eslint/parser` ^8.39.0 - TypeScript parser for ESLint
+- `eslint-plugin-jsx-a11y` ^6.10.2 - Accessibility linting for JSX
+- `eslint-plugin-react` ^7.37.5 - React-specific linting rules
+- `eslint-plugin-react-hooks` ^4.6.2 - React hooks linting rules
+- `eslint-plugin-react-refresh` ^0.4.20 - React Fast Refresh linting
 - `prettier` ^3.0.0 - Code formatting
 - `typescript` ^5.0.2 - Type checking
 
