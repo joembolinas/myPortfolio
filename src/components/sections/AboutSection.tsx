@@ -4,6 +4,7 @@ import { FadeInOnScroll, FadeInChild } from '@/components/animations/FadeInOnScr
 import { ProgressiveReveal } from '@/components/animations/ProgressiveReveal';
 import { SkillCardHover } from '@/components/animations/HoverLift';
 import { skillCategories, getSkillsByCategory } from '@/data/skills';
+import { about } from '@/data/about';
 import { useAdaptiveAnimations } from '@/hooks/useDevicePerformance';
 
 // Enhanced About section with better theming and animations
@@ -43,11 +44,10 @@ export const AboutSection: React.FC = () => {
                 },
               })}
             >
-              About Me
+              {about.headline}
             </motion.h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              From administration to code - building bridges between business operations and
-              technology solutions
+              {about.bio || 'From administration to code - building bridges between business operations and technology solutions'}
             </p>
           </div>
         </FadeInOnScroll>
@@ -63,37 +63,34 @@ export const AboutSection: React.FC = () => {
                 staggerDelay={config.staggerDelay}
               >
                 <p className="text-gray-300 leading-relaxed text-lg">
-                  As a <span className="text-blue-400 font-semibold">2nd year college student</span>{' '}
-                  and former
-                  <span className="text-emerald-400 font-semibold">
-                    {' '}
-                    Senior Administrative Officer
-                  </span>
-                  , I bring a unique perspective to software development that combines{' '}
-                  <span className="text-purple-400 font-semibold">
-                    5+ years of business operations experience
-                  </span>{' '}
-                  with growing technical expertise.
+                  {about.narrative || 'As a 2nd year college student and former Senior Administrative Officer, I bring a unique perspective to software development that combines 5+ years of business operations experience with growing technical expertise.'}
                 </p>
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  My transition from government administration to technology isn't just a career
-                  change—it's about applying
-                  <span className="text-blue-400 font-semibold">
-                    {' '}
-                    systematic thinking, project management skills, and stakeholder communication
-                  </span>{' '}
-                  to create software solutions that actually solve real-world problems.
-                </p>
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  Currently focused on{' '}
-                  <span className="text-emerald-400 font-semibold">
-                    frontend development with React and TypeScript
-                  </span>
-                  , while exploring cybersecurity through{' '}
-                  <span className="text-red-400 font-semibold">TryHackMe</span> and strengthening
-                  algorithmic thinking via{' '}
-                  <span className="text-yellow-400 font-semibold">LeetCode</span>.
-                </p>
+                {about.strengths && about.strengths.length > 0 && (
+                  <div className="mt-4">
+                    <h4 className="text-lg font-semibold text-blue-400 mb-2">Core Strengths</h4>
+                    <ul className="space-y-2">
+                      {about.strengths.map((strength, index) => (
+                        <li key={index} className="text-gray-300 flex items-start">
+                          <span className="text-emerald-400 mr-2">•</span>
+                          {strength}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {about.currentFocus && about.currentFocus.length > 0 && (
+                  <div className="mt-4">
+                    <h4 className="text-lg font-semibold text-purple-400 mb-2">Current Focus</h4>
+                    <ul className="space-y-2">
+                      {about.currentFocus.map((focus, index) => (
+                        <li key={index} className="text-gray-300 flex items-start">
+                          <span className="text-blue-400 mr-2">•</span>
+                          {focus}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </ProgressiveReveal>
             </div>
 
@@ -179,16 +176,18 @@ export const AboutSection: React.FC = () => {
               Looking for opportunities to contribute to meaningful projects and grow alongside
               experienced developers. Let's build something amazing together!
             </p>
-            <motion.button
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() =>
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }
-            >
-              Get In Touch
-            </motion.button>
+            {about.cta && (
+              <motion.button
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() =>
+                  document.getElementById(about.cta?.href?.replace('#', '') || 'contact')?.scrollIntoView({ behavior: 'smooth' })
+                }
+              >
+                {about.cta.label}
+              </motion.button>
+            )}
           </div>
         </FadeInOnScroll>
       </div>

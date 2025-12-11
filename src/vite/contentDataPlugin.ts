@@ -442,7 +442,7 @@ function parseContact(file: MarkdownFile): ContactData | null {
   const { data, content } = matter(file.content);
   const sections = splitSections(content);
   const contacts: ContactDataItem[] = Array.isArray(data.contacts)
-    ? data.contacts.map((c: any) => normalizeContact(c)).filter(Boolean)
+    ? data.contacts.map((c: any) => normalizeContact(c)).filter((item): item is ContactDataItem => item !== null)
     : extractContactItems(sections['contacts']);
 
   if (!contacts.length) return null;
