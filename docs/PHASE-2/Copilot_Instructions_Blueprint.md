@@ -9,7 +9,6 @@ ai_note: "Comprehensive Copilot instructions for AI-assisted development. Provid
 summary: "Complete AI assistant instructions documenting technology stack, coding standards, naming conventions, file organization, import patterns, error handling, and project-specific development guidelines for the Growth Journey Portfolio."
 date: 2025-12-09
 ---
-
 # Copilot Instructions Blueprint
 
 ## Executive Summary
@@ -39,21 +38,25 @@ Module System: ES Modules (ESM)
 ### 1.2 Key Libraries
 
 **UI & Animation:**
+
 - `framer-motion` ^10.16.0 - Animation and transitions
 - `react-error-boundary` ^6.0.0 - Error handling
 - `react-router-dom` ^6.15.0 - Client-side routing (future)
 
 **Markdown & Content:**
+
 - `gray-matter` ^4.0.3 - YAML frontmatter parsing
 - Virtual modules (`virtual:content/*`) - Build-time content pipeline
 
 **Testing:**
+
 - `vitest` ^1.0.0 - Unit testing framework
 - `@testing-library/react` ^14.0.0 - Component testing
 - `@testing-library/jest-dom` ^6.1.0 - DOM matchers
 - `@axe-core/react` ^4.8.0 - Accessibility testing
 
 **Code Quality:**
+
 - `eslint` ^8.50.0 - JavaScript/TypeScript linting
 - `prettier` ^3.0.0 - Code formatting
 - `typescript` ^5.0.2 - Type checking
@@ -94,6 +97,7 @@ Module System: ES Modules (ESM)
 ```
 
 **Type Safety Requirements:**
+
 - ✅ **NO implicit `any`** - Always provide explicit types
 - ✅ **Null safety** - Handle `null` and `undefined` explicitly
 - ✅ **Interface over type** - Prefer `interface` for object shapes
@@ -138,6 +142,7 @@ module.exports = {
 ```
 
 **Key Rules:**
+
 - **Line length:** 100 characters max
 - **Indentation:** 2 spaces (no tabs)
 - **Quotes:** Single quotes for strings, double for JSX attributes
@@ -207,6 +212,7 @@ export const Component: React.FC<ComponentProps> = ({ title, items, onSelect }) 
 ```
 
 **Key Patterns:**
+
 - ✅ **Named exports** (not default) for components
 - ✅ **PascalCase** component names
 - ✅ **Props interface** named `{ComponentName}Props`
@@ -239,6 +245,7 @@ function calculateTotal(items: CartItem[], taxRate: number): number {
 ```
 
 **JSDoc Requirements:**
+
 - ✅ **All exported functions** - Must have JSDoc
 - ✅ **Complex logic** - Explain why, not what
 - ✅ **@param and @returns** - Document all parameters and return values
@@ -265,15 +272,15 @@ export const useActiveSection = (sectionIds: string[]): string => {
 
 **File Naming Rules:**
 
-| Type | Convention | Example |
-|------|------------|---------|
-| **Components** | PascalCase.tsx | `HeroSection.tsx`, `Navigation.tsx` |
-| **Hooks** | camelCase.ts | `useActiveSection.ts`, `useScrollTo.ts` |
-| **Utilities** | camelCase.ts | `markdownParser.ts`, `iconColorGenerator.ts` |
-| **Types** | camelCase.ts | `index.ts` (in types/) |
-| **Tests** | {name}.test.tsx | `accessibility.test.tsx`, `HeroSection.test.tsx` |
-| **Config** | kebab-case.{ext} | `prettier.config.cjs`, `vite.config.ts` |
-| **Markdown** | kebab-case.md | `project-portfolio.md`, `career-start.md` |
+| Type                 | Convention       | Example                                              |
+| -------------------- | ---------------- | ---------------------------------------------------- |
+| **Components** | PascalCase.tsx   | `HeroSection.tsx`, `Navigation.tsx`              |
+| **Hooks**      | camelCase.ts     | `useActiveSection.ts`, `useScrollTo.ts`          |
+| **Utilities**  | camelCase.ts     | `markdownParser.ts`, `iconColorGenerator.ts`     |
+| **Types**      | camelCase.ts     | `index.ts` (in types/)                             |
+| **Tests**      | {name}.test.tsx  | `accessibility.test.tsx`, `HeroSection.test.tsx` |
+| **Config**     | kebab-case.{ext} | `prettier.config.cjs`, `vite.config.ts`          |
+| **Markdown**   | kebab-case.md    | `project-portfolio.md`, `career-start.md`        |
 
 **Directory Naming:**
 
@@ -488,6 +495,7 @@ import './styles.css';
 ### 5.2 Import Rules
 
 **Order:**
+
 1. React (always first)
 2. External npm packages (alphabetical)
 3. Path alias imports (`@/*`) (alphabetical)
@@ -496,10 +504,12 @@ import './styles.css';
 6. Assets and styles (last)
 
 **Blank lines:**
+
 - One blank line between each group
 - No blank lines within groups
 
 **Named vs Default:**
+
 - ✅ **Prefer named imports** for components and utilities
 - ✅ **Use default imports** only for external libraries that require it
 
@@ -579,14 +589,14 @@ interface ApiError {
 async function fetchGitHubData(): Promise<GitHubUser | null> {
   try {
     const response = await fetch('https://api.github.com/users/joembolinas');
-    
+  
     if (!response.ok) {
       throw new Error(`GitHub API error: ${response.status}`);
     }
-    
+  
     const data = await response.json();
     return data as GitHubUser;
-    
+  
   } catch (error) {
     // Type guard for Error type
     if (error instanceof Error) {
@@ -903,6 +913,7 @@ export const projects: Project[] = Array.isArray(projectsData) && projectsData.l
 ```
 
 **Types:**
+
 - `feat:` New feature
 - `fix:` Bug fix
 - `docs:` Documentation
@@ -936,6 +947,7 @@ Fixes #58
 ### 12.1 Code Generation Preferences
 
 When generating code:
+
 - ✅ **Use TypeScript strict mode** - No implicit any, explicit types
 - ✅ **Named exports** - Avoid default exports
 - ✅ **Function components** - No class components
@@ -1015,6 +1027,7 @@ export const useHookName = (param: string): UseHookReturn => {
 ### 12.3 Patterns to Avoid
 
 **Don't Generate:**
+
 - ❌ Class components
 - ❌ Default exports
 - ❌ Implicit `any` types
@@ -1028,14 +1041,14 @@ export const useHookName = (param: string): UseHookReturn => {
 
 ### 13.1 File Extensions
 
-| Extension | Purpose |
-|-----------|---------|
-| `.tsx` | React components with JSX |
-| `.ts` | TypeScript files (utilities, hooks, types) |
-| `.test.tsx` | Component tests |
-| `.test.ts` | Utility function tests |
-| `.md` | Markdown content |
-| `.json` | Configuration and data |
+| Extension     | Purpose                                    |
+| ------------- | ------------------------------------------ |
+| `.tsx`      | React components with JSX                  |
+| `.ts`       | TypeScript files (utilities, hooks, types) |
+| `.test.tsx` | Component tests                            |
+| `.test.ts`  | Utility function tests                     |
+| `.md`       | Markdown content                           |
+| `.json`     | Configuration and data                     |
 
 ### 13.2 Path Aliases
 
@@ -1102,10 +1115,43 @@ Reference these ADRs for architectural context:
 
 **Revision History:**
 
-| Date | Author | Changes |
-|------|--------|---------|
+| Date       | Author              | Changes                                               |
+| ---------- | ------------------- | ----------------------------------------------------- |
 | 2025-12-09 | Growth Journey Team | Initial version auto-generated from codebase analysis |
 
 ---
 
 v1.0.0 | Active | Last Updated: Dec 09 2025 - 16:45
+
+---
+
+TODO: FIX
+
+```
+ Inaccuracies Found
+Virtual Module Names (Critical):
+
+Blueprint: import { projectsData } from 'virtual:content/projects'
+Actual: import { projectsData } from 'virtual:projects-data'
+Same issue for all content modules
+Journey Data Module:
+
+Blueprint: import { journeyData } from 'virtual:journey-data'
+Actual: import { learningJourney as journeyData } from 'virtual:learning-journey-data'
+Vite Version:
+
+Blueprint: 5.0+
+Actual: 7.0.6
+Prettier Config:
+
+Blueprint shows basic config but actual has additional overrides for .md and .json files
+ESLint Configuration:
+
+Blueprint mentions ESLint but actual config is minimal; package.json includes additional plugins
+🔧 Recommendations for Updates
+Update Virtual Module Imports in Quick Reference section
+Correct Vite version to 7.0+
+Add Prettier overrides to the config example
+Clarify ESLint setup with plugin details
+Verify all import examples against actual usage
+```
