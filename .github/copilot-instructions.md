@@ -6,7 +6,7 @@
 
 ## Project Snapshot
 
-- **Phase**: Phase 2 - Architecture & Design (current branch: refactor/content; default: main)
+- **Phase**: Phase 3 Implementation Plan
 - **Stack**: React 18.2 + Vite 7.0 + TypeScript 5.0 + Tailwind CSS 3.4 + Framer Motion 10.16
 - **Targets**: 90+ Lighthouse scores, WCAG AA accessibility, performance-first UX
 - **Runtime**: Node.js 18+, npm 9+, ES Modules (ESM)
@@ -170,6 +170,7 @@ export const Component: React.FC<ComponentProps> = ({ title, items, onSelect }) 
 ```
 
 **Key Patterns:**
+
 - ✅ Named exports (not default)
 - ✅ Props interface named `{ComponentName}Props`
 - ✅ Hooks at top, before event handlers
@@ -201,6 +202,7 @@ import './styles.css';
 ```
 
 **Rules:**
+
 - One blank line between each group
 - No blank lines within groups
 - Prefer named imports for components/utilities
@@ -242,14 +244,14 @@ import { learningJourney } from 'virtual:learning-journey-data';
 async function fetchGitHubData(): Promise<GitHubUser | null> {
   try {
     const response = await fetch('https://api.github.com/users/joembolinas');
-    
+  
     if (!response.ok) {
       throw new Error(`GitHub API error: ${response.status}`);
     }
-    
+  
     const data = await response.json();
     return data as GitHubUser;
-    
+  
   } catch (error) {
     if (error instanceof Error) {
       console.error('Failed to fetch GitHub data:', error.message);
@@ -427,6 +429,7 @@ export const useActiveSection = (sectionIds: string[]): string => {
 ```
 
 **Requirements:**
+
 - ✅ All exported functions must have JSDoc
 - ✅ Explain why, not what
 - ✅ Document all parameters with `@param`
@@ -436,6 +439,7 @@ export const useActiveSection = (sectionIds: string[]): string => {
 ### File Footnotes
 
 Include at end of each file:
+
 ```
 v1.0.0 | Active | Last Updated: Dec 11 2025 - 14:30
 ```
@@ -509,6 +513,7 @@ describe('Accessibility', () => {
 **Format**: `<type>(<scope>): <subject>`
 
 **Types**:
+
 - `feat:` New feature
 - `fix:` Bug fix
 - `docs:` Documentation
@@ -518,6 +523,7 @@ describe('Accessibility', () => {
 - `chore:` Build/tooling changes
 
 **Example**:
+
 ```
 feat(hero): add animated gradient background
 
@@ -532,6 +538,7 @@ Closes #42
 ## AI Code Generation Checklist
 
 When generating code:
+
 - ✅ Use TypeScript strict mode - No implicit any
 - ✅ Named exports - Avoid default exports
 - ✅ Function components - No class components
@@ -543,6 +550,7 @@ When generating code:
 - ✅ Virtual modules - Import content from `virtual:*-data`
 
 **Avoid**:
+
 - ❌ Class components
 - ❌ Default exports
 - ❌ Implicit `any` types
@@ -595,6 +603,7 @@ myPortfolio/
 ## Architecture Decision Records
 
 Reference these ADRs for architectural context:
+
 - **ADR-001**: Build-Time vs Runtime Parsing - Use Vite plugins
 - **ADR-002**: Virtual Modules vs Import Aliases - Use `virtual:*` prefix
 - **ADR-003**: Single vs Multiple Plugins - Use two plugins (content + journey)
