@@ -262,7 +262,7 @@ export function contentDataPlugin(): Plugin {
 function readMarkdownFiles(contentPath: string): MarkdownFile[] {
   const files: MarkdownFile[] = [];
   if (!fs.existsSync(contentPath)) return files;
-  const ignoreSpec = /spec\.md$/i;
+  const ignoreSpec = /spec\.md$|^(Projects|Blogs)\.md$/i;
 
   function walk(dir: string, relativeBase = '') {
     const entries = fs.readdirSync(dir, { withFileTypes: true });

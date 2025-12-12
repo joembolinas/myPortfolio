@@ -141,6 +141,7 @@ function readMarkdownFiles(contentPath: string): Array<{ path: string; content: 
   // Recursively read all .md files
   function walkDir(dir: string, relativeBase = '') {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
+    const ignoreSpec = /spec\.md$|^LearningJourney\.md$/i;
 
     for (const entry of entries) {
       const fullPath = path.join(dir, entry.name);
@@ -148,7 +149,7 @@ function readMarkdownFiles(contentPath: string): Array<{ path: string; content: 
 
       if (entry.isDirectory()) {
         walkDir(fullPath, relativePath);
-      } else if (entry.isFile() && entry.name.endsWith('.md')) {
+      } else if (entry.isFile() && entry.name.endsWith('.md') && !ignoreSpec.test(entry.name)) {
         const content = fs.readFileSync(fullPath, 'utf-8');
         files.push({
           path: relativePath.replace(/\\/g, '/'), // Normalize to forward slashes
