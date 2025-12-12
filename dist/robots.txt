@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap (add when available)
-# Sitemap: https://yourdomain.com/sitemap.xml

@@ -5,18 +5,22 @@ import { ParticleBackground } from '@/components/animations/ParticleBackground';
 import { FadeInOnScroll } from '@/components/animations/FadeInOnScroll';
 import { CyclicText } from '@/components/animations/CyclicText';
 import { motion } from 'framer-motion';
+import { home } from '@/data/home';
 
 // Hero section with particle background and morphing text
 export const HeroSection: React.FC = () => {
   const { scrollToSection } = useScrollTo();
 
-  const careerTitles = [
-    'Full Stack Developer',
-    'Frontend Specialist',
-    'React Enthusiast',
-    'Career Changer',
-    'Problem Solver',
-  ];
+  // Use highlights from content as cyclic text, or fallback to career titles
+  const careerTitles = home.highlights && home.highlights.length > 0
+    ? home.highlights
+    : [
+        'Full Stack Developer',
+        'Frontend Specialist',
+        'React Enthusiast',
+        'Career Changer',
+        'Problem Solver',
+      ];
 
   return (
     <section
@@ -40,61 +44,53 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">
-            Hello, I'm{' '}
-            <span className="relative inline-block">
-              <span className="relative z-10">Joem</span>
-              <motion.div
-                className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-25"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.25, 0.4, 0.25],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatType: 'loop',
-                }}
-              />
-            </span>
+            {home.title}
           </h1>
         </motion.div>
 
         {/* Career transition subtitle with morphing text */}
         <FadeInOnScroll delay={0.4}>
           <div className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            {home.subtitle && (
+              <div className="mb-2 text-gray-200">{home.subtitle}</div>
+            )}
             <CyclicText
               texts={careerTitles}
               className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-semibold"
               interval={3000}
             />
-            <div className="mt-2">
-              passionate about creating beautiful, functional, and user-friendly applications
-            </div>
+            {home.body && (
+              <div className="mt-2">{home.body}</div>
+            )}
           </div>
         </FadeInOnScroll>
 
         {/* Call-to-action buttons with hover animations */}
         <FadeInOnScroll delay={0.6}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="primary"
-                onClick={() => scrollToSection('projects')}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                View My Work
-              </Button>
-            </motion.div>
+            {home.ctaPrimary && (
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="primary"
+                  onClick={() => scrollToSection(home.ctaPrimary?.href?.replace('#', '') || 'projects')}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  {home.ctaPrimary.label}
+                </Button>
+              </motion.div>
+            )}
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="outline"
-                onClick={() => scrollToSection('learning-journey')}
-                className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300"
-              >
-                My Journey
-              </Button>
-            </motion.div>
+            {home.ctaSecondary && (
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="outline"
+                  onClick={() => scrollToSection(home.ctaSecondary?.href?.replace('#', '') || 'learning-journey')}
+                  className="border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300"
+                >
+                  {home.ctaSecondary.label}
+                </Button>
+              </motion.div>
+            )}
           </div>
         </FadeInOnScroll>
 
