@@ -162,17 +162,7 @@ export function contentDataPlugin(): Plugin {
         const mod = server.moduleGraph.getModuleById(resolved[match.key]);
         if (mod) {
           server.moduleGraph.invalidateModule(mod);
-          server.ws.send({
-            type: 'update',
-            updates: [
-              {
-                type: 'js-update',
-                path: mod.url,
-                acceptedPath: mod.url,
-                timestamp: Date.now(),
-              },
-            ],
-          });
+          server.ws.send({ type: 'full-reload' });
         }
       }
     },
@@ -180,20 +170,24 @@ export function contentDataPlugin(): Plugin {
 }
 
 function readMarkdownFiles(contentPath: string): MarkdownFile[] {
-  if (!fs.existsSync(contentPath)) return [];
-  const ignoreSpec = /spec\.md$/i;
   const files: MarkdownFile[] = [];
+  if (!fs.existsSync(contentPath)) return files;
+  const ignoreSpec = /spec\.md$/i;
 
-  const entries = fs.readdirSync(contentPath, { withFileTypes: true });
-  for (const entry of entries) {
-    if (entry.isFile() && entry.name.endsWith('.md') && !ignoreSpec.test(entry.name)) {
-      const fullPath = path.join(contentPath, entry.name);
-      files.push({
-        path: entry.name,
-        content: fs.readFileSync(fullPath, 'utf-8'),
-      });
+  function walk(dir: string, relativeBase = '') {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name);
+      const rel = path.join(relativeBase, entry.name);
+      if (entry.isDirectory()) {
+        walk(full, rel);
+      } else if (entry.isFile() && entry.name.endsWith('.md') && !ignoreSpec.test(entry.name)) {
+        files.push({ path: rel.replace(/\\/g, '/'), content: fs.readFileSync(full, 'utf-8') });
+      }
     }
   }
+
+  walk(contentPath);
   return files;
 }
 
