@@ -1,5 +1,5 @@
 ---
-title: Growth Journey Portfolio
+title: My Awesome Portfolio
 description: A performant, accessible portfolio built with React, TypeScript, and Vite.
 technologies: [React, TypeScript, Vite, Tailwind]
 gradient: from-blue-500 to-purple-600
