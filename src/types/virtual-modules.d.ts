@@ -52,3 +52,8 @@ declare module 'virtual:contact-data' {
   }
   export const contactData: ContactData | null;
 }
+
+declare module 'virtual:learning-journey-data' {
+  import type { LearningJourneyItem } from '@/types';
+  export const learningJourney: LearningJourneyItem[];
+}

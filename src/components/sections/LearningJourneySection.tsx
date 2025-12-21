@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FadeInOnScroll, FadeInChild } from '@/components/animations/FadeInOnScroll';
 import { HoverLift } from '@/components/animations/HoverLift';
-import { learningJourney, LearningJourneyItem } from '@/data/learningJourney';
+import { learningJourney } from '@/data/learningJourney';
+import type { LearningJourneyItem } from '@/types';
 import { useAdaptiveAnimations } from '@/hooks/useDevicePerformance';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 
@@ -18,7 +19,7 @@ export const LearningJourneySection: React.FC = () => {
   };
 
   const getCategoryIcon = (category: LearningJourneyItem['category']) => {
-    const icons = {
+    const icons: Record<LearningJourneyItem['category'], string> = {
       education: '🎓',
       work: '💼',
       skill: '🛠️',

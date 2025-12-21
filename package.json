@@ -46,6 +46,8 @@
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "@vitest/coverage-v8": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -64,7 +66,7 @@
     "typescript": "^5.0.2",
     "vite": "^7.0.6",
     "vite-bundle-analyzer": "^0.7.0",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.16"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

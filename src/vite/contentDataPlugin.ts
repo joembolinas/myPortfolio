@@ -146,14 +146,23 @@ export function contentDataPlugin(): Plugin {
     load(id) {
       const entry = Object.entries(resolved).find(([, rid]) => rid === id);
       if (!entry) return null;
+
       const [key] = entry as [keyof typeof modules, string];
       const config = configs.find((c) => c.key === key);
       if (!config) return null;
+
+      console.time(`[plugin:${config.key}]`);
       const dirPath = path.resolve(root, config.dir);
       const files = readMarkdownFiles(dirPath);
       const parsed = files.map((f) => config.parser(f)).filter(Boolean);
       const data = config.single ? parsed[0] ?? null : parsed;
-      return `export const ${config.exporter} = ${JSON.stringify(data ?? (config.single ? null : []), null, 2)};`;
+      const result = `export const ${config.exporter} = ${JSON.stringify(
+        data ?? (config.single ? null : []),
+        null,
+        2,
+      )};`;
+      console.timeEnd(`[plugin:${config.key}]`);
+      return result;
     },
 
     handleHotUpdate({ file, server }) {
@@ -309,7 +318,13 @@ function parseContact(file: MarkdownFile): ContactData | null {
   const { data, content } = matter(file.content);
   const sections = splitSections(content);
   const contacts: ContactDataItem[] = Array.isArray(data.contacts)
-    ? data.contacts.map((c: any) => normalizeContact(c)).filter(Boolean)
+    ? data.contacts.reduce((acc: ContactDataItem[], c: any) => {
+        const normalized = normalizeContact(c);
+        if (normalized) {
+          acc.push(normalized);
+        }
+        return acc;
+      }, [])
     : extractContactItems(sections['contacts']);
 
   if (!contacts.length) return null;

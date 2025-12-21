@@ -48,7 +48,10 @@ export function journeyDataPlugin(): Plugin {
 
     load(id) {
       if (id === RESOLVED_VIRTUAL_MODULE_ID) {
-        return generateVirtualModule(contentPath);
+        console.time('[plugin:learning-journey]');
+        const result = generateVirtualModule(contentPath);
+        console.timeEnd('[plugin:learning-journey]');
+        return result;
       }
     },
 

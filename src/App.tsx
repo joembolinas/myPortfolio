@@ -43,13 +43,15 @@ function App() {
       >
         Skip to main content
       </a>
-      {/* Fixed navigation */}
-      <Navigation />
+
+      {/* Header with navigation and hero */}
+      <header>
+        <Navigation />
+        <HeroSection />
+      </header>
 
       {/* All sections with lazy loading */}
       <main id="main-content" role="main" className="relative" tabIndex={-1}>
-        {/* Hero loads immediately for faster FCP */}
-        <HeroSection />
         {/* Other sections load as needed */}
         <Suspense fallback={<LoadingSection message="Loading About section..." />}>
           <AboutSection />

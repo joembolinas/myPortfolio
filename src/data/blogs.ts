@@ -1,19 +1,5 @@
 import { blogsData } from 'virtual:blogs-data';
-
-export interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  content?: string;
-  publishDate: string;
-  readTime: number;
-  category: 'tutorial' | 'experience' | 'project' | 'reflection' | 'technical';
-  tags: string[];
-  featured: boolean;
-  image?: string;
-  status: 'published' | 'draft' | 'coming-soon';
-  url?: string;
-}
+import type { BlogPost } from '@/types';
 
 const fallbackBlogPosts: BlogPost[] = [
   {

@@ -1,21 +1,4 @@
-export interface LearningJourneyItem {
-  id: string;
-  title: string;
-  period: string;
-  category: 'education' | 'work' | 'skill' | 'project' | 'certification';
-  description: string;
-  expandedContent: {
-    overview: string;
-    keyLearnings: string[];
-    technologies?: string[];
-    achievements?: string[];
-    challenges?: string[];
-    nextSteps?: string[];
-  };
-  icon: string;
-  color: string;
-  isExpanded?: boolean;
-}
+import type { LearningJourneyItem } from '@/types';
 
 // Import learning journey data from virtual module populated by Vite plugin
 // This reads all .md files from content/learningJourney/ at build time

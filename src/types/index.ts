@@ -88,3 +88,37 @@ export interface ContactSubmitResult {
   error?: string;
   receivedAt: number;
 }
+
+export interface LearningJourneyItem {
+  id: string;
+  title: string;
+  period: string;
+  category: 'education' | 'work' | 'skill' | 'project' | 'certification';
+  description: string;
+  expandedContent: {
+    overview: string;
+    keyLearnings: string[];
+    technologies?: string[];
+    achievements?: string[];
+    challenges?: string[];
+    nextSteps?: string[];
+  };
+  icon: string;
+  color: string;
+  isExpanded?: boolean;
+}
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content?: string;
+  publishDate: string;
+  readTime: number;
+  category: 'tutorial' | 'experience' | 'project' | 'reflection' | 'technical';
+  tags: string[];
+  featured: boolean;
+  image?: string;
+  status: 'published' | 'draft' | 'coming-soon';
+  url?: string;
+}

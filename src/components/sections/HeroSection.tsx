@@ -22,7 +22,6 @@ export const HeroSection: React.FC = () => {
     <section
       id="home"
       className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
-      role="banner"
       aria-label="Introduction and primary presentation"
     >
       {/* Interactive particle background */}

@@ -82,7 +82,7 @@ describe('useContactForm', () => {
       await result.current.submit();
     });
 
-    expect(result.current.state.errors.message).toContain('10 characters');
+    expect(result.current.state.errors.message).toContain('Too short');
   });
 
   it('should reset form after successful submission', async () => {
