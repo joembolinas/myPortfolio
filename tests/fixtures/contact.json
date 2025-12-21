@@ -1,0 +1,34 @@
+{
+  "contacts": [
+    {
+      "type": "email",
+      "icon": "email",
+      "label": "Email",
+      "value": "bolinasjoem@gmail.com",
+      "url": "mailto:bolinasjoem@gmail.com"
+    },
+    {
+      "type": "linkedin",
+      "icon": "briefcase",
+      "label": "LinkedIn",
+      "value": "linkedin.com/in/joem",
+      "url": "https://linkedin.com/in/joembolinas"
+    },
+    {
+      "type": "github",
+      "icon": "laptop",
+      "label": "GitHub",
+      "value": "github.com/joembolinas",
+      "url": "https://github.com/joembolinas"
+    }
+  ],
+  "navigationItems": [
+    { "id": "home", "label": "home", "href": "#home" },
+    { "id": "about", "label": "about", "href": "#about" },
+    { "id": "projects", "label": "projects", "href": "#projects" },
+    { "id": "learning-journey", "label": "journey", "href": "#learning-journey" },
+    { "id": "github", "label": "github", "href": "#github" },
+    { "id": "blog", "label": "blog", "href": "#blog" },
+    { "id": "contact", "label": "contact", "href": "#contact" }
+  ]
+}

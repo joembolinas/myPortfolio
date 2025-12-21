@@ -1,0 +1,18 @@
+{
+  "skills": [
+    { "name": "React", "category": "dev", "proficiency": "intermediate", "icon": "react" },
+    { "name": "JavaScript", "category": "dev", "proficiency": "intermediate", "icon": "javascript" },
+    { "name": "TypeScript", "category": "dev", "proficiency": "beginner", "icon": "typescript" },
+    { "name": "HTML5", "category": "dev", "proficiency": "intermediate", "icon": "html" },
+    { "name": "CSS3", "category": "dev", "proficiency": "intermediate", "icon": "css" },
+    { "name": "Tailwind CSS", "category": "dev", "proficiency": "intermediate", "icon": "tailwind" },
+    { "name": "Node.js", "category": "dev", "proficiency": "beginner", "icon": "nodejs" },
+    { "name": "Python", "category": "dev", "proficiency": "beginner", "icon": "python" }
+  ],
+  "skillCategories": {
+    "dev": { "title": "Development", "description": "Frontend & backend development technologies", "color": "from-blue-500 to-cyan-500" },
+    "network": { "title": "Network & CyberSec", "description": "Security, networking, and ethical hacking", "color": "from-red-500 to-orange-500" },
+    "data": { "title": "Data Analytics", "description": "Data analysis, databases, and visualization", "color": "from-green-500 to-emerald-500" },
+    "ai": { "title": "AI & Machine Learning", "description": "Artificial intelligence and machine learning", "color": "from-purple-500 to-pink-500" }
+  }
+}

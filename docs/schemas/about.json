@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/schemas/about.json",
+  "type": "object",
+  "required": ["id", "headline"],
+  "properties": {
+    "id": { "type": "string" },
+    "headline": { "type": "string" },
+    "bio": { "type": ["string", "null"] },
+    "strengths": { "type": "array", "items": { "type": "string" } },
+    "values": { "type": "array", "items": { "type": "string" } },
+    "currentFocus": { "type": "array", "items": { "type": "string" } },
+    "cta": { "type": ["object", "null"] },
+    "narrative": { "type": ["string", "null"] }
+  }
+}

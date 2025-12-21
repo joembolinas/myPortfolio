@@ -1,0 +1,19 @@
+{
+  "$id": "https://example.com/schemas/learning_journey.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "title", "period", "category"],
+    "properties": {
+      "id": { "type": "string" },
+      "title": { "type": "string" },
+      "period": { "type": "string" },
+      "category": { "type": "string" },
+      "description": { "type": ["string", "null"] },
+      "expandedContent": { "type": "object" },
+      "icon": { "type": ["string", "null"] },
+      "color": { "type": ["string", "null"] },
+      "isExpanded": { "type": "boolean" }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "career-transition-story",
+    "title": "From Admin to Developer: My Career Transition Story",
+    "excerpt": "The challenges, learnings, and mindset shifts involved in transitioning from government administration to software development.",
+    "publishDate": "2024-12-01",
+    "readTime": 8,
+    "category": "experience",
+    "tags": ["career-change", "personal-story", "motivation"],
+    "featured": true,
+    "status": "coming-soon"
+  },
+  {
+    "id": "first-react-project",
+    "title": "Building My First React Portfolio: Lessons Learned",
+    "excerpt": "Technical challenges and design decisions involved in creating a modern portfolio website with React and TypeScript.",
+    "publishDate": "2024-11-15",
+    "readTime": 12,
+    "category": "project",
+    "tags": ["react", "typescript", "portfolio", "web-development"],
+    "featured": true,
+    "status": "coming-soon"
+  },
+  {
+    "id": "leetcode-beginner-guide",
+    "title": "LeetCode for Career Changers: A Practical Approach",
+    "excerpt": "How to approach algorithmic problem-solving when coming from a non-technical background.",
+    "publishDate": "2024-11-01",
+    "readTime": 10,
+    "category": "tutorial",
+    "tags": ["algorithms", "leetcode", "learning", "career-change"],
+    "featured": false,
+    "status": "coming-soon"
+  }
+]

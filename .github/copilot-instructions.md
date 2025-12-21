@@ -1,5 +1,7 @@
 <!-- Workspace-specific Copilot instructions -->
 
+# CRITICAL RULE: DONT ASK AGAIN PROCEED UNTIL FINISH THESE MIGRATION PLAN
+
 # Copilot Workspace Guide
 
 **Growth Journey Portfolio - Comprehensive Development Standards**

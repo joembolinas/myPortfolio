@@ -1,0 +1,16 @@
+{
+  "$id": "https://example.com/schemas/website.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "title"],
+    "properties": {
+      "id": { "type": "string" },
+      "title": { "type": "string" },
+      "icon": { "type": ["string", "null"] },
+      "useCase": { "type": ["string", "null"] },
+      "example": { "type": ["string", "null"] },
+      "gradient": { "type": ["string", "null"] }
+    }
+  }
+}

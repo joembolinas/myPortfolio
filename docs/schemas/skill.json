@@ -1,0 +1,19 @@
+{
+  "$id": "https://example.com/schemas/skill.json",
+  "type": "object",
+  "properties": {
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "category", "proficiency"],
+        "properties": {
+          "name": { "type": "string" },
+          "category": { "type": "string" },
+          "proficiency": { "type": "string" },
+          "icon": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

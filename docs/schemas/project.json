@@ -1,0 +1,16 @@
+{
+  "$id": "https://example.com/schemas/project.json",
+  "type": "object",
+  "required": ["id", "title"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": ["string", "null"] },
+    "technologies": { "type": "array", "items": { "type": "string" } },
+    "gradient": { "type": ["string", "null"] },
+    "demoUrl": { "type": ["string", "null"], "format": "uri" },
+    "sourceUrl": { "type": ["string", "null"], "format": "uri" },
+    "image": { "type": ["string", "null"] },
+    "featured": { "type": "boolean" }
+  }
+}

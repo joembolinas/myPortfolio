@@ -1,0 +1,14 @@
+{
+  "id": "home",
+  "title": "Growth Journey Portfolio",
+  "subtitle": "Building performant, accessible experiences",
+  "ctaPrimary": { "label": "View Projects", "href": "#projects" },
+  "ctaSecondary": { "label": "My Journey", "href": "#learning-journey" },
+  "highlights": ["Performance-first", "WCAG AA", "React 18", "TypeScript 5"],
+  "badges": ["Lighthouse 90+", "A11y AA"],
+  "social": [
+    { "label": "GitHub", "href": "https://github.com/joembolinas" },
+    { "label": "LinkedIn", "href": "https://linkedin.com/in/joembolinas" }
+  ],
+  "body": "A career transformation story from admin/procurement to software engineering."
+}

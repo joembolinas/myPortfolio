@@ -1,0 +1,20 @@
+{
+  "$id": "https://example.com/schemas/blogpost.json",
+  "type": "object",
+  "required": ["id", "title", "publishDate", "status"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "excerpt": { "type": ["string", "null"] },
+    "content_markdown": { "type": ["string", "null"] },
+    "content_html": { "type": ["string", "null"] },
+    "publishDate": { "type": "string", "format": "date" },
+    "readTime": { "type": ["integer", "null"] },
+    "category": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "featured": { "type": "boolean" },
+    "image": { "type": ["string", "null"] },
+    "status": { "type": "string", "enum": ["published","draft","coming-soon"] },
+    "url": { "type": ["string", "null"] }
+  }
+}

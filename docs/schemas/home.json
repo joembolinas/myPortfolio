@@ -1,0 +1,16 @@
+{
+  "$id": "https://example.com/schemas/home.json",
+  "type": "object",
+  "required": ["id", "title"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "subtitle": { "type": ["string", "null"] },
+    "ctaPrimary": { "type": ["object", "null"] },
+    "ctaSecondary": { "type": ["object", "null"] },
+    "highlights": { "type": "array", "items": { "type": "string" } },
+    "badges": { "type": "array", "items": { "type": "string" } },
+    "social": { "type": "array", "items": { "type": "object" } },
+    "body": { "type": ["string", "null"] }
+  }
+}

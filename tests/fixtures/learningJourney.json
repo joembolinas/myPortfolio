@@ -1,0 +1,46 @@
+[
+  {
+    "id": "career-start",
+    "title": "Senior Admin/Procurement Officer",
+    "period": "2018-2023",
+    "category": "work",
+    "description": "Building foundational business and organizational skills in government service.",
+    "expandedContent": {
+      "overview": "Developed comprehensive administrative and procurement expertise while managing complex projects and stakeholder relationships in a fast-paced government environment.",
+      "keyLearnings": [
+        "Project management and deadline coordination",
+        "Stakeholder communication and relationship building",
+        "Process optimization and workflow improvement"
+      ],
+      "achievements": ["Streamlined procurement processes, reducing processing time by 30%"]
+    },
+    "icon": "💼",
+    "color": "from-blue-500 to-blue-600"
+  },
+  {
+    "id": "college-return",
+    "title": "College Return - 2nd Year Student",
+    "period": "2023-Present",
+    "category": "education",
+    "description": "Pursuing formal computer science education to strengthen technical foundations.",
+    "expandedContent": {
+      "overview": "Returned to formal education to build strong theoretical foundations in computer science while applying real-world experience to academic learning.",
+      "keyLearnings": ["Data structures and algorithms fundamentals", "Object-oriented programming principles"]
+    },
+    "icon": "🎓",
+    "color": "from-green-500 to-green-600"
+  },
+  {
+    "id": "leetcode-journey",
+    "title": "LeetCode Problem Solving",
+    "period": "2024-Present",
+    "category": "skill",
+    "description": "Developing algorithmic thinking and problem-solving skills through consistent practice.",
+    "expandedContent": {
+      "overview": "Committed to daily problem-solving practice to strengthen algorithmic thinking and prepare for technical interviews.",
+      "keyLearnings": ["Algorithm design and optimization techniques", "Time and space complexity analysis"]
+    },
+    "icon": "🧩",
+    "color": "from-yellow-500 to-orange-500"
+  }
+]

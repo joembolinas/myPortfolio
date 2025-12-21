@@ -1,0 +1,44 @@
+name: Contract Tests
+
+on:
+  push:
+    branches: [ dev, integration, main ]
+  pull_request:
+    branches: [ dev, integration, main ]
+
+jobs:
+  contract-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest requests jsonschema
+
+      - name: (Optional) Start backend (if present)
+        run: |
+          # If a backend exists at backend/app.py or app/main.py, start it for tests.
+          # Update this command to match your backend entrypoint when available.
+          if [ -f backend/app.py ]; then
+            python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000 &
+            sleep 2
+          fi
+
+      - name: Run contract tests
+        run: |
+          pytest -q
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-results
+          path: ./**/test-results* || true
